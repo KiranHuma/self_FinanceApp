@@ -1,0 +1,11 @@
+F:\Vb projects\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.exe
+F:\Vb projects\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.pdb
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csprojAssemblyReference.cache
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.loginFrm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Properties.Resources.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.userregFrm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csproj.GenerateResource.cache
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csproj.CoreCompileInputs.cache
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.exe
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.pdb
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.userdetailsFrm.resources
