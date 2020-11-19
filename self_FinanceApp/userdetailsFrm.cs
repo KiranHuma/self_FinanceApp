@@ -11,23 +11,27 @@ namespace self_FinanceApp
 {
     public partial class userdetailsFrm : Form
     {
+        //Global Variables
         SqlCommand cmd = new SqlCommand();
         SqlConnection con = new SqlConnection();
-
-        string str;
-        SqlCommand com;
-        int count;
+        BindingSource source1 = new BindingSource();
+       
+       
+       
+        //Database Connection String
         String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
         public userdetailsFrm()
         {
             InitializeComponent();
         }
-
+        //The function call on Form Load
         private void userdetailsFrm_Load(object sender, EventArgs e)
         {
             label1.Text = loginFrm.SetValueForText1;
             txtDate.Text = DateTime.Now.ToString("MM-dd-yyyy ");
+            getdata();
         }
+        //Function for database connection
         public void dbaccessconnection()
         {
             try
@@ -43,6 +47,30 @@ namespace self_FinanceApp
                 MessageBox.Show("Database not Connected");
             }
         }
+        // get the data of User in grid
+        public void getdata()
+        {
+            {
+                try
+                {
+                    var con = new SqlConnection(cs);
+                    con.Open();
+                    var da = new SqlDataAdapter("Select * from db_incomeexpenses ", con);
+                    var dt = new DataTable();
+                    da.Fill(dt);
+                    source1.DataSource = dt;
+                    GetInEx_Grid.DataSource = dt;
+                    GetInEx_Grid.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed:Retrieving Data" + ex.Message);
+                    this.Dispose();
+                }
+            }
+
+        }
+        //Function to get data from the database into textboxes
         public void getcred()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -80,21 +108,17 @@ namespace self_FinanceApp
                 }
             }
         }
-
+        //Function call on get button
         private void button1_Click(object sender, EventArgs e)
         {
             getcred();
         }
-
+        //Close form
         private void label3_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void btnupdate_Click(object sender, EventArgs e)
-        {
-            updatecred();
-        }
+        //function for updating the credentials
         public void updatecred()
         {
             try
@@ -113,9 +137,6 @@ namespace self_FinanceApp
                 command.Parameters.AddWithValue("@Genderr", CmboGender.Text);
                 command.Parameters.AddWithValue("@Contact_noo", txtContact.Text);
                 command.Parameters.AddWithValue("@Emaill", txtEmail.Text);
-   
-
-
                 command.ExecuteNonQuery();
                 label12.Text = "Data  updated Successfully";
             }
@@ -123,10 +144,15 @@ namespace self_FinanceApp
             {
                 label12.Text = "Data not updated Successfully";
                 MessageBox.Show(ex.Message);
-
             }
         }
-
+        //Function call on updatebutton for the credentials
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            updatecred();
+        }
+      
+        ///for matching the password.If the password in both textboxes matches the label will show "MATCH" otherwise Not Match
         private void txtPassAgain_TextChanged(object sender, EventArgs e)
         {
             {
@@ -141,6 +167,70 @@ namespace self_FinanceApp
                     label2.ForeColor = Color.Red;
                 }
             }
+        }
+       //to add new records.All the texboxes will empty on clicking add new button
+        private void btnadd_Click(object sender, EventArgs e)
+        {
+            txt_INEX_Username.Text = "";
+           txt_INEX_name.Text="";
+            txt_INEX_Contact.Text="";
+            txt_Income.Text="";
+            txt_expense.Text="";
+             txt_balnce.Text="";
+           
+        }
+
+        //insert the values of income and expenses in database
+        public void insert_incomeexpenses()
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(cs);
+                connection.Open();
+
+               string Usernamee = txt_INEX_Username.Text;
+                 string Name = txt_INEX_name.Text;
+                string Contact= txt_INEX_Contact.Text;
+                string Income = txt_Income.Text;
+                 string Expense = txt_expense.Text;
+                 string Balance= txt_balnce.Text;
+                string datee = txt_date.Text;
+               
+
+                string sqlquery = ("insert into db_incomeexpenses(Username,Name,Name_or_source,Income,Expenses,Your_Balance,Entry_Date)values('" + txt_INEX_Username.Text + "','" + txt_INEX_name.Text + "','" + txt_INEX_Contact.Text + "','" + txt_Income.Text + "','" + txt_expense.Text + "','" + txt_balnce.Text + "','" + txt_date.Value + "')");
+                SqlCommand command = new SqlCommand(sqlquery, connection);
+                command.Parameters.AddWithValue("Username", Usernamee);
+                command.Parameters.AddWithValue("Name", Name);
+                command.Parameters.AddWithValue("Name_or_source", Contact);
+                command.Parameters.AddWithValue("Income", Income);
+                command.Parameters.AddWithValue("Expenses", Expense);
+                command.Parameters.AddWithValue("Your_Balance", Balance);
+               command.Parameters.AddWithValue("Entry_Date", datee);
+
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                label7.Text = "Account not Created Successfully";
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+            insert_incomeexpenses();
+        }
+        public void your_balance()
+        {
+            double addd;
+            addd = double.Parse(txt_Income.Text) - double.Parse(txt_expense.Text);
+            txt_balnce.Text = Convert.ToString(addd);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            your_balance();
         }
     }
 }
