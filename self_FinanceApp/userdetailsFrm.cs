@@ -172,13 +172,12 @@ namespace self_FinanceApp
         //to add new records.All the texboxes will empty on clicking add new button
         private void btnadd_Click(object sender, EventArgs e)
         {
-            txt_INEX_Username.Text = "";
-            txt_INEX_name.Text = "";
+           
             txt_INEX_Contact.Text = "";
             txt_Income.Text = "";
             txt_expense.Text = "";
             txt_balnce.Text = "";
-
+            get_forinEx();
         }
 
         //insert the values of income and expenses in database
