@@ -55,7 +55,7 @@ namespace self_FinanceApp
                     SetValueForText1 = txtUser.Text;
                     /* I have made a new form  called userdeatils . If the user is successfully authenticated then the form will be moved to the next form */
                     this.Hide();
-                    new userdetailsFrm().Show();
+                    new Manage_income_expensesFrm().Show();
                 }
                 else
                     MessageBox.Show("Invalid username or password");
