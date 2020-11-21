@@ -15,7 +15,7 @@ namespace self_FinanceApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Add_IncomeExpense());
+            Application.Run(new loginFrm());
         }
     }
 }

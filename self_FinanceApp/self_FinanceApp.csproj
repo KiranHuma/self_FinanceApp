@@ -54,6 +54,12 @@
     <Compile Include="Add_IncomeExpense.Designer.cs">
       <DependentUpon>Add_IncomeExpense.cs</DependentUpon>
     </Compile>
+    <Compile Include="Incomeexpense_editFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incomeexpense_editFrm.Designer.cs">
+      <DependentUpon>Incomeexpense_editFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage_income_expensesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </Compile>
     <EmbeddedResource Include="Add_IncomeExpense.resx">
       <DependentUpon>Add_IncomeExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incomeexpense_editFrm.resx">
+      <DependentUpon>Incomeexpense_editFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginFrm.resx">
       <DependentUpon>loginFrm.cs</DependentUpon>

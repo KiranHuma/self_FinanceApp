@@ -16,7 +16,7 @@ namespace self_FinanceApp
        
         string str;
         SqlCommand com;
-        int count;
+        
         String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
             public userregFrm()
         {

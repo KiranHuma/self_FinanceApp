@@ -17,7 +17,7 @@ namespace self_FinanceApp
         SqlCommand cmd = new SqlCommand();
         SqlConnection con = new SqlConnection();
         BindingSource source1 = new BindingSource();
-
+       
 
 
         //Database Connection String
@@ -32,6 +32,7 @@ namespace self_FinanceApp
             Manage_income_expensesFrm Mie = new Manage_income_expensesFrm();
             this.Hide();
             Mie.Show();
+            get_incomesum();// to update the balance
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace self_FinanceApp
                 string datee = txt_date.Text;
                 if (rbtn_income.Checked)
                 {
-                    double addd;
+                  double addd;
                     addd = double.Parse(txt_amnt.Text) + double.Parse(lbl_balnce.Text);
                     lbl_balnce.Text = Convert.ToString(addd);
                     string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Income,Your_Balance,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + lbl_balnce.Text + "','" + txt_date.Value + "')");
@@ -67,13 +68,15 @@ namespace self_FinanceApp
                     command.Parameters.AddWithValue("Name", Name);
                     command.Parameters.AddWithValue("Description", Des);
                     command.Parameters.AddWithValue("Name_or_source", Contact);
-                    // command.Parameters.AddWithValue("Amount", amnt);
+                   
                     command.Parameters.AddWithValue("Income", amnt);
                     command.Parameters.AddWithValue("Your_Balance", blnc);
                     command.Parameters.AddWithValue("Entry_Date", datee);
-                   
+                   // get_incomesum();
                     command.ExecuteNonQuery();
+                  
                     label7.Text = "Income added Successfully";
+                    label7.ForeColor = System.Drawing.Color.DarkGreen;
 
                 }
                 else
@@ -92,11 +95,12 @@ namespace self_FinanceApp
                     command.Parameters.AddWithValue("Expense", amnt);
                     command.Parameters.AddWithValue("Your_Balance", blnc);
                     command.Parameters.AddWithValue("Entry_Date", datee);
-                    
+                   // get_incomesum();
                     command.ExecuteNonQuery();
                    
                     // radiobtn_expense.Text = "Expense";
                     label7.Text = "Expenses added Successfully";
+                    label7.ForeColor = System.Drawing.Color.DarkGreen;
                 }
 
             }
@@ -111,50 +115,19 @@ namespace self_FinanceApp
         private void Add_IncomeExpense_Load(object sender, EventArgs e)
         {
             lbl_user.Text = loginFrm.SetValueForText1;
-            handle_null();
-            get_incomesum();
             
             get_name();
-           
-            //handle_null();
-           // yorrblc();
-            
-         
+            get_contacts();
+          
         }
         private void button2_Click(object sender, EventArgs e)
         {
-           // get_incomesum();
-           // label9.Text = "0";
-           //  lbl_balnce.Text = "0";
-           // label1.Text = "0";
             insert_incomeexpenses();
-           // get_incomesum();
-            //get_expensesum();
-           // yorrblc();
+            label7.Visible = true;
         }
-        public void handle_null()
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(cs);
-
-                connection.Open();
-
-               // SELECT COALESCE(Column_name , 0 )FROM Table_Name;
-                string sqlquery = ("UPDATE db_incomeexpenses SET Expense=0 WHERE Expense is null ");
-                SqlCommand command = new SqlCommand(sqlquery, connection);
-                
-                command.ExecuteNonQuery();
-                label12.Text = "Data updated Successfully";
-            }
-            catch (Exception ex)
-            {
-                label12.Text = "Data not updated Successfully";
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        //get sum of income
+        
+    
+        //get sum of income and function for calculating the total balance
         public void get_incomesum()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -214,6 +187,41 @@ namespace self_FinanceApp
                 }
             }
         }
+        //get the contacts
+        public void get_contacts()
+        {
+            try
+            {
+                string constr = @cs;
+                // using (SqlConnection conn = new SqlConnection(@"Data Source=SHARKAWY;Initial Catalog=Booking;Persist Security Info=True;User ID=sa;Password=123456"))
+                using (SqlConnection conn = new SqlConnection(@cs))
+                {
+                    try
+                    {
+                        string query = "SELECT DISTINCT Name_or_source FROM db_incomeexpenses";
+                        SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                        conn.Open();
+                        DataSet ds = new DataSet();
+                        da.Fill(ds, "db_incomeexpenses");
+                        txt_contacts.DisplayMember = "Name_or_source";
+                        //txt_contacts.ValueMember = "Entry_no";
+                        txt_contacts.DataSource = ds.Tables["db_incomeexpenses"];
+                    }
+                    catch (Exception ex)
+                    {
+                        // write exception info to log or anything else
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            
+            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Failed:Retrieving RecentNames " + ex.Message);
+                this.Dispose();
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -233,7 +241,7 @@ namespace self_FinanceApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            handle_null();
+          
         }
     }
 }
