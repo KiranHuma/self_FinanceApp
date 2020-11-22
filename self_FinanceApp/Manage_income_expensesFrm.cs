@@ -17,7 +17,7 @@ namespace self_FinanceApp
         SqlCommand cmd = new SqlCommand();
         SqlConnection con = new SqlConnection();
         BindingSource source1 = new BindingSource();
-        public static string SetValueForText2 = "";
+     
 
 
         //Database Connection String
@@ -206,16 +206,16 @@ namespace self_FinanceApp
         {
 
             if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.getincome_Grid.Rows[e.RowIndex];
-                label12.Text = row.Cells["Entry_no"].Value.ToString();
-                label13.Text = row.Cells["Income"].Value.ToString();
-                label14.Text = row.Cells["Entry_Date"].Value.ToString();
+             {
+             DataGridViewRow row = this.getincome_Grid.Rows[e.RowIndex];
+             label12.Text = row.Cells["Entry_no"].Value.ToString();
+               label13.Text = row.Cells["Income"].Value.ToString();
+             label14.Text = row.Cells["Entry_Date"].Value.ToString();
 
 
+              }
+          
             }
-           
-        }
         //get delete the values where the description,income and entry date meet conditions
         public void delete_income()
         {
@@ -236,14 +236,38 @@ namespace self_FinanceApp
             }
 
         }
+        //get delete the values where the description,income and entry date meet conditions
+        public void delete_expense()
+        {
+            if (!getincome_Grid.CurrentRow.IsNewRow)
+            {
+                // Query string
+                SqlConnection con = new SqlConnection(cs);
+                con.Open();
+                cmd.Connection = con;
 
+                cmd.CommandText = "delete from db_incomeexpenses where Entry_no='" + label12.Text + "'";
+
+                cmd.ExecuteNonQuery();
+
+                //getincome_Grid.Rows.Remove(getincome_Grid.CurrentRow);
+                MessageBox.Show("Record Deleted");
+                con.Close();
+            }
+
+        }
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            SetValueForText2 = label12.Text;
-            
-            Incomeexpense_editFrm editt = new Incomeexpense_editFrm();
+            Incomeexpense_editFrm obj = new Incomeexpense_editFrm();
+            obj.label1.Text = this.getincome_Grid.CurrentRow.Cells[0].Value.ToString();
+            obj.txt_des.Text = this.getincome_Grid.CurrentRow.Cells[1].Value.ToString();
+            obj.txt_amnt.Text = this.getincome_Grid.CurrentRow.Cells[2].Value.ToString();
+            obj.txt_date.Text = this.getincome_Grid.CurrentRow.Cells[3].Value.ToString();
+           obj.rbtn_income.Visible = true;
             this.Hide();
-            editt.Show();
+            obj.ShowDialog();
+
+          
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -254,10 +278,66 @@ namespace self_FinanceApp
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             delete_income();
+           
             Manage_income_expensesFrm refreshh = new Manage_income_expensesFrm();
             this.Hide();
             refreshh.Show();
         
+        }
+
+        private void getexpense_Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.getexpense_Grid.Rows[e.RowIndex];
+                label12.Text = row.Cells["Entry_no"].Value.ToString();
+                label13.Text = row.Cells["Expense"].Value.ToString();
+                label14.Text = row.Cells["Entry_Date"].Value.ToString();
+
+
+            }
+        }
+
+        private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
+        {
+           
+        }
+
+        private void delToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Incomeexpense_editFrm obj = new Incomeexpense_editFrm();
+            obj.label1.Text = this.getexpense_Grid.CurrentRow.Cells[0].Value.ToString();
+            obj.txt_des.Text = this.getexpense_Grid.CurrentRow.Cells[1].Value.ToString();
+            obj.txt_amnt.Text = this.getexpense_Grid.CurrentRow.Cells[2].Value.ToString();
+            obj.txt_date.Text = this.getexpense_Grid.CurrentRow.Cells[3].Value.ToString();
+            obj.radiobtn_expense.Visible = true;
+            this.Hide();
+            obj.ShowDialog();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            delete_expense();
+           
+            Manage_income_expensesFrm refreshh = new Manage_income_expensesFrm();
+            this.Hide();
+            refreshh.Show();
+        }
+
+        private void getincome_Grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void getexpense_Grid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+          
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
     }

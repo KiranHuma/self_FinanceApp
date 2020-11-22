@@ -48,8 +48,8 @@
             this.lbl_balnce = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_des = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txt_des = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             // lbl_user
             // 
             this.lbl_user.AutoSize = true;
-            this.lbl_user.ForeColor = System.Drawing.Color.White;
+            this.lbl_user.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lbl_user.Location = new System.Drawing.Point(401, 26);
             this.lbl_user.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_user.Name = "lbl_user";
@@ -84,7 +84,7 @@
             this.rbtn_income.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtn_income.ForeColor = System.Drawing.Color.Green;
             this.rbtn_income.Location = new System.Drawing.Point(45, 356);
-            this.rbtn_income.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn_income.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn_income.Name = "rbtn_income";
             this.rbtn_income.Size = new System.Drawing.Size(90, 24);
             this.rbtn_income.TabIndex = 17;
@@ -99,7 +99,7 @@
             this.radiobtn_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radiobtn_expense.ForeColor = System.Drawing.Color.Red;
             this.radiobtn_expense.Location = new System.Drawing.Point(45, 398);
-            this.radiobtn_expense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radiobtn_expense.Margin = new System.Windows.Forms.Padding(4);
             this.radiobtn_expense.Name = "radiobtn_expense";
             this.radiobtn_expense.Size = new System.Drawing.Size(101, 24);
             this.radiobtn_expense.TabIndex = 18;
@@ -123,7 +123,7 @@
             // txt_amnt
             // 
             this.txt_amnt.Location = new System.Drawing.Point(62, 254);
-            this.txt_amnt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_amnt.Margin = new System.Windows.Forms.Padding(4);
             this.txt_amnt.Name = "txt_amnt";
             this.txt_amnt.Size = new System.Drawing.Size(213, 22);
             this.txt_amnt.TabIndex = 21;
@@ -132,7 +132,7 @@
             // txt_date
             // 
             this.txt_date.Location = new System.Drawing.Point(439, 371);
-            this.txt_date.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_date.Margin = new System.Windows.Forms.Padding(4);
             this.txt_date.Name = "txt_date";
             this.txt_date.Size = new System.Drawing.Size(241, 22);
             this.txt_date.TabIndex = 22;
@@ -181,7 +181,7 @@
             this.btn_addincome_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addincome_expense.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_addincome_expense.Location = new System.Drawing.Point(23, 10);
-            this.btn_addincome_expense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_addincome_expense.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addincome_expense.Name = "btn_addincome_expense";
             this.btn_addincome_expense.Size = new System.Drawing.Size(52, 31);
             this.btn_addincome_expense.TabIndex = 26;
@@ -216,7 +216,7 @@
             // 
             this.txt_contacts.FormattingEnabled = true;
             this.txt_contacts.Location = new System.Drawing.Point(62, 187);
-            this.txt_contacts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_contacts.Margin = new System.Windows.Forms.Padding(4);
             this.txt_contacts.Name = "txt_contacts";
             this.txt_contacts.Size = new System.Drawing.Size(212, 24);
             this.txt_contacts.TabIndex = 30;
@@ -230,7 +230,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
             this.button2.Location = new System.Drawing.Point(629, 417);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(51, 49);
             this.button2.TabIndex = 31;
@@ -240,7 +240,7 @@
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.ForeColor = System.Drawing.Color.White;
+            this.lbl_name.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lbl_name.Location = new System.Drawing.Point(482, 26);
             this.lbl_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_name.Name = "lbl_name";
@@ -296,18 +296,10 @@
             this.panel1.Size = new System.Drawing.Size(695, 346);
             this.panel1.TabIndex = 41;
             // 
-            // txt_des
-            // 
-            this.txt_des.Location = new System.Drawing.Point(62, 101);
-            this.txt_des.Name = "txt_des";
-            this.txt_des.Size = new System.Drawing.Size(353, 63);
-            this.txt_des.TabIndex = 41;
-            this.txt_des.Text = "";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(304, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -315,6 +307,14 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "user";
             this.label1.Visible = false;
+            // 
+            // txt_des
+            // 
+            this.txt_des.Location = new System.Drawing.Point(62, 101);
+            this.txt_des.Name = "txt_des";
+            this.txt_des.Size = new System.Drawing.Size(353, 63);
+            this.txt_des.TabIndex = 41;
+            this.txt_des.Text = "";
             // 
             // Add_IncomeExpense
             // 
@@ -329,7 +329,7 @@
             this.Controls.Add(this.radiobtn_expense);
             this.Controls.Add(this.rbtn_income);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Add_IncomeExpense";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_IncomeExpense";

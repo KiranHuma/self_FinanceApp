@@ -73,7 +73,7 @@ namespace self_FinanceApp
         {
             this.Close();
         }
-        //to edit the income or expenses
+        //to edit the  expenses
         public void income_edit()
         {
             double addd;
@@ -94,48 +94,47 @@ namespace self_FinanceApp
 
             
         }
-
-        //Function to get data from the database into textboxes for geting the username for expense/income
-        public void get_incomedetails()
+        //to edit the  expenses
+        public void expense_edit()
         {
-            using (SqlConnection connection = new SqlConnection(cs))
-            {
-                try
-                {
-                    SqlCommand command =
-                    new SqlCommand("select * from db_incomeexpenses where Entry_no='" + label1.Text + "'", connection);
-                    connection.Open();
-                    cmd.Parameters.Clear();
-                    SqlDataReader read = command.ExecuteReader();
+            double addd;
+            addd = double.Parse(txt_amnt.Text) + double.Parse(lbl_balnce.Text);
+            lbl_balnce.Text = Convert.ToString(addd);
 
-                    while (read.Read())
-                    {
-                        txt_des.Text = (read["Description"].ToString());
-                        txt_contacts.Text = (read["Name_or_source"].ToString());
-                        txt_amnt.Text = (read["Income"].ToString());
-                        txt_date.Text = (read["Entry_Date"].ToString());
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+
+            cmd.CommandText = "Update  db_incomeexpenses Set Description='" + txt_des.Text + "',Name_or_source='" + txt_contacts.Text + "',Expense='" + txt_amnt.Text + "' ,Entry_Date='" + txt_date.Value + "' where Entry_no='" + label1.Text + "'";
+            cmd.ExecuteNonQuery();
+            //getincome_Grid.Rows.Remove(getincome_Grid.CurrentRow);
+            MessageBox.Show("Data Updated");
+            con.Close();
 
 
-                    }
-                    read.Close();
 
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                    this.Dispose();
-                }
-            }
         }
+       
         private void button2_Click(object sender, EventArgs e)
         {
-            income_edit();
-        }
         
+            if (rbtn_income.Visible == true)
+            {
+              
+                income_edit();
+            }
+            else
+            {
+               
+                expense_edit();
+            }
+          
+        }
+      
         private void button1_Click(object sender, EventArgs e)
         {
-            get_incomedetails();
+         
         }
         public void get_contacts()
         
@@ -172,13 +171,12 @@ namespace self_FinanceApp
                 this.Dispose();
             }
         }
+
             private void Incomeexpense_editFrm_Load(object sender, EventArgs e)
         {
             
-            label1.Text =Manage_income_expensesFrm.SetValueForText2;
-            get_incomedetails();
             get_contacts();
-            radiobtn_expense.Visible = false;
+          //  radiobtn_expense.Visible = false;
         }
 
     }

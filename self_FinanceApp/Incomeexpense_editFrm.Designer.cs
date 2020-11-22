@@ -49,6 +49,7 @@
             this.radiobtn_expense = new System.Windows.Forms.RadioButton();
             this.rbtn_income = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.lbl_user);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_des);
@@ -85,7 +87,7 @@
             // lbl_user
             // 
             this.lbl_user.AutoSize = true;
-            this.lbl_user.ForeColor = System.Drawing.Color.White;
+            this.lbl_user.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lbl_user.Location = new System.Drawing.Point(379, 26);
             this.lbl_user.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_user.Name = "lbl_user";
@@ -97,13 +99,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(304, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 17);
             this.label1.TabIndex = 42;
             this.label1.Text = "0";
+            this.label1.Visible = false;
             // 
             // label12
             // 
@@ -267,6 +270,7 @@
             this.radiobtn_expense.TabStop = true;
             this.radiobtn_expense.Text = "Expense";
             this.radiobtn_expense.UseVisualStyleBackColor = true;
+            this.radiobtn_expense.Visible = false;
             // 
             // rbtn_income
             // 
@@ -281,6 +285,7 @@
             this.rbtn_income.TabStop = true;
             this.rbtn_income.Text = "Income";
             this.rbtn_income.UseVisualStyleBackColor = true;
+            this.rbtn_income.Visible = false;
             // 
             // button2
             // 
@@ -297,6 +302,17 @@
             this.button2.TabIndex = 48;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label9.Location = new System.Drawing.Point(486, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 17);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "label9";
+            this.label9.Visible = false;
             // 
             // Incomeexpense_editFrm
             // 
@@ -324,25 +340,26 @@
         }
 
         #endregion
-        private System.Windows.Forms.RichTextBox txt_des;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_addincome_expense;
         private System.Windows.Forms.Label lbl_balnce;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_amnt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox txt_contacts;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker txt_date;
-        private System.Windows.Forms.RadioButton radiobtn_expense;
-        private System.Windows.Forms.RadioButton rbtn_income;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label lbl_user;
+        public System.Windows.Forms.RichTextBox txt_des;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txt_amnt;
+        public System.Windows.Forms.ComboBox txt_contacts;
+        public System.Windows.Forms.Label lbl_user;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.DateTimePicker txt_date;
+        public System.Windows.Forms.RadioButton rbtn_income;
+        public System.Windows.Forms.RadioButton radiobtn_expense;
     }
 }
