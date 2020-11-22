@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incomeexpense_editFrm));
             this.txt_des = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.lbl_user = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             this.radiobtn_expense = new System.Windows.Forms.RadioButton();
             this.rbtn_income = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.lbl_user);
             this.panel1.Controls.Add(this.label1);
@@ -83,6 +85,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(701, 346);
             this.panel1.TabIndex = 49;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label9.Location = new System.Drawing.Point(486, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 17);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "label9";
+            this.label9.Visible = false;
             // 
             // lbl_user
             // 
@@ -303,16 +316,17 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label9
+            // radioButton1
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label9.Location = new System.Drawing.Point(486, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 17);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "label9";
-            this.label9.Visible = false;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(297, 188);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(111, 21);
+            this.radioButton1.TabIndex = 45;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Get Contacts";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // Incomeexpense_editFrm
             // 
@@ -361,5 +375,6 @@
         public System.Windows.Forms.DateTimePicker txt_date;
         public System.Windows.Forms.RadioButton rbtn_income;
         public System.Windows.Forms.RadioButton radiobtn_expense;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

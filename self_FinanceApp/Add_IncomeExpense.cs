@@ -62,7 +62,7 @@ namespace self_FinanceApp
                   double addd;
                     addd = double.Parse(txt_amnt.Text) + double.Parse(lbl_balnce.Text);
                     lbl_balnce.Text = Convert.ToString(addd);
-                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Income,Your_Balance,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + lbl_balnce.Text + "','" + txt_date.Value + "')");
+                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Income,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + txt_date.Value + "')");
                     SqlCommand command = new SqlCommand(sqlquery, connection);
                     command.Parameters.AddWithValue("Username", Usernamee);
                     command.Parameters.AddWithValue("Name", Name);
@@ -70,7 +70,7 @@ namespace self_FinanceApp
                     command.Parameters.AddWithValue("Name_or_source", Contact);
                    
                     command.Parameters.AddWithValue("Income", amnt);
-                    command.Parameters.AddWithValue("Your_Balance", blnc);
+                   
                     command.Parameters.AddWithValue("Entry_Date", datee);
                    // get_incomesum();
                     command.ExecuteNonQuery();
@@ -85,7 +85,7 @@ namespace self_FinanceApp
                     subtrct = Math.Abs(double.Parse(txt_amnt.Text) - (double.Parse(lbl_balnce.Text)));
                     lbl_balnce.Text = Convert.ToString(subtrct);
                     subtrct = Math.Abs(subtrct);
-                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Expense,Your_Balance,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + lbl_balnce.Text + "','" + txt_date.Value + "')");
+                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Expense,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + txt_date.Value + "')");
                     SqlCommand command = new SqlCommand(sqlquery, connection);
                     command.Parameters.AddWithValue("Username", Usernamee);
                     command.Parameters.AddWithValue("Name", Name);
@@ -93,7 +93,7 @@ namespace self_FinanceApp
                     command.Parameters.AddWithValue("Name_or_source", Contact);
                     // command.Parameters.AddWithValue("Amount", amnt);
                     command.Parameters.AddWithValue("Expense", amnt);
-                    command.Parameters.AddWithValue("Your_Balance", blnc);
+                   // command.Parameters.AddWithValue("Your_Balance", blnc);
                     command.Parameters.AddWithValue("Entry_Date", datee);
                    // get_incomesum();
                     command.ExecuteNonQuery();
@@ -117,7 +117,7 @@ namespace self_FinanceApp
             lbl_user.Text = loginFrm.SetValueForText1;
             
             get_name();
-            get_contacts();
+            
           
         }
         private void button2_Click(object sender, EventArgs e)
@@ -198,14 +198,14 @@ namespace self_FinanceApp
                 {
                     try
                     {
-                        string query = "SELECT DISTINCT Name_or_source FROM db_incomeexpenses";
+                        string query = "SELECT  Contact_Name FROM manage_contacts";
                         SqlDataAdapter da = new SqlDataAdapter(query, conn);
                         conn.Open();
                         DataSet ds = new DataSet();
-                        da.Fill(ds, "db_incomeexpenses");
-                        txt_contacts.DisplayMember = "Name_or_source";
+                        da.Fill(ds, "manage_contacts");
+                        txt_contacts.DisplayMember = "Contact_Name";
                         //txt_contacts.ValueMember = "Entry_no";
-                        txt_contacts.DataSource = ds.Tables["db_incomeexpenses"];
+                        txt_contacts.DataSource = ds.Tables["manage_contacts"];
                     }
                     catch (Exception ex)
                     {
@@ -242,6 +242,11 @@ namespace self_FinanceApp
         private void button3_Click(object sender, EventArgs e)
         {
           
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            get_contacts();
         }
     }
 }

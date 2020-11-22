@@ -50,6 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_des = new System.Windows.Forms.RichTextBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -276,6 +277,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_des);
             this.panel1.Controls.Add(this.lbl_name);
@@ -315,6 +317,18 @@
             this.txt_des.Size = new System.Drawing.Size(353, 63);
             this.txt_des.TabIndex = 41;
             this.txt_des.Text = "";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(292, 190);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(111, 21);
+            this.radioButton1.TabIndex = 46;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Get Contacts";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // Add_IncomeExpense
             // 
@@ -364,5 +378,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RichTextBox txt_des;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

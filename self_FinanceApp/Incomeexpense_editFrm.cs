@@ -147,14 +147,14 @@ namespace self_FinanceApp
                 {
                     try
                     {
-                        string query = "SELECT DISTINCT Name_or_source FROM db_incomeexpenses";
+                        string query = "SELECT  Contact_Name FROM manage_contacts";
                         SqlDataAdapter da = new SqlDataAdapter(query, conn);
                         conn.Open();
                         DataSet ds = new DataSet();
-                        da.Fill(ds, "db_incomeexpenses");
-                        txt_contacts.DisplayMember = "Name_or_source";
+                        da.Fill(ds, "manage_contacts");
+                        txt_contacts.DisplayMember = "Contact_Name";
                         //txt_contacts.ValueMember = "Entry_no";
-                        txt_contacts.DataSource = ds.Tables["db_incomeexpenses"];
+                        txt_contacts.DataSource = ds.Tables["manage_contacts"];
                     }
                     catch (Exception ex)
                     {
@@ -175,9 +175,13 @@ namespace self_FinanceApp
             private void Incomeexpense_editFrm_Load(object sender, EventArgs e)
         {
             
-            get_contacts();
+        
           //  radiobtn_expense.Visible = false;
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            get_contacts();
+        }
     }
 }

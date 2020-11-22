@@ -193,18 +193,18 @@ namespace self_FinanceApp
                 string Contact = txt_INEX_Contact.Text;
                 string Income = txt_Income.Text;
                 string Expense = txt_expense.Text;
-                string Balance = txt_balnce.Text;
+               // string Balance = txt_balnce.Text;
                 string datee = txt_date.Text;
 
 
-                string sqlquery = ("insert into db_incomeexpenses(Username,Name,Name_or_source,Income,Expenses,Your_Balance,Entry_Date)values('" + txt_INEX_Username.Text + "','" + txt_INEX_name.Text + "','" + txt_INEX_Contact.Text + "','" + txt_Income.Text + "','" + txt_expense.Text + "','" + txt_balnce.Text + "','" + txt_date.Value + "')");
+                string sqlquery = ("insert into db_incomeexpenses(Username,Name,Name_or_source,Income,Expenses,Entry_Date)values('" + txt_INEX_Username.Text + "','" + txt_INEX_name.Text + "','" + txt_INEX_Contact.Text + "','" + txt_Income.Text + "','" + txt_expense.Text + "','" + txt_date.Value + "')");
                 SqlCommand command = new SqlCommand(sqlquery, connection);
                 command.Parameters.AddWithValue("Username", Usernamee);
                 command.Parameters.AddWithValue("Name", Name);
                 command.Parameters.AddWithValue("Name_or_source", Contact);
                 command.Parameters.AddWithValue("Income", Income);
                 command.Parameters.AddWithValue("Expenses", Expense);
-                command.Parameters.AddWithValue("Your_Balance", Balance);
+              //  command.Parameters.AddWithValue("Your_Balance", Balance);
                 command.Parameters.AddWithValue("Entry_Date", datee);
 
 
@@ -271,7 +271,7 @@ namespace self_FinanceApp
                 txt_INEX_Contact.Text = row.Cells["Name_or_source"].Value.ToString();
                 txt_Income.Text = row.Cells["Income"].Value.ToString();
                 txt_expense.Text = row.Cells["Expenses"].Value.ToString();
-                txt_balnce.Text = row.Cells["Your_Balance"].Value.ToString();
+               // txt_balnce.Text = row.Cells["Your_Balance"].Value.ToString();
                 txt_date.Text = row.Cells["Entry_Date"].Value.ToString();
 
             }
@@ -291,7 +291,7 @@ namespace self_FinanceApp
                 connection.Open();
 
 
-                string sqlquery = ("Update db_incomeexpenses set Username=@Usernamee,Name=@Namee,Name_or_source=@Name_or_sourcee,Income=@Incomee,Expenses=@Expensess,Your_Balance=@Your_Balancee,Entry_Date=@Entry_Datee  where Entry_no=@Entry_noo");
+                string sqlquery = ("Update db_incomeexpenses set Username=@Usernamee,Name=@Namee,Name_or_source=@Name_or_sourcee,Income=@Incomee,Expenses=@Expensess,Entry_Date=@Entry_Datee  where Entry_no=@Entry_noo");
                 SqlCommand command = new SqlCommand(sqlquery, connection);
                 command.Parameters.AddWithValue("@Entry_noo", txt_InEx_entrynumber.Text);
                 command.Parameters.AddWithValue("@Usernamee", txt_INEX_Username.Text);
@@ -299,7 +299,7 @@ namespace self_FinanceApp
                 command.Parameters.AddWithValue("@Name_or_sourcee", txt_INEX_Contact.Text);
                 command.Parameters.AddWithValue("@Incomee", txt_Income.Text);
                 command.Parameters.AddWithValue("@Expensess", txt_expense.Text);
-                command.Parameters.AddWithValue("@Your_Balancee", txt_balnce.Text);
+                //command.Parameters.AddWithValue("@Your_Balancee", txt_balnce.Text);
                 command.Parameters.AddWithValue("@Entry_Datee", txt_date.Value);
                 command.ExecuteNonQuery();
                 label12.Text = "Data  updated Successfully";
