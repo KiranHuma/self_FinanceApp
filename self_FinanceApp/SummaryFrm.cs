@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 namespace self_FinanceApp
 {
     public partial class SummaryFrm : Form
@@ -75,20 +77,7 @@ namespace self_FinanceApp
             }
 
         }
-        public void balnc_check()
-        {
-            foreach (DataGridViewRow row in GetInEx_Grid.Rows)
-            {
-                if (decimal.TryParse(row.Cells["Income"]?.Value?.ToString(), out decimal Income)
-                    && decimal.TryParse(row.Cells["Expense"]?.Value?.ToString(), out decimal Expense))
-                {
-                    var avg = (Income - Income) ;
-                    row.Cells["Your_Balance"].Value = avg;
-
-                    
-                }
-            }
-        }
+     
         public void getdata_summary()
         {
             {
@@ -168,7 +157,7 @@ namespace self_FinanceApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            balnc_check();
+       
         }
         //search summary
         public void search_sum()
@@ -192,6 +181,39 @@ namespace self_FinanceApp
             search_sum();
         
                 radioButton3.Checked = false;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+                incomeReport rprot = new incomeReport(); // The report you created.
+                SqlConnection myConnection;
+                var MyCommand = new SqlCommand();
+                var myDA = new SqlDataAdapter();
+                var myDS = new db_selfFinaceDataSet(); // The DataSet you created.
+                myConnection = new SqlConnection(cs);
+                DateTime dfrom = dateTimePicker1.Value;
+                DateTime dto = dateTimePicker2.Value;
+                MyCommand.Connection = myConnection;
+                MyCommand.CommandText = "select * from db_incomeexpenses where  Username='" + label1.Text + "' AND Entry_Date  >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
+                MyCommand.CommandType = CommandType.Text;
+                myDA.SelectCommand = MyCommand;
+                myDA.Fill(myDS, "db_incomeexpenses");
+                rprot.SetDataSource(myDS);
+
+                incomeexpenseReportForm ud = new incomeexpenseReportForm();
+               
+                ud.crystalReportViewer1.ReportSource = rprot;
+                ud.Show();
+
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

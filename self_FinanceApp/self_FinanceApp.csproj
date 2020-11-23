@@ -11,6 +11,8 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,8 +38,15 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,11 +63,28 @@
     <Compile Include="Add_IncomeExpense.Designer.cs">
       <DependentUpon>Add_IncomeExpense.cs</DependentUpon>
     </Compile>
+    <Compile Include="db_selfFinaceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_selfFinaceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="incomeexpenseReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="incomeexpenseReportForm.Designer.cs">
+      <DependentUpon>incomeexpenseReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Incomeexpense_editFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Incomeexpense_editFrm.Designer.cs">
       <DependentUpon>Incomeexpense_editFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="incomeReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>incomeReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Manage_contacts.cs">
       <SubType>Form</SubType>
@@ -101,8 +127,15 @@
     <EmbeddedResource Include="Add_IncomeExpense.resx">
       <DependentUpon>Add_IncomeExpense.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="incomeexpenseReportForm.resx">
+      <DependentUpon>incomeexpenseReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Incomeexpense_editFrm.resx">
       <DependentUpon>Incomeexpense_editFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="incomeReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>incomeReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="loginFrm.resx">
       <DependentUpon>loginFrm.cs</DependentUpon>
@@ -121,6 +154,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SummaryFrm.resx">
       <DependentUpon>SummaryFrm.cs</DependentUpon>
@@ -131,6 +165,18 @@
     <EmbeddedResource Include="userregFrm.resx">
       <DependentUpon>userregFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="db_selfFinaceDataSet.xsc">
+      <DependentUpon>db_selfFinaceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_selfFinaceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_selfFinaceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_selfFinaceDataSet.xss">
+      <DependentUpon>db_selfFinaceDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -140,6 +186,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
