@@ -385,13 +385,28 @@ namespace self_FinanceApp
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //to delete the selected row
-            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+            try
             {
-                dataGridView1.Rows.RemoveAt(item.Index);
+                var ObjConnection = new SqlConnection();
+                int i;
+                ObjConnection.ConnectionString = cs;
+                var ObjCommand = new SqlCommand();
+                ObjCommand.Connection = ObjConnection;
+                for (i = this.dataGridView1.SelectedRows.Count - 1; i >= 0; i -= 1)
+                {
+                    ObjCommand.CommandText = "delete from db_auth where Entry_no='" + dataGridView1.SelectedRows[i].Cells["Entry_no"].Value + "'";
+                    ObjConnection.Open();
+                    ObjCommand.ExecuteNonQuery();
+                    ObjConnection.Close();
+                    this.dataGridView1.Rows.Remove(this.dataGridView1.SelectedRows[i]);
+                }
             }
-            Manage_income_expensesFrm refreshh = new Manage_income_expensesFrm();
-            this.Hide();
-            refreshh.Show();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed:Deleting Selected Values" + ex.Message);
+                this.Dispose();
+            }
+            //refreshh.Show();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

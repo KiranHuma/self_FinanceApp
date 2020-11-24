@@ -34,10 +34,12 @@ namespace self_FinanceApp
             {
                 button1.Visible = true;
                 button2.Visible = false;
+               
             }
             else {
                 button2.Visible = true;
                 button1.Visible = false;
+                crystalReportViewer1.Visible = false;
             }
             
             
@@ -100,7 +102,7 @@ namespace self_FinanceApp
                 rprot.SetDataSource(myDS);
 
               //  incomeexpenseReportForm ud = new incomeexpenseReportForm();
-              
+                crystalReportViewer1.Visible = true;
                 crystalReportViewer1.ReportSource = rprot;
               //  ud.Show();
 

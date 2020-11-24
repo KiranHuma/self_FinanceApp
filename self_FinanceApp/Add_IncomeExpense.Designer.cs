@@ -48,9 +48,9 @@
             this.lbl_balnce = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_des = new System.Windows.Forms.RichTextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -241,13 +241,12 @@
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lbl_name.ForeColor = System.Drawing.Color.Honeydew;
             this.lbl_name.Location = new System.Drawing.Point(482, 26);
             this.lbl_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(73, 17);
+            this.lbl_name.Size = new System.Drawing.Size(0, 17);
             this.lbl_name.TabIndex = 32;
-            this.lbl_name.Text = "Nameuser";
             this.lbl_name.Visible = false;
             // 
             // lbl_balnce
@@ -298,6 +297,18 @@
             this.panel1.Size = new System.Drawing.Size(695, 346);
             this.panel1.TabIndex = 41;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(292, 190);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(111, 21);
+            this.radioButton1.TabIndex = 46;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Get Contacts";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -317,18 +328,6 @@
             this.txt_des.Size = new System.Drawing.Size(353, 63);
             this.txt_des.TabIndex = 41;
             this.txt_des.Text = "";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(292, 190);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(111, 21);
-            this.radioButton1.TabIndex = 46;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Get Contacts";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // Add_IncomeExpense
             // 

@@ -235,13 +235,32 @@ namespace self_FinanceApp
         {
             
             //to delete the selected row
-            foreach (DataGridViewRow item in this.getincome_Grid.SelectedRows)
+            try
             {
-                getincome_Grid.Rows.RemoveAt(item.Index);
+                var ObjConnection = new SqlConnection();
+                int i;
+               
+               
+               
+
+                ObjConnection.ConnectionString = cs;
+                var ObjCommand = new SqlCommand();
+                ObjCommand.Connection = ObjConnection;
+                for (i = this.getincome_Grid.SelectedRows.Count - 1; i >= 0; i -= 1)
+                {
+                    ObjCommand.CommandText = "delete from db_incomeexpenses where Entry_no='" + getincome_Grid.SelectedRows[i].Cells["Entry_no"].Value + "'";
+                    ObjConnection.Open();
+                    ObjCommand.ExecuteNonQuery();
+                    ObjConnection.Close();
+                    this.getincome_Grid.Rows.Remove(this.getincome_Grid.SelectedRows[i]);
+                }   
             }
-            Manage_income_expensesFrm refreshh = new Manage_income_expensesFrm();
-            this.Hide();
-            refreshh.Show();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed:Deleting Selected Values" + ex.Message);
+                this.Dispose();
+            }
+           
         
         }
 
@@ -270,14 +289,31 @@ namespace self_FinanceApp
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          //to delete the selected row
-            foreach (DataGridViewRow item in this.getexpense_Grid.SelectedRows)
+            try
             {
-                getexpense_Grid.Rows.RemoveAt(item.Index);
+                var ObjConnection = new SqlConnection();
+                int i;
+                object mResult;
+
+
+
+                ObjConnection.ConnectionString = cs;
+                var ObjCommand = new SqlCommand();
+                ObjCommand.Connection = ObjConnection;
+                for (i = this.getexpense_Grid.SelectedRows.Count - 1; i >= 0; i -= 1)
+                {
+                    ObjCommand.CommandText = "delete from db_incomeexpenses where Entry_no='" + getexpense_Grid.SelectedRows[i].Cells["Entry_no"].Value + "'";
+                    ObjConnection.Open();
+                    ObjCommand.ExecuteNonQuery();
+                    ObjConnection.Close();
+                    this.getexpense_Grid.Rows.Remove(this.getexpense_Grid.SelectedRows[i]);
+                }
             }
-            Manage_income_expensesFrm refreshh = new Manage_income_expensesFrm();
-            this.Hide();
-            refreshh.Show();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed:Deleting Selected Values" + ex.Message);
+                this.Dispose();
+            }
         }
 
         private void getincome_Grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

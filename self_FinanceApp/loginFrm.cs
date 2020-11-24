@@ -71,6 +71,7 @@ namespace self_FinanceApp
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
+                    SetValueForText1 = txtUser.Text;
                     SetValueForText2 = selectUser.Text;
                     /* I have made a new form  called userdeatils . If the user is successfully authenticated then the form will be moved to the next form */
                     this.Hide();
