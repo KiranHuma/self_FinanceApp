@@ -28,9 +28,40 @@ namespace self_FinanceApp
         private void userdetailsFrm_Load(object sender, EventArgs e)
         {
             label1.Text = loginFrm.SetValueForText1;
-            txtDate.Text = DateTime.Now.ToString("MM-dd-yyyy ");
-            getdata();
-            get_forinEx();
+            label27.Text = loginFrm.SetValueForText2;
+            if (label27.Text == "Admin")
+            {
+                label30.Text = "Admin";
+                label28.Visible = true;
+                button5.Visible = true;
+                label29.Visible = true;
+                label8.Visible = false;
+                label5.Visible = false;
+                label9.Visible = false;
+                label6.Visible = false;
+                txtName.Visible = false;
+                CmboGender.Visible = false;
+                txtContact.Visible = false;
+                txtEmail.Visible = false;
+                txtDate.Text = DateTime.Now.ToString("MM-dd-yyyy ");
+                txt_useName_Search.Visible = true;
+                label31.Visible = true;
+                getdata_foradmin();
+                dataGridView1.Visible = true;
+              
+            }
+            else
+            {
+                label28.Visible = false;
+                button5.Visible = false;
+                label29.Visible = false;
+                txtDate.Text = DateTime.Now.ToString("MM-dd-yyyy ");
+                txt_useName_Search.Visible = false;
+                label31.Visible = false;
+                dataGridView1.Visible = false;
+             
+            }
+
         }
         //Function for database connection
         public void dbaccessconnection()
@@ -48,20 +79,20 @@ namespace self_FinanceApp
                 MessageBox.Show("Database not Connected");
             }
         }
-        // get the data of User in grid
-        public void getdata()
+       
+        public void getdata_foradmin()
         {
             {
                 try
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select * from db_incomeexpenses ", con);
+                    var da = new SqlDataAdapter("Select * from db_auth ", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
-                    GetInEx_Grid.DataSource = dt;
-                    GetInEx_Grid.Refresh();
+                    dataGridView1.DataSource = dt;
+                    dataGridView1.Refresh();
                 }
                 catch (Exception ex)
                 {
@@ -109,10 +140,57 @@ namespace self_FinanceApp
                 }
             }
         }
+
         //Function call on get button
         private void button1_Click(object sender, EventArgs e)
         {
-            getcred();
+            if (label30.Text == "User" | label27.Text == "User")
+            {
+              
+                  getcred();
+            }
+            else
+            {
+                MessageBox.Show("Select user from grid"); 
+                tabControl1.SelectedTab = tabPage5;
+            }
+           
+            
+        }
+        //Function to get data from the database into textboxes
+        public void get_admincred()
+        {
+            using (SqlConnection connection = new SqlConnection(cs))
+            {
+                try
+                {
+
+
+                    SqlCommand command =
+                    new SqlCommand("select * from db_admin where Role='" + label27.Text + "'", connection);
+                    connection.Open();
+
+                    SqlDataReader read = command.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        txtentry.Text = (read["Entry_no"].ToString());
+                        txtUsername.Text = (read["Username"].ToString());
+                       
+                        txtPass.Text = (read["Password"].ToString());
+                        
+
+                    }
+                    read.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    // MsgBox(("Failed:Autoincrement of Service ID Entry" + ex.Message));
+                    MessageBox.Show(ex.Message);
+                    this.Dispose();
+                }
+            }
         }
         //Close form
         private void label3_Click(object sender, EventArgs e)
@@ -147,10 +225,43 @@ namespace self_FinanceApp
                 MessageBox.Show(ex.Message);
             }
         }
+        //update admin cred
+        public void Admin_updatecred()
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(cs);
+
+                connection.Open();
+
+
+                string sqlquery = ("Update db_admin set Username=@Usernamee,Password=@Passwordd where Entry_no=@Entry_noo");
+                SqlCommand command = new SqlCommand(sqlquery, connection);
+                command.Parameters.AddWithValue("@Entry_noo", txtentry.Text);
+                command.Parameters.AddWithValue("@Usernamee", txtUsername.Text);
+                command.Parameters.AddWithValue("@Passwordd", txtPass.Text);
+                
+                command.ExecuteNonQuery();
+                label12.Text = "Data  updated Successfully";
+            }
+            catch (Exception ex)
+            {
+                label12.Text = "Data not updated Successfully";
+                MessageBox.Show(ex.Message);
+            }
+        }
         //Function call on updatebutton for the credentials
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            updatecred();
+            if (label30.Text == "Admin")
+            {
+                Admin_updatecred();
+            }
+            else
+            {
+                updatecred();
+            }
+           
         }
 
         ///for matching the password.If the password in both textboxes matches the label will show "MATCH" otherwise Not Match
@@ -173,180 +284,47 @@ namespace self_FinanceApp
         private void btnadd_Click(object sender, EventArgs e)
         {
            
-            txt_INEX_Contact.Text = "";
-            txt_Income.Text = "";
-            txt_expense.Text = "";
-            txt_balnce.Text = "";
-            get_forinEx();
+        
         }
 
-        //insert the values of income and expenses in database
-        public void insert_incomeexpenses()
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(cs);
-                connection.Open();
-
-                string Usernamee = txt_INEX_Username.Text;
-                string Name = txt_INEX_name.Text;
-                string Contact = txt_INEX_Contact.Text;
-                string Income = txt_Income.Text;
-                string Expense = txt_expense.Text;
-               // string Balance = txt_balnce.Text;
-                string datee = txt_date.Text;
-
-
-                string sqlquery = ("insert into db_incomeexpenses(Username,Name,Name_or_source,Income,Expenses,Entry_Date)values('" + txt_INEX_Username.Text + "','" + txt_INEX_name.Text + "','" + txt_INEX_Contact.Text + "','" + txt_Income.Text + "','" + txt_expense.Text + "','" + txt_date.Value + "')");
-                SqlCommand command = new SqlCommand(sqlquery, connection);
-                command.Parameters.AddWithValue("Username", Usernamee);
-                command.Parameters.AddWithValue("Name", Name);
-                command.Parameters.AddWithValue("Name_or_source", Contact);
-                command.Parameters.AddWithValue("Income", Income);
-                command.Parameters.AddWithValue("Expenses", Expense);
-              //  command.Parameters.AddWithValue("Your_Balance", Balance);
-                command.Parameters.AddWithValue("Entry_Date", datee);
-
-
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                label7.Text = "Account not Created Successfully";
-                MessageBox.Show(ex.Message);
-
-            }
-        }
+     
         private void btnsave_Click(object sender, EventArgs e)
         {
-            insert_incomeexpenses();
-            getdata();
+           
         }
         // function to deduct the expenses from income
         public void your_balance()
         {
-            double addd;
-            addd = double.Parse(txt_Income.Text) - double.Parse(txt_expense.Text);
-            txt_balnce.Text = Convert.ToString(addd);
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            your_balance();
+           
         }
-        //filter the data w.r.t the selected date
-        public void date_filter()
-        {
-            con.Close();
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
-            DateTime dfrom = dateTimePicker1.Value;
-            DateTime dto = dateTimePicker2.Value;
-            con.ConnectionString = cs;
-            con.Open();
-            string str = "Select * from db_incomeexpenses where Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
-            var da = new SqlDataAdapter(str, con);
-            da.Fill(dt);
-            GetInEx_Grid.DataSource = dt;
-            con.Close();
-            GetInEx_Grid.Refresh();
-
-        }
+       
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            date_filter();
+            
         }
         //populate the textboxes from grid to textboxes
         private void GetInEx_Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_InEx_entrynumber.Visible = true;
-            label3.Visible = true;
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.GetInEx_Grid.Rows[e.RowIndex];
-                txt_InEx_entrynumber.Text = row.Cells["Entry_no"].Value.ToString();
-                txt_INEX_Username.Text = row.Cells["Username"].Value.ToString();
-                txt_INEX_name.Text = row.Cells["Name"].Value.ToString();
-                txt_INEX_Contact.Text = row.Cells["Name_or_source"].Value.ToString();
-                txt_Income.Text = row.Cells["Income"].Value.ToString();
-                txt_expense.Text = row.Cells["Expenses"].Value.ToString();
-               // txt_balnce.Text = row.Cells["Your_Balance"].Value.ToString();
-                txt_date.Text = row.Cells["Entry_Date"].Value.ToString();
-
-            }
+          
 
         }
         private void label19_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        //edit the income-expenses details
-        public void edit_incomeexpenses()
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(cs);
-
-                connection.Open();
-
-
-                string sqlquery = ("Update db_incomeexpenses set Username=@Usernamee,Name=@Namee,Name_or_source=@Name_or_sourcee,Income=@Incomee,Expenses=@Expensess,Entry_Date=@Entry_Datee  where Entry_no=@Entry_noo");
-                SqlCommand command = new SqlCommand(sqlquery, connection);
-                command.Parameters.AddWithValue("@Entry_noo", txt_InEx_entrynumber.Text);
-                command.Parameters.AddWithValue("@Usernamee", txt_INEX_Username.Text);
-                command.Parameters.AddWithValue("@Namee", txt_INEX_name.Text);
-                command.Parameters.AddWithValue("@Name_or_sourcee", txt_INEX_Contact.Text);
-                command.Parameters.AddWithValue("@Incomee", txt_Income.Text);
-                command.Parameters.AddWithValue("@Expensess", txt_expense.Text);
-                //command.Parameters.AddWithValue("@Your_Balancee", txt_balnce.Text);
-                command.Parameters.AddWithValue("@Entry_Datee", txt_date.Value);
-                command.ExecuteNonQuery();
-                label12.Text = "Data  updated Successfully";
-            }
-            catch (Exception ex)
-            {
-                label12.Text = "Data not updated Successfully";
-                MessageBox.Show(ex.Message);
-            }
-        }
+      
         private void button2_Click(object sender, EventArgs e)
         {
-            edit_incomeexpenses();
-            getdata();
+           
+           
         }
-        //Function to get data from the database into textboxes for geting the name username for expense/income
-        public void get_forinEx()
-        {
-            using (SqlConnection connection = new SqlConnection(cs))
-            {
-                try
-                {
-
-
-                    SqlCommand command =
-                    new SqlCommand("select * from db_auth where Username='" + label1.Text + "'", connection);
-                    connection.Open();
-
-                    SqlDataReader read = command.ExecuteReader();
-
-                    while (read.Read())
-                    {
-                        txt_InEx_entrynumber.Text = (read["Entry_no"].ToString());
-                        txt_INEX_Username.Text = (read["Username"].ToString());
-                        txt_INEX_name.Text = (read["Name"].ToString());
-                    }
-                    read.Close();
-
-                }
-                catch (Exception ex)
-                {
-                  
-                    MessageBox.Show(ex.Message);
-                    this.Dispose();
-                }
-            }
-        }
+        
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -355,39 +333,94 @@ namespace self_FinanceApp
 
         private void btndel_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(cs);
-                con.Open();
-                cmd = new SqlCommand("delete db_incomeexpenses where Entry_no=@Entry_no", con);
-               
-                cmd.Parameters.AddWithValue("@Entry_no", int.Parse(txt_InEx_entrynumber.Text));
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Record Deleted Successfully!");
-                getdata();
+           
             }
 
         private void button4_Click(object sender, EventArgs e)
         {
             
 
+           
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            label30.Text="Admin";
+            label8.Visible = false;
+            label5.Visible = false;
+            label9.Visible = false;
+            label6.Visible = false;
+            txtName.Visible = false;
+            CmboGender.Visible = false;
+            txtContact.Visible = false;
+            txtEmail.Visible = false;
+            get_admincred();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            label30.Text = "User";
+            label8.Visible = true;
+            label5.Visible = true;
+            label9.Visible = true;
+            label6.Visible = true;
+            txtName.Visible = true;
+            CmboGender.Visible = true;
+            txtContact.Visible = true;
+            txtEmail.Visible = true;
+            if (e.RowIndex >= 0)
             {
-                try
-                {
-                    var con = new SqlConnection(cs);
-                    con.Open();
-                    var da = new SqlDataAdapter("Select * from db_incomeexpenses where Income='" + textBox1.Text + "'", con);
-                    var dt = new DataTable();
-                    da.Fill(dt);
-                    source1.DataSource = dt;
-                    GetInEx_Grid.DataSource = dt;
-                    GetInEx_Grid.Refresh();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed:Retrieving Data" + ex.Message);
-                    this.Dispose();
-                }
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                txtentry.Text = row.Cells["Entry_no"].Value.ToString();
+                txtUsername.Text = row.Cells["Username"].Value.ToString();
+                txtName.Text = row.Cells["Name"].Value.ToString();
+                txtPass.Text = row.Cells["Password"].Value.ToString();
+                CmboGender.Text = row.Cells["Gender"].Value.ToString();
+                txtContact.Text = row.Cells["Contact_no"].Value.ToString();
+                txtEmail.Text = row.Cells["Email"].Value.ToString();
+                tabControl1.SelectedTab = tabPage4;
             }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //to delete the selected row
+            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+            {
+                dataGridView1.Rows.RemoveAt(item.Index);
+            }
+            Manage_income_expensesFrm refreshh = new Manage_income_expensesFrm();
+            this.Hide();
+            refreshh.Show();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string str;
+            try
+            {
+                var con = new SqlConnection(cs);
+                con.Open();
+                str = "Select * from db_auth where Name like '" + txt_useName_Search.Text + "%'";
+                SqlCommand cmd = new SqlCommand(str, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "db_auth");
+                con.Close();
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "db_auth";
+                dataGridView1.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Failed: Name Search", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Dispose();
+            }
+        }
+
+        private void label19_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
     

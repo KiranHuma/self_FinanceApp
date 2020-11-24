@@ -18,7 +18,7 @@ namespace self_FinanceApp
         SqlConnection con = new SqlConnection();
         BindingSource source1 = new BindingSource();
         public static string SetValueForText3 = "";
-
+        
 
         //Database Connection String
         String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
@@ -77,7 +77,7 @@ namespace self_FinanceApp
             }
 
         }
-     
+
         public void getdata_summary()
         {
             {
@@ -138,9 +138,33 @@ namespace self_FinanceApp
         private void SummaryFrm_Load(object sender, EventArgs e)
         {
             label1.Text = Manage_income_expensesFrm.SetValueForText3;
-            getdata_income();
-            getdata_expense();
-            getdata_summary();
+            label6.Text = loginFrm.SetValueForText2;
+           if (label6.Text=="Admin")
+           {
+               radioButton1.Visible = false;
+               radioButton2.Visible = false;
+               radioButton3.Visible = false;
+               radioButton4.Visible = true;
+               radioButton5.Visible = true;
+               radioButton6.Visible = true;
+               admin_grid();
+               admin_incomegrid();
+               admin_expensegrid();
+           }
+           else
+           {
+            radioButton4.Visible = false;   
+            radioButton5.Visible = false;
+            radioButton6.Visible = false;
+            radioButton1.Visible = true;
+            radioButton2.Visible = true;
+            radioButton3.Visible = true;
+               
+               getdata_income();
+               getdata_expense();
+               getdata_summary();
+           }
+            
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -157,7 +181,7 @@ namespace self_FinanceApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-       
+
         }
         //search summary
         public void search_sum()
@@ -179,41 +203,170 @@ namespace self_FinanceApp
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             search_sum();
-        
-                radioButton3.Checked = false;
+
+            radioButton3.Checked = false;
+        }
+        //for income report
+        public void frm_summary_report_text()
+        {
+
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        // for admin panel
+        public void admin_datesummary()
+        {
+            con.Close();
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DateTime dfrom = dateTimePicker6.Value;
+            DateTime dto = dateTimePicker5.Value;
+            con.ConnectionString = cs;
+            con.Open();
+            string str = "SELECT * from db_incomeexpenses where Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
+            var da = new SqlDataAdapter(str, con);
+            da.Fill(dt);
+            GetInEx_Grid.DataSource = dt;
+            con.Close();
+            GetInEx_Grid.Refresh();
+        }
+       
+        public void admin_grid()
+        {
+            {
+                try
+                {
+                    var con = new SqlConnection(cs);
+                    con.Open();
+                    var da = new SqlDataAdapter("Select * from db_incomeexpenses", con);
+                    var dt = new DataTable();
+                    da.Fill(dt);
+                    source1.DataSource = dt;
+                    GetInEx_Grid.DataSource = dt;
+                    GetInEx_Grid.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed:Retrieving Data" + ex.Message);
+                    this.Dispose();
+                }
+            }
+        }
+        public void admin_incomegrid()
+        {
+            {
+                try
+                {
+                    var con = new SqlConnection(cs);
+                    con.Open();
+                    var da = new SqlDataAdapter("Select * from db_incomeexpenses where Income IS NOT NULL ", con);
+                    var dt = new DataTable();
+                    da.Fill(dt);
+                    source1.DataSource = dt;
+                    getincome_Grid.DataSource = dt;
+                    getincome_Grid.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed:Retrieving Data" + ex.Message);
+                    this.Dispose();
+                }
+            }
+        }
+        public void admin_expensegrid()
+        {
+            {
+                try
+                {
+                    var con = new SqlConnection(cs);
+                    con.Open();
+                    var da = new SqlDataAdapter("Select * from db_incomeexpenses where Expense IS NOT NULL ", con);
+                    var dt = new DataTable();
+                    da.Fill(dt);
+                    source1.DataSource = dt;
+                    getexpense_Grid.DataSource = dt;
+                    getexpense_Grid.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed:Retrieving Data" + ex.Message);
+                    this.Dispose();
+                }
+            }
+        }
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            admin_datesummary();
+            radioButton4.Checked = false;
+        }
+        public void admin_incomefilter()
         {
             try
             {
-                Cursor = Cursors.WaitCursor;
-                incomeReport rprot = new incomeReport(); // The report you created.
-                SqlConnection myConnection;
-                var MyCommand = new SqlCommand();
-                var myDA = new SqlDataAdapter();
-                var myDS = new db_selfFinaceDataSet(); // The DataSet you created.
-                myConnection = new SqlConnection(cs);
+                con.Close();
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
                 DateTime dfrom = dateTimePicker1.Value;
                 DateTime dto = dateTimePicker2.Value;
-                MyCommand.Connection = myConnection;
-                MyCommand.CommandText = "select * from db_incomeexpenses where  Username='" + label1.Text + "' AND Entry_Date  >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
-                MyCommand.CommandType = CommandType.Text;
-                myDA.SelectCommand = MyCommand;
-                myDA.Fill(myDS, "db_incomeexpenses");
-                rprot.SetDataSource(myDS);
-
-                incomeexpenseReportForm ud = new incomeexpenseReportForm();
-               
-                ud.crystalReportViewer1.ReportSource = rprot;
-                ud.Show();
-
-               
+                con.ConnectionString = cs;
+                con.Open();
+                string str = "SELECT * from db_incomeexpenses where Income IS NOT NULL AND Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
+                var da = new SqlDataAdapter(str, con);
+                da.Fill(dt);
+                getincome_Grid.DataSource = dt;
+                con.Close();
+                getincome_Grid.Refresh();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed:Retrieving Data" + ex.Message);
+                this.Dispose();
             }
         }
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            admin_incomefilter();
+            radioButton5.Checked = false;
+        }
+        public void admin_expensefilter()
+        {
+            try
+            {
+
+            con.Close();
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DateTime dfrom = dateTimePicker4.Value;
+            DateTime dto = dateTimePicker3.Value;
+            con.ConnectionString = cs;
+            con.Open();
+            string str = "SELECT * from db_incomeexpenses where Expense IS NOT NULL AND Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
+            var da = new SqlDataAdapter(str, con);
+            da.Fill(dt);
+            getexpense_Grid.DataSource = dt;
+            con.Close();
+            getexpense_Grid.Refresh();
+              }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed:Retrieving Data" + ex.Message);
+                this.Dispose();
+            }
+
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            admin_expensefilter();
+            radioButton6.Checked = false;
+        }
     }
-}
+    }
+

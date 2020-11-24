@@ -174,11 +174,39 @@ namespace self_FinanceApp
 
             private void Incomeexpense_editFrm_Load(object sender, EventArgs e)
         {
-            
-        
+
+            get_contactforEdit();
           //  radiobtn_expense.Visible = false;
         }
+            //get sum of income
+            public void get_contactforEdit()
+            {
+                using (SqlConnection connection = new SqlConnection(cs))
+                {
+                    try
+                    {
+                        SqlCommand command =
+                        new SqlCommand("SELECT Name_or_source FROM db_incomeexpenses where Entry_no='" + label1.Text + "'", connection);
+                        connection.Open();
+                        cmd.Parameters.Clear();
+                        SqlDataReader read = command.ExecuteReader();
 
+                        while (read.Read())
+                        {
+                            txt_contacts.Text = (read["Name_or_source"].ToString());
+
+                        }
+                        read.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                        this.Dispose();
+                    }
+                }
+            }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             get_contacts();

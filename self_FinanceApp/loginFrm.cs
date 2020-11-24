@@ -12,6 +12,7 @@ namespace self_FinanceApp
     public partial class loginFrm : Form
     {
         public static string SetValueForText1 = "";
+        public static string SetValueForText2 = "";
         SqlCommand cmd = new SqlCommand();
         SqlConnection con = new SqlConnection();
        
@@ -53,6 +54,7 @@ namespace self_FinanceApp
                 if (dt.Rows[0][0].ToString() == "1")
                 {
                     SetValueForText1 = txtUser.Text;
+                    SetValueForText2 = selectUser.Text;
                     /* I have made a new form  called userdeatils . If the user is successfully authenticated then the form will be moved to the next form */
                     this.Hide();
                     new Manage_income_expensesFrm().Show();
@@ -62,13 +64,18 @@ namespace self_FinanceApp
             }
             else if (selectUser.Text == "Admin")
             {
-                if (txtUser.Text == "fin " | txtPass.Text == "123")
+                SqlConnection con = new SqlConnection(@cs); // making connection   
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM db_admin WHERE Username='" + txtUser.Text + "' AND Password='" + txtPass.Text + "'", con);
+                /* in above line the program is selecting the whole data from table and the matching it with the user name and password provided by user. */
+                DataTable dt = new DataTable(); //this is creating a virtual table  
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "1")
                 {
-                    MessageBox.Show("You are successfully logged", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    userdetailsFrm ud = new userdetailsFrm();
+                    SetValueForText2 = selectUser.Text;
+                    /* I have made a new form  called userdeatils . If the user is successfully authenticated then the form will be moved to the next form */
                     this.Hide();
-                    ud.Show();
-                    this.Hide();
+                    new Manage_income_expensesFrm().Show();
+                
                 }
                 else
                 { 

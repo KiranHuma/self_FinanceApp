@@ -94,7 +94,7 @@ namespace self_FinanceApp
                 try
                 {
                     SqlCommand command =
-                    new SqlCommand("SELECT SUM(Income) as incomeamount FROM db_incomeexpenses where Username='" + label2.Text + "'  AND Username='" + label2.Text + "'", connection);
+                    new SqlCommand("SELECT SUM(Income) as incomeamount FROM db_incomeexpenses where Username='" + label2.Text + "'", connection);
                     connection.Open();
                     cmd.Parameters.Clear();
                     SqlDataReader read = command.ExecuteReader();
@@ -309,6 +309,20 @@ namespace self_FinanceApp
             SummaryFrm MC = new SummaryFrm();
             this.Hide();
             MC.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            
+            incomeexpenseReportForm ud = new incomeexpenseReportForm();
+            ud.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            userdetailsFrm ud = new userdetailsFrm();
+            ud.Show();
         }
     }
     }
