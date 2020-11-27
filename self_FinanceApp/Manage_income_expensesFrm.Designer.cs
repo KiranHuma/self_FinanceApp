@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manage_income_expensesFrm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,6 +45,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.userid = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.lbl_income = new System.Windows.Forms.Label();
@@ -68,14 +78,6 @@
             this.txt_blncdate = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.Recurring_interval = new System.Windows.Forms.Label();
@@ -83,7 +85,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.recurring_income = new System.Windows.Forms.Label();
             this.recuring_expenses = new System.Windows.Forms.Label();
@@ -102,8 +103,12 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.every_expense_week_entrynumbr = new System.Windows.Forms.Label();
+            this.everyweek_income = new System.Windows.Forms.Label();
+            this.everyweek_expense = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.everyweek_username = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -122,10 +127,6 @@
             this.everyweek_todaydate = new System.Windows.Forms.Label();
             this.everyweek_entrydate = new System.Windows.Forms.DateTimePicker();
             this.everyweek_recDate = new System.Windows.Forms.Label();
-            this.everyweek_income = new System.Windows.Forms.Label();
-            this.everyweek_expense = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.every_expense_week_entrynumbr = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.expense_two_week_entrynumbr = new System.Windows.Forms.Label();
             this.every_two_week_income = new System.Windows.Forms.Label();
@@ -149,9 +150,9 @@
             this.every_two_week_entrydate = new System.Windows.Forms.DateTimePicker();
             this.every_two_week_recDate = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label33 = new System.Windows.Forms.Label();
+            this.three_week_entry_Expense = new System.Windows.Forms.Label();
             this.every_three_week_income = new System.Windows.Forms.Label();
-            this.everyweek_three_expenses = new System.Windows.Forms.Label();
+            this.every_three_week_expenses = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.every_three_week_username = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
@@ -171,7 +172,7 @@
             this.every_three_week_entrydate = new System.Windows.Forms.DateTimePicker();
             this.every_three_week_recDate = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label34 = new System.Windows.Forms.Label();
+            this.four_week_Expense_entry = new System.Windows.Forms.Label();
             this.every_four_week_income = new System.Windows.Forms.Label();
             this.everyweek_four_expenses = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -193,7 +194,7 @@
             this.every_four_week_entrydate = new System.Windows.Forms.DateTimePicker();
             this.every_four_week_recDate = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label38 = new System.Windows.Forms.Label();
+            this.every_month_Entry_Expense = new System.Windows.Forms.Label();
             this.every_month_income = new System.Windows.Forms.Label();
             this.month_expense = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
@@ -215,9 +216,9 @@
             this.every_month_entrydate = new System.Windows.Forms.DateTimePicker();
             this.every_month_recDate = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label41 = new System.Windows.Forms.Label();
+            this.every_three_mnth_expense_entry = new System.Windows.Forms.Label();
             this.every_three_month_income = new System.Windows.Forms.Label();
-            this.three_month_income = new System.Windows.Forms.Label();
+            this.three_month_expense = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.every_three_month_username = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
@@ -237,9 +238,9 @@
             this.every_three_month_entrydate = new System.Windows.Forms.DateTimePicker();
             this.every_three_month_recDate = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label76 = new System.Windows.Forms.Label();
+            this.six_month_expense_entry = new System.Windows.Forms.Label();
             this.every_six_month_income = new System.Windows.Forms.Label();
-            this.six_month_income = new System.Windows.Forms.Label();
+            this.six_month_expense = new System.Windows.Forms.Label();
             this.label79 = new System.Windows.Forms.Label();
             this.every_six_month_username = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
@@ -259,7 +260,7 @@
             this.every_six_month_entrydate = new System.Windows.Forms.DateTimePicker();
             this.every_six_month_recDate = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label45 = new System.Windows.Forms.Label();
+            this.every_year_expense_entry = new System.Windows.Forms.Label();
             this.every_year_income = new System.Windows.Forms.Label();
             this.every_year_expense = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
@@ -280,6 +281,20 @@
             this.every_year_todaydate = new System.Windows.Forms.Label();
             this.every_year_entrydate = new System.Windows.Forms.DateTimePicker();
             this.every_year_recDate = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.recurringINCOME_GRID = new System.Windows.Forms.DataGridView();
+            this.recurringEXPENSE_GRID = new System.Windows.Forms.DataGridView();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.getexpense_Grid)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getincome_Grid)).BeginInit();
@@ -295,6 +310,9 @@
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.recurringINCOME_GRID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recurringEXPENSE_GRID)).BeginInit();
             this.SuspendLayout();
             // 
             // userid
@@ -317,7 +335,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(628, 709);
+            this.button1.Location = new System.Drawing.Point(1394, 795);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 41);
@@ -332,7 +350,7 @@
             this.lbl_income.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_income.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_income.ForeColor = System.Drawing.Color.White;
-            this.lbl_income.Location = new System.Drawing.Point(420, 646);
+            this.lbl_income.Location = new System.Drawing.Point(1186, 732);
             this.lbl_income.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_income.Name = "lbl_income";
             this.lbl_income.Size = new System.Drawing.Size(182, 20);
@@ -348,7 +366,7 @@
             this.btn_addincome_expense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addincome_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addincome_expense.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_addincome_expense.Location = new System.Drawing.Point(628, 634);
+            this.btn_addincome_expense.Location = new System.Drawing.Point(1394, 720);
             this.btn_addincome_expense.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addincome_expense.Name = "btn_addincome_expense";
             this.btn_addincome_expense.Size = new System.Drawing.Size(52, 41);
@@ -365,7 +383,7 @@
             this.btn_recurring.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_recurring.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_recurring.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_recurring.Location = new System.Drawing.Point(628, 570);
+            this.btn_recurring.Location = new System.Drawing.Point(1394, 656);
             this.btn_recurring.Margin = new System.Windows.Forms.Padding(4);
             this.btn_recurring.Name = "btn_recurring";
             this.btn_recurring.Size = new System.Drawing.Size(52, 41);
@@ -381,7 +399,7 @@
             this.lbl_recurr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_recurr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_recurr.ForeColor = System.Drawing.Color.White;
-            this.lbl_recurr.Location = new System.Drawing.Point(328, 582);
+            this.lbl_recurr.Location = new System.Drawing.Point(1094, 668);
             this.lbl_recurr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_recurr.Name = "lbl_recurr";
             this.lbl_recurr.Size = new System.Drawing.Size(264, 20);
@@ -394,7 +412,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(667, 10);
+            this.label4.Location = new System.Drawing.Point(1424, 12);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 29);
@@ -407,7 +425,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Green;
-            this.label7.Location = new System.Drawing.Point(421, 32);
+            this.label7.Location = new System.Drawing.Point(370, 139);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 20);
             this.label7.TabIndex = 1;
@@ -418,7 +436,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(537, 32);
+            this.label8.Location = new System.Drawing.Point(1273, 140);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 20);
             this.label8.TabIndex = 2;
@@ -428,61 +446,61 @@
             // 
             this.getexpense_Grid.AllowUserToAddRows = false;
             this.getexpense_Grid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.getexpense_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
+            this.getexpense_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.getexpense_Grid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.getexpense_Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.getexpense_Grid.BackgroundColor = System.Drawing.Color.White;
+            this.getexpense_Grid.BackgroundColor = System.Drawing.Color.DimGray;
             this.getexpense_Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.getexpense_Grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.getexpense_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Brown;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.getexpense_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.getexpense_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.getexpense_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.getexpense_Grid.ContextMenuStrip = this.contextMenuStrip2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.getexpense_Grid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.getexpense_Grid.DefaultCellStyle = dataGridViewCellStyle23;
             this.getexpense_Grid.EnableHeadersVisualStyles = false;
             this.getexpense_Grid.GridColor = System.Drawing.Color.White;
-            this.getexpense_Grid.Location = new System.Drawing.Point(130, 558);
+            this.getexpense_Grid.Location = new System.Drawing.Point(158, 614);
             this.getexpense_Grid.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.getexpense_Grid.Name = "getexpense_Grid";
             this.getexpense_Grid.ReadOnly = true;
             this.getexpense_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.getexpense_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.getexpense_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.getexpense_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.getexpense_Grid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
+            this.getexpense_Grid.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.getexpense_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.getexpense_Grid.Size = new System.Drawing.Size(348, 150);
+            this.getexpense_Grid.Size = new System.Drawing.Size(522, 150);
             this.getexpense_Grid.TabIndex = 172;
             this.getexpense_Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.getexpense_Grid_CellContentClick);
             this.getexpense_Grid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.getexpense_Grid_CellMouseDoubleClick);
@@ -515,61 +533,61 @@
             // 
             this.getincome_Grid.AllowUserToAddRows = false;
             this.getincome_Grid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.getincome_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.getincome_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.getincome_Grid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.getincome_Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.getincome_Grid.BackgroundColor = System.Drawing.Color.White;
+            this.getincome_Grid.BackgroundColor = System.Drawing.Color.DimGray;
             this.getincome_Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.getincome_Grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.getincome_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.getincome_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.getincome_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.getincome_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.getincome_Grid.ContextMenuStrip = this.contextMenuStrip1;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.getincome_Grid.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.getincome_Grid.DefaultCellStyle = dataGridViewCellStyle3;
             this.getincome_Grid.EnableHeadersVisualStyles = false;
             this.getincome_Grid.GridColor = System.Drawing.Color.White;
-            this.getincome_Grid.Location = new System.Drawing.Point(130, 392);
+            this.getincome_Grid.Location = new System.Drawing.Point(158, 431);
             this.getincome_Grid.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.getincome_Grid.Name = "getincome_Grid";
             this.getincome_Grid.ReadOnly = true;
             this.getincome_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.getincome_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.getincome_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.getincome_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.getincome_Grid.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.getincome_Grid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.getincome_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.getincome_Grid.Size = new System.Drawing.Size(348, 154);
+            this.getincome_Grid.Size = new System.Drawing.Size(522, 154);
             this.getincome_Grid.TabIndex = 171;
             this.getincome_Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.getincome_Grid_CellContentClick);
             this.getincome_Grid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.getincome_Grid_CellDoubleClick);
@@ -601,7 +619,7 @@
             // monthCalendar1
             // 
             this.monthCalendar1.ForeColor = System.Drawing.Color.IndianRed;
-            this.monthCalendar1.Location = new System.Drawing.Point(100, 79);
+            this.monthCalendar1.Location = new System.Drawing.Point(590, 72);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.ShowWeekNumbers = true;
             this.monthCalendar1.TabIndex = 173;
@@ -623,18 +641,21 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Controls.Add(this.label27);
-            this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.label25);
+            this.panel3.Controls.Add(this.label31);
+            this.panel3.Controls.Add(this.label32);
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label27);
             this.panel3.Controls.Add(this.txt_blncdate);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(-3, 298);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(683, 62);
+            this.panel3.Size = new System.Drawing.Size(1460, 62);
             this.panel3.TabIndex = 175;
             // 
             // label27
@@ -642,7 +663,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Green;
-            this.label27.Location = new System.Drawing.Point(335, 26);
+            this.label27.Location = new System.Drawing.Point(557, 23);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(19, 20);
@@ -654,7 +675,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(537, 9);
+            this.label16.Location = new System.Drawing.Point(1270, 97);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(90, 20);
             this.label16.TabIndex = 11;
@@ -665,7 +686,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Green;
-            this.label15.Location = new System.Drawing.Point(421, 12);
+            this.label15.Location = new System.Drawing.Point(370, 91);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(69, 20);
             this.label15.TabIndex = 10;
@@ -718,116 +739,15 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label20);
-            this.panel4.Controls.Add(this.label25);
-            this.panel4.Controls.Add(this.label17);
-            this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.label18);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.panel12);
             this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.label21);
             this.panel4.Location = new System.Drawing.Point(-3, -1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(706, 68);
+            this.panel4.Size = new System.Drawing.Size(1464, 68);
             this.panel4.TabIndex = 176;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(115, 42);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 17);
-            this.label6.TabIndex = 183;
-            this.label6.Text = "Year";
-            this.label6.Visible = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(507, 42);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(70, 17);
-            this.label20.TabIndex = 184;
-            this.label20.Text = "Recurring";
-            this.label20.Visible = false;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(436, 42);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(54, 17);
-            this.label25.TabIndex = 186;
-            this.label25.Text = "label25";
-            this.label25.Visible = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(62, 42);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(47, 17);
-            this.label17.TabIndex = 182;
-            this.label17.Text = "Month";
-            this.label17.Visible = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(353, 42);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 17);
-            this.label14.TabIndex = 178;
-            this.label14.Text = "label14";
-            this.label14.Visible = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 42);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(16, 17);
-            this.label18.TabIndex = 181;
-            this.label18.Text = "1";
-            this.label18.Visible = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(278, 42);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 17);
-            this.label13.TabIndex = 177;
-            this.label13.Text = "label13";
-            this.label13.Visible = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(214, 42);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 17);
-            this.label12.TabIndex = 176;
-            this.label12.Text = "user";
-            this.label12.Visible = false;
             // 
             // label10
             // 
@@ -873,7 +793,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(13, 748);
+            this.button2.Location = new System.Drawing.Point(36, 727);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(41, 41);
@@ -886,7 +806,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(284, 761);
+            this.label5.Location = new System.Drawing.Point(658, 816);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 20);
             this.label5.TabIndex = 178;
@@ -901,7 +821,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(13, 684);
+            this.button3.Location = new System.Drawing.Point(36, 663);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(52, 41);
@@ -917,7 +837,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(12, 624);
+            this.button4.Location = new System.Drawing.Point(35, 603);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(52, 41);
@@ -925,23 +845,12 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label19.Location = new System.Drawing.Point(403, 854);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(138, 20);
-            this.label19.TabIndex = 185;
-            this.label19.Text = "Show Summary";
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label21.Location = new System.Drawing.Point(464, 94);
+            this.label21.Location = new System.Drawing.Point(790, 10);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(160, 20);
             this.label21.TabIndex = 183;
@@ -1142,11 +1051,22 @@
             this.panel1.Controls.Add(this.today_datee);
             this.panel1.Controls.Add(this.entry_date);
             this.panel1.Controls.Add(this.recurring_date);
-            this.panel1.Location = new System.Drawing.Point(436, 123);
+            this.panel1.Location = new System.Drawing.Point(49, 87);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(20, 29);
+            this.panel1.Size = new System.Drawing.Size(10, 10);
             this.panel1.TabIndex = 207;
             this.panel1.Visible = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.Red;
+            this.label30.Location = new System.Drawing.Point(166, 165);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(88, 20);
+            this.label30.TabIndex = 207;
+            this.label30.Text = "E_ENtry#";
             // 
             // label28
             // 
@@ -1184,11 +1104,44 @@
             this.panel2.Controls.Add(this.everyweek_todaydate);
             this.panel2.Controls.Add(this.everyweek_entrydate);
             this.panel2.Controls.Add(this.everyweek_recDate);
-            this.panel2.Location = new System.Drawing.Point(463, 127);
+            this.panel2.Location = new System.Drawing.Point(102, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(21, 16);
+            this.panel2.Size = new System.Drawing.Size(16, 16);
             this.panel2.TabIndex = 208;
             this.panel2.Visible = false;
+            // 
+            // every_expense_week_entrynumbr
+            // 
+            this.every_expense_week_entrynumbr.AutoSize = true;
+            this.every_expense_week_entrynumbr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.every_expense_week_entrynumbr.ForeColor = System.Drawing.Color.Red;
+            this.every_expense_week_entrynumbr.Location = new System.Drawing.Point(145, 169);
+            this.every_expense_week_entrynumbr.Name = "every_expense_week_entrynumbr";
+            this.every_expense_week_entrynumbr.Size = new System.Drawing.Size(88, 20);
+            this.every_expense_week_entrynumbr.TabIndex = 208;
+            this.every_expense_week_entrynumbr.Text = "E_ENtry#";
+            // 
+            // everyweek_income
+            // 
+            this.everyweek_income.AutoSize = true;
+            this.everyweek_income.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.everyweek_income.ForeColor = System.Drawing.Color.Green;
+            this.everyweek_income.Location = new System.Drawing.Point(143, 94);
+            this.everyweek_income.Name = "everyweek_income";
+            this.everyweek_income.Size = new System.Drawing.Size(69, 20);
+            this.everyweek_income.TabIndex = 207;
+            this.everyweek_income.Text = "Income";
+            // 
+            // everyweek_expense
+            // 
+            this.everyweek_expense.AutoSize = true;
+            this.everyweek_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.everyweek_expense.ForeColor = System.Drawing.Color.Red;
+            this.everyweek_expense.Location = new System.Drawing.Point(143, 149);
+            this.everyweek_expense.Name = "everyweek_expense";
+            this.everyweek_expense.Size = new System.Drawing.Size(90, 20);
+            this.everyweek_expense.TabIndex = 208;
+            this.everyweek_expense.Text = "Expenses";
             // 
             // label29
             // 
@@ -1385,50 +1338,6 @@
             this.everyweek_recDate.TabIndex = 200;
             this.everyweek_recDate.Text = "label22";
             // 
-            // everyweek_income
-            // 
-            this.everyweek_income.AutoSize = true;
-            this.everyweek_income.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.everyweek_income.ForeColor = System.Drawing.Color.Green;
-            this.everyweek_income.Location = new System.Drawing.Point(143, 94);
-            this.everyweek_income.Name = "everyweek_income";
-            this.everyweek_income.Size = new System.Drawing.Size(69, 20);
-            this.everyweek_income.TabIndex = 207;
-            this.everyweek_income.Text = "Income";
-            // 
-            // everyweek_expense
-            // 
-            this.everyweek_expense.AutoSize = true;
-            this.everyweek_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.everyweek_expense.ForeColor = System.Drawing.Color.Red;
-            this.everyweek_expense.Location = new System.Drawing.Point(143, 149);
-            this.everyweek_expense.Name = "everyweek_expense";
-            this.everyweek_expense.Size = new System.Drawing.Size(90, 20);
-            this.everyweek_expense.TabIndex = 208;
-            this.everyweek_expense.Text = "Expenses";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(166, 165);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(88, 20);
-            this.label30.TabIndex = 207;
-            this.label30.Text = "E_ENtry#";
-            // 
-            // every_expense_week_entrynumbr
-            // 
-            this.every_expense_week_entrynumbr.AutoSize = true;
-            this.every_expense_week_entrynumbr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.every_expense_week_entrynumbr.ForeColor = System.Drawing.Color.Red;
-            this.every_expense_week_entrynumbr.Location = new System.Drawing.Point(145, 169);
-            this.every_expense_week_entrynumbr.Name = "every_expense_week_entrynumbr";
-            this.every_expense_week_entrynumbr.Size = new System.Drawing.Size(88, 20);
-            this.every_expense_week_entrynumbr.TabIndex = 208;
-            this.every_expense_week_entrynumbr.Text = "E_ENtry#";
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.expense_two_week_entrynumbr);
@@ -1452,9 +1361,9 @@
             this.panel5.Controls.Add(this.every_two_week_todaydate);
             this.panel5.Controls.Add(this.every_two_week_entrydate);
             this.panel5.Controls.Add(this.every_two_week_recDate);
-            this.panel5.Location = new System.Drawing.Point(495, 131);
+            this.panel5.Location = new System.Drawing.Point(129, 73);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(19, 18);
+            this.panel5.Size = new System.Drawing.Size(24, 11);
             this.panel5.TabIndex = 209;
             this.panel5.Visible = false;
             // 
@@ -1688,9 +1597,9 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.label33);
+            this.panel6.Controls.Add(this.three_week_entry_Expense);
             this.panel6.Controls.Add(this.every_three_week_income);
-            this.panel6.Controls.Add(this.everyweek_three_expenses);
+            this.panel6.Controls.Add(this.every_three_week_expenses);
             this.panel6.Controls.Add(this.label39);
             this.panel6.Controls.Add(this.every_three_week_username);
             this.panel6.Controls.Add(this.button8);
@@ -1709,22 +1618,22 @@
             this.panel6.Controls.Add(this.every_three_week_todaydate);
             this.panel6.Controls.Add(this.every_three_week_entrydate);
             this.panel6.Controls.Add(this.every_three_week_recDate);
-            this.panel6.Location = new System.Drawing.Point(437, 162);
+            this.panel6.Location = new System.Drawing.Point(166, 68);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 37);
+            this.panel6.Size = new System.Drawing.Size(14, 21);
             this.panel6.TabIndex = 210;
             this.panel6.Visible = false;
             // 
-            // label33
+            // three_week_entry_Expense
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(145, 169);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(88, 20);
-            this.label33.TabIndex = 208;
-            this.label33.Text = "E_ENtry#";
+            this.three_week_entry_Expense.AutoSize = true;
+            this.three_week_entry_Expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.three_week_entry_Expense.ForeColor = System.Drawing.Color.Red;
+            this.three_week_entry_Expense.Location = new System.Drawing.Point(145, 169);
+            this.three_week_entry_Expense.Name = "three_week_entry_Expense";
+            this.three_week_entry_Expense.Size = new System.Drawing.Size(88, 20);
+            this.three_week_entry_Expense.TabIndex = 208;
+            this.three_week_entry_Expense.Text = "E_ENtry#";
             // 
             // every_three_week_income
             // 
@@ -1737,16 +1646,16 @@
             this.every_three_week_income.TabIndex = 207;
             this.every_three_week_income.Text = "Income";
             // 
-            // everyweek_three_expenses
+            // every_three_week_expenses
             // 
-            this.everyweek_three_expenses.AutoSize = true;
-            this.everyweek_three_expenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.everyweek_three_expenses.ForeColor = System.Drawing.Color.Red;
-            this.everyweek_three_expenses.Location = new System.Drawing.Point(143, 149);
-            this.everyweek_three_expenses.Name = "everyweek_three_expenses";
-            this.everyweek_three_expenses.Size = new System.Drawing.Size(90, 20);
-            this.everyweek_three_expenses.TabIndex = 208;
-            this.everyweek_three_expenses.Text = "Expenses";
+            this.every_three_week_expenses.AutoSize = true;
+            this.every_three_week_expenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.every_three_week_expenses.ForeColor = System.Drawing.Color.Red;
+            this.every_three_week_expenses.Location = new System.Drawing.Point(143, 149);
+            this.every_three_week_expenses.Name = "every_three_week_expenses";
+            this.every_three_week_expenses.Size = new System.Drawing.Size(90, 20);
+            this.every_three_week_expenses.TabIndex = 208;
+            this.every_three_week_expenses.Text = "Expenses";
             // 
             // label39
             // 
@@ -1945,7 +1854,7 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.label34);
+            this.panel7.Controls.Add(this.four_week_Expense_entry);
             this.panel7.Controls.Add(this.every_four_week_income);
             this.panel7.Controls.Add(this.everyweek_four_expenses);
             this.panel7.Controls.Add(this.label42);
@@ -1966,22 +1875,22 @@
             this.panel7.Controls.Add(this.every_four_week_todaydate);
             this.panel7.Controls.Add(this.every_four_week_entrydate);
             this.panel7.Controls.Add(this.every_four_week_recDate);
-            this.panel7.Location = new System.Drawing.Point(464, 166);
+            this.panel7.Location = new System.Drawing.Point(199, 69);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 37);
+            this.panel7.Size = new System.Drawing.Size(23, 18);
             this.panel7.TabIndex = 211;
             this.panel7.Visible = false;
             // 
-            // label34
+            // four_week_Expense_entry
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.Red;
-            this.label34.Location = new System.Drawing.Point(145, 169);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(88, 20);
-            this.label34.TabIndex = 208;
-            this.label34.Text = "E_ENtry#";
+            this.four_week_Expense_entry.AutoSize = true;
+            this.four_week_Expense_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.four_week_Expense_entry.ForeColor = System.Drawing.Color.Red;
+            this.four_week_Expense_entry.Location = new System.Drawing.Point(145, 169);
+            this.four_week_Expense_entry.Name = "four_week_Expense_entry";
+            this.four_week_Expense_entry.Size = new System.Drawing.Size(88, 20);
+            this.four_week_Expense_entry.TabIndex = 208;
+            this.four_week_Expense_entry.Text = "E_ENtry#";
             // 
             // every_four_week_income
             // 
@@ -2202,7 +2111,7 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.label38);
+            this.panel8.Controls.Add(this.every_month_Entry_Expense);
             this.panel8.Controls.Add(this.every_month_income);
             this.panel8.Controls.Add(this.month_expense);
             this.panel8.Controls.Add(this.label47);
@@ -2223,22 +2132,22 @@
             this.panel8.Controls.Add(this.every_month_todaydate);
             this.panel8.Controls.Add(this.every_month_entrydate);
             this.panel8.Controls.Add(this.every_month_recDate);
-            this.panel8.Location = new System.Drawing.Point(494, 169);
+            this.panel8.Location = new System.Drawing.Point(259, 62);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 25);
+            this.panel8.Size = new System.Drawing.Size(23, 22);
             this.panel8.TabIndex = 212;
             this.panel8.Visible = false;
             // 
-            // label38
+            // every_month_Entry_Expense
             // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.Red;
-            this.label38.Location = new System.Drawing.Point(145, 169);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(88, 20);
-            this.label38.TabIndex = 208;
-            this.label38.Text = "E_ENtry#";
+            this.every_month_Entry_Expense.AutoSize = true;
+            this.every_month_Entry_Expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.every_month_Entry_Expense.ForeColor = System.Drawing.Color.Red;
+            this.every_month_Entry_Expense.Location = new System.Drawing.Point(145, 169);
+            this.every_month_Entry_Expense.Name = "every_month_Entry_Expense";
+            this.every_month_Entry_Expense.Size = new System.Drawing.Size(88, 20);
+            this.every_month_Entry_Expense.TabIndex = 208;
+            this.every_month_Entry_Expense.Text = "E_ENtry#";
             // 
             // every_month_income
             // 
@@ -2459,9 +2368,9 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.label41);
+            this.panel9.Controls.Add(this.every_three_mnth_expense_entry);
             this.panel9.Controls.Add(this.every_three_month_income);
-            this.panel9.Controls.Add(this.three_month_income);
+            this.panel9.Controls.Add(this.three_month_expense);
             this.panel9.Controls.Add(this.label52);
             this.panel9.Controls.Add(this.every_three_month_username);
             this.panel9.Controls.Add(this.button11);
@@ -2480,22 +2389,22 @@
             this.panel9.Controls.Add(this.label74);
             this.panel9.Controls.Add(this.every_three_month_entrydate);
             this.panel9.Controls.Add(this.every_three_month_recDate);
-            this.panel9.Location = new System.Drawing.Point(526, 167);
+            this.panel9.Location = new System.Drawing.Point(308, 64);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(10, 10);
+            this.panel9.Size = new System.Drawing.Size(18, 17);
             this.panel9.TabIndex = 213;
             this.panel9.Visible = false;
             // 
-            // label41
+            // every_three_mnth_expense_entry
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.Color.Red;
-            this.label41.Location = new System.Drawing.Point(145, 169);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(88, 20);
-            this.label41.TabIndex = 208;
-            this.label41.Text = "E_ENtry#";
+            this.every_three_mnth_expense_entry.AutoSize = true;
+            this.every_three_mnth_expense_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.every_three_mnth_expense_entry.ForeColor = System.Drawing.Color.Red;
+            this.every_three_mnth_expense_entry.Location = new System.Drawing.Point(145, 169);
+            this.every_three_mnth_expense_entry.Name = "every_three_mnth_expense_entry";
+            this.every_three_mnth_expense_entry.Size = new System.Drawing.Size(88, 20);
+            this.every_three_mnth_expense_entry.TabIndex = 208;
+            this.every_three_mnth_expense_entry.Text = "E_ENtry#";
             // 
             // every_three_month_income
             // 
@@ -2508,16 +2417,16 @@
             this.every_three_month_income.TabIndex = 207;
             this.every_three_month_income.Text = "Income";
             // 
-            // three_month_income
+            // three_month_expense
             // 
-            this.three_month_income.AutoSize = true;
-            this.three_month_income.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.three_month_income.ForeColor = System.Drawing.Color.Red;
-            this.three_month_income.Location = new System.Drawing.Point(143, 149);
-            this.three_month_income.Name = "three_month_income";
-            this.three_month_income.Size = new System.Drawing.Size(90, 20);
-            this.three_month_income.TabIndex = 208;
-            this.three_month_income.Text = "Expenses";
+            this.three_month_expense.AutoSize = true;
+            this.three_month_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.three_month_expense.ForeColor = System.Drawing.Color.Red;
+            this.three_month_expense.Location = new System.Drawing.Point(143, 149);
+            this.three_month_expense.Name = "three_month_expense";
+            this.three_month_expense.Size = new System.Drawing.Size(90, 20);
+            this.three_month_expense.TabIndex = 208;
+            this.three_month_expense.Text = "Expenses";
             // 
             // label52
             // 
@@ -2716,9 +2625,9 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.label76);
+            this.panel10.Controls.Add(this.six_month_expense_entry);
             this.panel10.Controls.Add(this.every_six_month_income);
-            this.panel10.Controls.Add(this.six_month_income);
+            this.panel10.Controls.Add(this.six_month_expense);
             this.panel10.Controls.Add(this.label79);
             this.panel10.Controls.Add(this.every_six_month_username);
             this.panel10.Controls.Add(this.button12);
@@ -2737,22 +2646,22 @@
             this.panel10.Controls.Add(this.label91);
             this.panel10.Controls.Add(this.every_six_month_entrydate);
             this.panel10.Controls.Add(this.every_six_month_recDate);
-            this.panel10.Location = new System.Drawing.Point(568, 173);
+            this.panel10.Location = new System.Drawing.Point(348, 65);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(10, 10);
+            this.panel10.Size = new System.Drawing.Size(36, 19);
             this.panel10.TabIndex = 214;
             this.panel10.Visible = false;
             // 
-            // label76
+            // six_month_expense_entry
             // 
-            this.label76.AutoSize = true;
-            this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label76.ForeColor = System.Drawing.Color.Red;
-            this.label76.Location = new System.Drawing.Point(145, 169);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(88, 20);
-            this.label76.TabIndex = 208;
-            this.label76.Text = "E_ENtry#";
+            this.six_month_expense_entry.AutoSize = true;
+            this.six_month_expense_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.six_month_expense_entry.ForeColor = System.Drawing.Color.Red;
+            this.six_month_expense_entry.Location = new System.Drawing.Point(145, 169);
+            this.six_month_expense_entry.Name = "six_month_expense_entry";
+            this.six_month_expense_entry.Size = new System.Drawing.Size(88, 20);
+            this.six_month_expense_entry.TabIndex = 208;
+            this.six_month_expense_entry.Text = "E_ENtry#";
             // 
             // every_six_month_income
             // 
@@ -2765,16 +2674,16 @@
             this.every_six_month_income.TabIndex = 207;
             this.every_six_month_income.Text = "Income";
             // 
-            // six_month_income
+            // six_month_expense
             // 
-            this.six_month_income.AutoSize = true;
-            this.six_month_income.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.six_month_income.ForeColor = System.Drawing.Color.Red;
-            this.six_month_income.Location = new System.Drawing.Point(143, 149);
-            this.six_month_income.Name = "six_month_income";
-            this.six_month_income.Size = new System.Drawing.Size(90, 20);
-            this.six_month_income.TabIndex = 208;
-            this.six_month_income.Text = "Expenses";
+            this.six_month_expense.AutoSize = true;
+            this.six_month_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.six_month_expense.ForeColor = System.Drawing.Color.Red;
+            this.six_month_expense.Location = new System.Drawing.Point(143, 149);
+            this.six_month_expense.Name = "six_month_expense";
+            this.six_month_expense.Size = new System.Drawing.Size(90, 20);
+            this.six_month_expense.TabIndex = 208;
+            this.six_month_expense.Text = "Expenses";
             // 
             // label79
             // 
@@ -2973,7 +2882,7 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.label45);
+            this.panel11.Controls.Add(this.every_year_expense_entry);
             this.panel11.Controls.Add(this.every_year_income);
             this.panel11.Controls.Add(this.every_year_expense);
             this.panel11.Controls.Add(this.label59);
@@ -2994,22 +2903,21 @@
             this.panel11.Controls.Add(this.every_year_todaydate);
             this.panel11.Controls.Add(this.every_year_entrydate);
             this.panel11.Controls.Add(this.every_year_recDate);
-            this.panel11.Location = new System.Drawing.Point(427, 215);
+            this.panel11.Location = new System.Drawing.Point(77, 79);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(10, 10);
+            this.panel11.Size = new System.Drawing.Size(19, 18);
             this.panel11.TabIndex = 215;
-            this.panel11.Visible = false;
             // 
-            // label45
+            // every_year_expense_entry
             // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.Red;
-            this.label45.Location = new System.Drawing.Point(145, 169);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(88, 20);
-            this.label45.TabIndex = 208;
-            this.label45.Text = "E_ENtry#";
+            this.every_year_expense_entry.AutoSize = true;
+            this.every_year_expense_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.every_year_expense_entry.ForeColor = System.Drawing.Color.Red;
+            this.every_year_expense_entry.Location = new System.Drawing.Point(145, 169);
+            this.every_year_expense_entry.Name = "every_year_expense_entry";
+            this.every_year_expense_entry.Size = new System.Drawing.Size(88, 20);
+            this.every_year_expense_entry.TabIndex = 208;
+            this.every_year_expense_entry.Text = "E_ENtry#";
             // 
             // every_year_income
             // 
@@ -3228,23 +3136,277 @@
             this.every_year_recDate.TabIndex = 200;
             this.every_year_recDate.Text = "label22";
             // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.panel9);
+            this.panel12.Controls.Add(this.panel1);
+            this.panel12.Controls.Add(this.panel2);
+            this.panel12.Controls.Add(this.panel11);
+            this.panel12.Controls.Add(this.panel5);
+            this.panel12.Controls.Add(this.panel10);
+            this.panel12.Controls.Add(this.panel6);
+            this.panel12.Controls.Add(this.panel7);
+            this.panel12.Controls.Add(this.panel8);
+            this.panel12.Location = new System.Drawing.Point(1087, 42);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(10, 10);
+            this.panel12.TabIndex = 216;
+            this.panel12.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(1002, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(226, 20);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Total Recurring Expenses";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Green;
+            this.label12.Location = new System.Drawing.Point(97, 91);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(205, 20);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Total Recurring Income";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Green;
+            this.label13.Location = new System.Drawing.Point(145, 138);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 20);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "Income";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(1080, 146);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(90, 20);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Expenses";
+            // 
+            // recurringINCOME_GRID
+            // 
+            this.recurringINCOME_GRID.AllowUserToAddRows = false;
+            this.recurringINCOME_GRID.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.recurringINCOME_GRID.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.recurringINCOME_GRID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.recurringINCOME_GRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.recurringINCOME_GRID.BackgroundColor = System.Drawing.Color.DimGray;
+            this.recurringINCOME_GRID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.recurringINCOME_GRID.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.recurringINCOME_GRID.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.recurringINCOME_GRID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.recurringINCOME_GRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.recurringINCOME_GRID.ContextMenuStrip = this.contextMenuStrip1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.recurringINCOME_GRID.DefaultCellStyle = dataGridViewCellStyle8;
+            this.recurringINCOME_GRID.EnableHeadersVisualStyles = false;
+            this.recurringINCOME_GRID.GridColor = System.Drawing.Color.White;
+            this.recurringINCOME_GRID.Location = new System.Drawing.Point(768, 432);
+            this.recurringINCOME_GRID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.recurringINCOME_GRID.Name = "recurringINCOME_GRID";
+            this.recurringINCOME_GRID.ReadOnly = true;
+            this.recurringINCOME_GRID.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.recurringINCOME_GRID.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.recurringINCOME_GRID.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.recurringINCOME_GRID.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.recurringINCOME_GRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.recurringINCOME_GRID.Size = new System.Drawing.Size(657, 154);
+            this.recurringINCOME_GRID.TabIndex = 181;
+            // 
+            // recurringEXPENSE_GRID
+            // 
+            this.recurringEXPENSE_GRID.AllowUserToAddRows = false;
+            this.recurringEXPENSE_GRID.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.recurringEXPENSE_GRID.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.recurringEXPENSE_GRID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.recurringEXPENSE_GRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.recurringEXPENSE_GRID.BackgroundColor = System.Drawing.Color.DimGray;
+            this.recurringEXPENSE_GRID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.recurringEXPENSE_GRID.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.recurringEXPENSE_GRID.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.recurringEXPENSE_GRID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.recurringEXPENSE_GRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.recurringEXPENSE_GRID.ContextMenuStrip = this.contextMenuStrip2;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.recurringEXPENSE_GRID.DefaultCellStyle = dataGridViewCellStyle13;
+            this.recurringEXPENSE_GRID.EnableHeadersVisualStyles = false;
+            this.recurringEXPENSE_GRID.GridColor = System.Drawing.Color.White;
+            this.recurringEXPENSE_GRID.Location = new System.Drawing.Point(768, 614);
+            this.recurringEXPENSE_GRID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.recurringEXPENSE_GRID.Name = "recurringEXPENSE_GRID";
+            this.recurringEXPENSE_GRID.ReadOnly = true;
+            this.recurringEXPENSE_GRID.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.recurringEXPENSE_GRID.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.recurringEXPENSE_GRID.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            this.recurringEXPENSE_GRID.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.recurringEXPENSE_GRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.recurringEXPENSE_GRID.Size = new System.Drawing.Size(657, 150);
+            this.recurringEXPENSE_GRID.TabIndex = 182;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(522, 26);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(12, 17);
+            this.label17.TabIndex = 15;
+            this.label17.Text = ":";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(459, 26);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(38, 17);
+            this.label18.TabIndex = 14;
+            this.label18.Text = "Date";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(296, 26);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(155, 17);
+            this.label19.TabIndex = 13;
+            this.label19.Text = "Balance with Recursion";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(994, 24);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(12, 17);
+            this.label20.TabIndex = 19;
+            this.label20.Text = ":";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(931, 24);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(38, 17);
+            this.label25.TabIndex = 18;
+            this.label25.Text = "Date";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(828, 24);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(95, 17);
+            this.label31.TabIndex = 17;
+            this.label31.Text = "Total Balance";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Green;
+            this.label32.Location = new System.Drawing.Point(1029, 21);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(19, 20);
+            this.label32.TabIndex = 16;
+            this.label32.Text = "0";
+            // 
             // Manage_income_expensesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(690, 802);
-            this.Controls.Add(this.panel11);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label21);
+            this.ClientSize = new System.Drawing.Size(1459, 891);
+            this.Controls.Add(this.recurringEXPENSE_GRID);
+            this.Controls.Add(this.recurringINCOME_GRID);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
@@ -3291,6 +3453,9 @@
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.recurringINCOME_GRID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recurringEXPENSE_GRID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3320,9 +3485,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
@@ -3332,16 +3494,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label recurring_income;
         private System.Windows.Forms.Label recuring_expenses;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label Recurring_interval;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label Record_Stauts;
@@ -3406,9 +3562,9 @@
         private System.Windows.Forms.DateTimePicker every_two_week_entrydate;
         private System.Windows.Forms.Label every_two_week_recDate;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label three_week_entry_Expense;
         private System.Windows.Forms.Label every_three_week_income;
-        private System.Windows.Forms.Label everyweek_three_expenses;
+        private System.Windows.Forms.Label every_three_week_expenses;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label every_three_week_username;
         private System.Windows.Forms.Button button8;
@@ -3428,7 +3584,7 @@
         private System.Windows.Forms.DateTimePicker every_three_week_entrydate;
         private System.Windows.Forms.Label every_three_week_recDate;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label four_week_Expense_entry;
         private System.Windows.Forms.Label every_four_week_income;
         private System.Windows.Forms.Label everyweek_four_expenses;
         private System.Windows.Forms.Label label42;
@@ -3448,9 +3604,8 @@
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label every_four_week_todaydate;
         private System.Windows.Forms.DateTimePicker every_four_week_entrydate;
-        private System.Windows.Forms.Label every_four_week_recDate;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label every_month_Entry_Expense;
         private System.Windows.Forms.Label every_month_income;
         private System.Windows.Forms.Label month_expense;
         private System.Windows.Forms.Label label47;
@@ -3472,9 +3627,9 @@
         private System.Windows.Forms.DateTimePicker every_month_entrydate;
         private System.Windows.Forms.Label every_month_recDate;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label every_three_mnth_expense_entry;
         private System.Windows.Forms.Label every_three_month_income;
-        private System.Windows.Forms.Label three_month_income;
+        private System.Windows.Forms.Label three_month_expense;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label every_three_month_username;
         private System.Windows.Forms.Button button11;
@@ -3494,9 +3649,9 @@
         private System.Windows.Forms.DateTimePicker every_three_month_entrydate;
         private System.Windows.Forms.Label every_three_month_recDate;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label six_month_expense_entry;
         private System.Windows.Forms.Label every_six_month_income;
-        private System.Windows.Forms.Label six_month_income;
+        private System.Windows.Forms.Label six_month_expense;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Label every_six_month_username;
         private System.Windows.Forms.Button button12;
@@ -3516,7 +3671,7 @@
         private System.Windows.Forms.DateTimePicker every_six_month_entrydate;
         private System.Windows.Forms.Label every_six_month_recDate;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label every_year_expense_entry;
         private System.Windows.Forms.Label every_year_income;
         private System.Windows.Forms.Label every_year_expense;
         private System.Windows.Forms.Label label59;
@@ -3537,5 +3692,20 @@
         private System.Windows.Forms.Label every_year_todaydate;
         private System.Windows.Forms.DateTimePicker every_year_entrydate;
         private System.Windows.Forms.Label every_year_recDate;
+        private System.Windows.Forms.Label every_four_week_recDate;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridView recurringINCOME_GRID;
+        private System.Windows.Forms.DataGridView recurringEXPENSE_GRID;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
     }
 }

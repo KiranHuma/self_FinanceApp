@@ -39,7 +39,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select Entry_no,Username,Name,Description,Name_or_source,Income,Entry_Date from db_incomeexpenses where Income IS NOT NULL  AND Username='" + label1.Text + "'", con);
+                    var da = new SqlDataAdapter("Select Entry_no,Username,Name,Description,Name_or_source,ISNULL(Income,Recurring_Income) as INCOME,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses where Username='" + label1.Text + "'", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
@@ -62,7 +62,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select Entry_no,Username,Name,Description,Name_or_source,Expense,Entry_Date from db_incomeexpenses where Expense IS NOT NULL  AND Username='" + label1.Text + "'", con);
+                    var da = new SqlDataAdapter("Select Entry_no,Username,Name,Description,Name_or_source,ISNULL(Expense,Recurring_Expense) as EXPENSES,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses where Username='" + label1.Text + "'", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
@@ -85,7 +85,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select Entry_no,Username,Name,Description,Name_or_source,Income,Expense,Entry_Date from db_incomeexpenses  where  Username='" + label1.Text + "'", con);
+                    var da = new SqlDataAdapter("Select Entry_no,Username,Name,Description,Name_or_source,ISNULL(Income,Recurring_Income)as INCOME,ISNULL(Expense,Recurring_Expense)as EXPENSES,Recurring_Date,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses  where  Username='" + label1.Text + "'", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
@@ -110,7 +110,7 @@ namespace self_FinanceApp
             DateTime dto = dateTimePicker2.Value;
             con.ConnectionString = cs;
             con.Open();
-            string str = "SELECT Entry_no,Username,Name,Description,Name_or_source,Income,Entry_Date from db_incomeexpenses where Income IS NOT NULL AND Username='" + label1.Text + "' AND Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
+            string str = "SELECT Entry_no,Username,Name,Description,Name_or_source,ISNULL(Income,Recurring_Income)as INCOME,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses where  Username='" + label1.Text + "' AND Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
             var da = new SqlDataAdapter(str, con);
             da.Fill(dt);
             getincome_Grid.DataSource = dt;
@@ -127,7 +127,7 @@ namespace self_FinanceApp
             DateTime dto = dateTimePicker3.Value;
             con.ConnectionString = cs;
             con.Open();
-            string str = "SELECT Entry_no,Username,Name,Description,Name_or_source,Expense,Entry_Date from db_incomeexpenses where Expense IS NOT NULL AND Username='" + label1.Text + "' AND Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
+            string str = "SELECT Entry_no,Username,Name,Description,Name_or_source,ISNULL(Expense,Recurring_Expense)as EXPENSES,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses where  Username='" + label1.Text + "' AND Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
             var da = new SqlDataAdapter(str, con);
             da.Fill(dt);
             getexpense_Grid.DataSource = dt;
@@ -193,7 +193,7 @@ namespace self_FinanceApp
             DateTime dto = dateTimePicker5.Value;
             con.ConnectionString = cs;
             con.Open();
-            string str = "SELECT Entry_no,Username,Name,Description,Name_or_source,Income,Expense,Entry_Date from db_incomeexpenses where Username='" + label1.Text + "' AND Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
+            string str = "SELECT Entry_no,Username,Name,Description,Name_or_source,ISNULL(Income,Recurring_Income)as INCOME,ISNULL(Expense,Recurring_Expense)as EXPENSES,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses where Username='" + label1.Text + "' AND Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
             var da = new SqlDataAdapter(str, con);
             da.Fill(dt);
             GetInEx_Grid.DataSource = dt;
@@ -225,7 +225,7 @@ namespace self_FinanceApp
             DateTime dto = dateTimePicker5.Value;
             con.ConnectionString = cs;
             con.Open();
-            string str = "SELECT * from db_incomeexpenses where Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
+            string str = "SELECT  Entry_no,Username,Name,Description,Name_or_source,ISNULL(Income,Recurring_Income)as INCOME,ISNULL(Expense,Recurring_Expense)as EXPENSES,Recurring_Date,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses where Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
             var da = new SqlDataAdapter(str, con);
             da.Fill(dt);
             GetInEx_Grid.DataSource = dt;
@@ -240,7 +240,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select * from db_incomeexpenses", con);
+                    var da = new SqlDataAdapter("Select Entry_no,Username,Name,Description,Name_or_source,ISNULL(Income,Recurring_Income)as INCOME,ISNULL(Expense,Recurring_Expense)as EXPENSES,Recurring_Date,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
@@ -261,7 +261,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select * from db_incomeexpenses where Income IS NOT NULL ", con);
+                    var da = new SqlDataAdapter("Select Entry_no,Username,Name,Description,Name_or_source,ISNULL(Income,Recurring_Income)as INCOME,Recurring_Date,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses  ", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
@@ -282,7 +282,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select * from db_incomeexpenses where Expense IS NOT NULL ", con);
+                    var da = new SqlDataAdapter("Select Entry_no,Username,Name,Description,Name_or_source,ISNULL(Expense,Recurring_Expense)as EXPENSES,Recurring_Date,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses ", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
@@ -317,7 +317,7 @@ namespace self_FinanceApp
                 DateTime dto = dateTimePicker2.Value;
                 con.ConnectionString = cs;
                 con.Open();
-                string str = "SELECT * from db_incomeexpenses where Income IS NOT NULL AND Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
+                string str = "SELECT Entry_no,Username,Name,Description,Name_or_source,ISNULL(Income,Recurring_Income)as INCOME,Recurring_Date,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses where  Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
                 var da = new SqlDataAdapter(str, con);
                 da.Fill(dt);
                 getincome_Grid.DataSource = dt;
@@ -347,7 +347,7 @@ namespace self_FinanceApp
             DateTime dto = dateTimePicker3.Value;
             con.ConnectionString = cs;
             con.Open();
-            string str = "SELECT * from db_incomeexpenses where Expense IS NOT NULL AND Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
+            string str = "SELECT Entry_no,Username,Name,Description,Name_or_source,ISNULL(Expense,Recurring_Expense)as EXPENSES,Recurring_Date,Recurring_Interval,Record_update,Entry_Date from db_incomeexpenses where Entry_Date >= '" + dfrom + "' and Entry_Date <='" + dto + "'";
             var da = new SqlDataAdapter(str, con);
             da.Fill(dt);
             getexpense_Grid.DataSource = dt;
