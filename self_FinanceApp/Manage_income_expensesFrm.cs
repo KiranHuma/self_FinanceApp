@@ -2536,21 +2536,13 @@ namespace self_FinanceApp
        
         public void update_blnce()
         {
-            
-
             // Query string
             SqlConnection con = new SqlConnection(cs);
             con.Open();
             cmd.Connection = con;
             cmd.CommandText = "Update db_auth Set Your_Balnc_withou_Recurring='" + label3.Text + "',Your_Balance_with_Recursion='" + label27.Text + "' where Username='" + userid.Text + "'";
             cmd.ExecuteNonQuery();
-            
-           
-            
             con.Close();
-           
-
-
         }
 
         public void get_blancee()
@@ -2613,6 +2605,193 @@ namespace self_FinanceApp
         {
 
         }
+
+        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Prediction Algorithm Start||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        public void update_prdiction_dates()
+        {
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            DateTime Pre_start = dateTimePicker11.Value;
+            DateTime pre_end = dateTimePicker9.Value;
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Prediction_Start_Date='" + Pre_start + "',Prediction_End_Date='" + pre_end + "' where  Entry_Date >='" + Pre_start + "' and Entry_Date <='" + pre_end + "' AND Recurring_Interval IS NOT NULL AND Username='" + userid.Text + "';";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void update_values_to_Null_of_previous_prediction()
+        {
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            DateTime Pre_start = dateTimePicker11.Value;
+            DateTime pre_end = dateTimePicker9.Value;
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Prediction_Start_Date=NULL,Prediction_End_Date=NULL where Prediction_Start_Date IS NOT NULL and  Prediction_End_Date IS NOT NULL AND Recurring_Interval IS NOT NULL AND Username='" + userid.Text + "';";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void update_no_of_days()
+        {
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set No_of_days=" + label33.Text + " where Prediction_Start_Date IS NOT NULL and  Prediction_End_Date IS NOT NULL AND Recurring_Interval IS NOT NULL AND Username='" + userid.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+           // update_values_to_Null_of_previous_prediction();
+            //update_prdiction_dates();  // to enter prediction dates
+           // count_numberof_days_entriess();
+           // update_no_of_days(); //count number of days from today date to prediction date
+            update_no_of_days_everyday();
+            update_no_of_days_week();
+            update_no_of_days_2_week();
+            update_no_of_days_3_week();
+            update_no_of_days_4_week();
+            update_no_of_days_every_month();
+            update_no_of_days_3_month();
+            update_no_of_days_6_month();
+            update_no_of_days_every_year();
+        }
+
+        public void count_numberof_days_entriess()
+        {
+            using (SqlConnection connection = new SqlConnection(cs))
+            {
+                try
+                {
+                    DateTime Pre_start = dateTimePicker11.Value;
+                    DateTime pre_end = dateTimePicker9.Value;
+                    SqlCommand command =
+                    new SqlCommand("SELECT DATEDIFF(DAY,Prediction_Start_Date,Prediction_End_Date) AS everdayinterval FROM db_incomeexpenses where Prediction_End_Date IS NOT NULL AND Username='" + userid.Text + "'", connection);
+                    connection.Open();
+                    cmd.Parameters.Clear();
+                    SqlDataReader read = command.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        label33.Text = (read["everdayinterval"].ToString());
+
+                    }
+                    read.Close();
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                    this.Dispose();
+                }
+            }
+        }
+
+        private void dateTimePicker9_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        //||||||||||||||||||||||||||||||||||||||||||||||||||||||||Update the values of week,2weeks,3weeks,4weeks||||||||||||||||||||||
+        public void update_no_of_days_everyday()
+        {
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/1 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every day' AND Username='" + userid.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void update_no_of_days_week()
+        {
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/7 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every week' AND Username='" + userid.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void update_no_of_days_2_week()
+        {
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/14 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every 2 weeks' AND Username='" + userid.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void update_no_of_days_3_week()
+        {
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/21 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every 3 weeks' AND Username='" + userid.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void update_no_of_days_4_week()
+        {
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/28 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every 4 weeks' AND Username='" + userid.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void update_no_of_days_every_month()
+        {
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/30.417 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every Month' AND Username='" + userid.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void update_no_of_days_3_month()
+        {
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/91.251 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every 3 Months' AND Username='" + userid.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void update_no_of_days_6_month()
+        {
+            // Query stringEvery 6 Months
+
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/182.502 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every 6 Months' AND Username='" + userid.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+         public void update_no_of_days_every_year()
+        {
+            // Query stringEvery 6 Months
+
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/365 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every year' AND Username='" + userid.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Prediction Algorithm END||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     }
     }
 
