@@ -43,7 +43,7 @@ namespace self_FinanceApp
                 string Record_update = label19.Text;
 
                string Entry_Date = txt_date.Text;
-
+               string Date_of_entry = txt_date.Text;
                // DateTime Recurring_Date = recurring_date.Value.Date;
                // DateTime Entry_Date = txt_date.Value.Date;
                 if (rbtn_income.Checked)
@@ -52,7 +52,7 @@ namespace self_FinanceApp
                     addd = double.Parse(txt_amnt.Text) + double.Parse(lbl_balnce.Text);
                     lbl_balnce.Text = Convert.ToString(addd);
 
-                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Income,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + recurring_date.Text + "','" + recurring_txt.Text + "','" + label19.Text + "','" + txt_date.Text + "')");
+                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Income,Recurring_Date,Recurring_Interval,Record_update,Date_of_Entry,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + recurring_date.Text + "','" + recurring_txt.Text + "','" + label19.Text + "','" + txt_date.Text + "','" + txt_date.Text + "')");
                     SqlCommand command = new SqlCommand(sqlquery, connection);
                     command.Parameters.AddWithValue("Username", Usernamee);
                     command.Parameters.AddWithValue("Name", Name);
@@ -62,6 +62,7 @@ namespace self_FinanceApp
                     command.Parameters.AddWithValue("Recurring_Date", Recurring_Date);
                     command.Parameters.AddWithValue("Recurring_Interval", Recurring_Interval);
                     command.Parameters.AddWithValue("Record_update", Record_update);
+                    command.Parameters.AddWithValue("Date_of_Entry", Date_of_entry);
                     command.Parameters.AddWithValue("Entry_Date", Entry_Date);
                     // get_incomesum();
                     command.ExecuteNonQuery();
@@ -76,7 +77,7 @@ namespace self_FinanceApp
                     subtrct = Math.Abs(double.Parse(txt_amnt.Text) - (double.Parse(lbl_balnce.Text)));
                     lbl_balnce.Text = Convert.ToString(subtrct);
                     subtrct = Math.Abs(subtrct);
-                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Expense,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + recurring_date.Value.Date + "','" + recurring_txt.Text + "','" + label19.Text + "','" + txt_date.Value.Date + "')");
+                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Expense,Recurring_Date,Recurring_Interval,Record_update,Date_of_Entry,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + recurring_date.Value.Date + "','" + recurring_txt.Text + "','" + label19.Text + "','" + txt_date.Text + "','" + txt_date.Value.Date + "')");
                     SqlCommand command = new SqlCommand(sqlquery, connection);
                     command.Parameters.AddWithValue("Username", Usernamee);
                     command.Parameters.AddWithValue("Name", Name);
@@ -86,6 +87,7 @@ namespace self_FinanceApp
                     command.Parameters.AddWithValue("Recurring_Date", Recurring_Date);
                     command.Parameters.AddWithValue("Recurring_Interval", Recurring_Interval);
                     command.Parameters.AddWithValue("Record_update", Record_update);
+                    command.Parameters.AddWithValue("Date_of_Entry", Date_of_entry);
                     command.Parameters.AddWithValue("Entry_Date", Entry_Date);
                     // get_incomesum();
                     command.ExecuteNonQuery();
@@ -122,16 +124,15 @@ namespace self_FinanceApp
                 string Record_update = label9.Text;
 
                 string Entry_Date = txt_date.Text;
-
-                // DateTime Recurring_Date = recurring_date.Value.Date;
-                // DateTime Entry_Date = txt_date.Value.Date;
+                string Date_of_entry = txt_date.Text;
+              
                 if (rbtn_income.Checked)
                 {
                     double addd;
                     addd = double.Parse(txt_amnt.Text) + double.Parse(lbl_balnce.Text);
                     lbl_balnce.Text = Convert.ToString(addd);
 
-                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Income,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + txt_date.Text + "','" + recurring_txt.Text + "','" + label9.Text + "','" + txt_date.Text + "')");
+                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Income,Recurring_Date,Recurring_Interval,Record_update,Date_of_Entry,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + txt_date.Text + "','" + recurring_txt.Text + "','" + label9.Text + "','" + txt_date.Text + "','" + txt_date.Text + "')");
                     SqlCommand command = new SqlCommand(sqlquery, connection);
                     command.Parameters.AddWithValue("Username", Usernamee);
                     command.Parameters.AddWithValue("Name", Name);
@@ -141,6 +142,7 @@ namespace self_FinanceApp
                     command.Parameters.AddWithValue("Recurring_Date", Recurring_Date);
                     command.Parameters.AddWithValue("Recurring_Interval", Recurring_Interval);
                     command.Parameters.AddWithValue("Record_update", Record_update);
+                    command.Parameters.AddWithValue("Date_of_Entry", Date_of_entry);
                     command.Parameters.AddWithValue("Entry_Date", Entry_Date);
                     // get_incomesum();
                     command.ExecuteNonQuery();
@@ -155,7 +157,7 @@ namespace self_FinanceApp
                     subtrct = Math.Abs(double.Parse(txt_amnt.Text) - (double.Parse(lbl_balnce.Text)));
                     lbl_balnce.Text = Convert.ToString(subtrct);
                     subtrct = Math.Abs(subtrct);
-                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Expense,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + txt_date.Text + "','" + recurring_txt.Text + "','" + label9.Text + "','" + txt_date.Value.Date + "')");
+                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Expense,Recurring_Date,Recurring_Interval,Record_update,Date_of_Entry,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + txt_date.Text + "','" + recurring_txt.Text + "','" + label9.Text + "','" + txt_date.Text + "','" + txt_date.Value.Date + "')");
                     SqlCommand command = new SqlCommand(sqlquery, connection);
                     command.Parameters.AddWithValue("Username", Usernamee);
                     command.Parameters.AddWithValue("Name", Name);
@@ -165,6 +167,7 @@ namespace self_FinanceApp
                     command.Parameters.AddWithValue("Recurring_Date", Recurring_Date);
                     command.Parameters.AddWithValue("Recurring_Interval", Recurring_Interval);
                     command.Parameters.AddWithValue("Record_update", Record_update);
+                    command.Parameters.AddWithValue("Date_of_Entry", Date_of_entry);
                     command.Parameters.AddWithValue("Entry_Date", Entry_Date);
                     // get_incomesum();
                     command.ExecuteNonQuery();
@@ -187,8 +190,11 @@ namespace self_FinanceApp
         {
             lbl_user.Text = loginFrm.SetValueForText1;
             get_name();
+           
+           
             recurring_date.Value = DateTime.Today;
             txt_date.Value = DateTime.Today;
+            
             //Today_date.Text = DateTime.Now.ToString("MM-dd-yyyy");
            // label9.Text = DateTime.Now.ToString("dd");
             //label11.Text = DateTime.Now.ToString("MM");
@@ -320,6 +326,11 @@ namespace self_FinanceApp
         private void txt_date_ValueChanged(object sender, EventArgs e)
         {
             change_interval_for_rcurring();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }    
     }
 }

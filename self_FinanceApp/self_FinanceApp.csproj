@@ -158,6 +158,9 @@
     <EmbeddedResource Include="Manage_income_expensesFrm.resx">
       <DependentUpon>Manage_income_expensesFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PredictionScreen.resx">
+      <DependentUpon>PredictionScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

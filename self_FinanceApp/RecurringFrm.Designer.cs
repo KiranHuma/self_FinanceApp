@@ -32,7 +32,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.txt_des = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.recurring_date = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.recurring_txt = new System.Windows.Forms.ComboBox();
@@ -51,11 +51,11 @@
             this.txt_contacts = new System.Windows.Forms.ComboBox();
             this.lbl_user = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.recurring_date = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.radiobtn_expense = new System.Windows.Forms.RadioButton();
             this.rbtn_income = new System.Windows.Forms.RadioButton();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,16 +108,15 @@
             this.panel1.Size = new System.Drawing.Size(695, 346);
             this.panel1.TabIndex = 48;
             // 
-            // recurring_date
+            // label9
             // 
-            this.recurring_date.Enabled = false;
-            this.recurring_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.recurring_date.Location = new System.Drawing.Point(396, 366);
-            this.recurring_date.Margin = new System.Windows.Forms.Padding(4);
-            this.recurring_date.Name = "recurring_date";
-            this.recurring_date.Size = new System.Drawing.Size(241, 22);
-            this.recurring_date.TabIndex = 49;
-            this.recurring_date.Value = new System.DateTime(2020, 11, 25, 0, 0, 0, 0);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(474, 168);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 17);
+            this.label9.TabIndex = 60;
+            this.label9.Text = "Updated";
+            this.label9.Visible = false;
             // 
             // label19
             // 
@@ -334,6 +333,18 @@
             this.label4.Size = new System.Drawing.Size(25, 29);
             this.label4.TabIndex = 15;
             this.label4.Text = "x";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // recurring_date
+            // 
+            this.recurring_date.Enabled = false;
+            this.recurring_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.recurring_date.Location = new System.Drawing.Point(396, 366);
+            this.recurring_date.Margin = new System.Windows.Forms.Padding(4);
+            this.recurring_date.Name = "recurring_date";
+            this.recurring_date.Size = new System.Drawing.Size(241, 22);
+            this.recurring_date.TabIndex = 49;
+            this.recurring_date.Value = new System.DateTime(2020, 11, 25, 0, 0, 0, 0);
             // 
             // button2
             // 
@@ -390,16 +401,6 @@
             this.rbtn_income.TabStop = true;
             this.rbtn_income.Text = "Income";
             this.rbtn_income.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(474, 168);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 17);
-            this.label9.TabIndex = 60;
-            this.label9.Text = "Updated";
-            this.label9.Visible = false;
             // 
             // RecurringFrm
             // 

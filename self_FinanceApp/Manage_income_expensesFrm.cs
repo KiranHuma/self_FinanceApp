@@ -29,7 +29,7 @@ namespace self_FinanceApp
 
         private void Manage_income_expensesFrm_Load(object sender, EventArgs e)
         {
-           
+
             userid.Text = loginFrm.SetValueForText1;
             txt_blncdate.Text = DateTime.Now.ToString("MMM-dd");
             label18.Text = DateTime.Now.ToString("MMM-dd");
@@ -68,17 +68,17 @@ namespace self_FinanceApp
             insert_two_week_recurringincomeexpenses();
             ////Every2  week function call END/////
 
-             ////Every 3 week function call START/////
+            ////Every 3 week function call START/////
             Every_three_week_getRecuring_incomedate();
             Everyweek_three_getRecuring_expensedate();
             update_status_for_everyweek_three();
-            insert_three_week_recurringincomeexpenses();     
-              ////Every 3  week function call END/////
+            insert_three_week_recurringincomeexpenses();
+            ////Every 3  week function call END/////
 
             ////Every 4 week function call START/////
             Every_four_week_getRecuring_incomedate();
             Everyweek_four_getRecuring_expensedate();
-           // change_interval_for_rcurring();
+            // change_interval_for_rcurring();
             update_status_for_everyweek_four();
             insert_four_week_recurringincomeexpenses();
             ////Every 4  week function call END/////
@@ -87,34 +87,38 @@ namespace self_FinanceApp
             Every_Month_getRecuring_incomedate();
             Every_Month_getRecuring_expensedate();
             update_status_for_every_Month();
-           insert_every_Month_recurringincomeexpenses();
+            insert_every_Month_recurringincomeexpenses();
             ////Every month  week function call END/////
 
             ////Every 3 month function call START/////
-           Every_3_Month_getRecuring_incomedate();
-           Every_3_Month_getRecuring_expensedate();
-           update_status_for_every_three_Month();
-           insert_every_3_Month_recurringincomeexpenses();
+            Every_3_Month_getRecuring_incomedate();
+            Every_3_Month_getRecuring_expensedate();
+            update_status_for_every_three_Month();
+            insert_every_3_Month_recurringincomeexpenses();
             ////Every 3 month  week function call END/////
 
             ////Every 6 month function call START/////
-             Every_6_Month_getRecuring_incomedate();
-             Every_6_Month_getRecuring_expensedate();
+            Every_6_Month_getRecuring_incomedate();
+            Every_6_Month_getRecuring_expensedate();
             update_status_for_every_6_Month();
             insert_every_6_Month_recurringincomeexpenses();
             ////Every 6 month  week function call END/////
 
             ////Every year function call START/////
-              Every_year_getRecuring_incomedate();
+            Every_year_getRecuring_incomedate();
             Every_year_getRecuring_expensedate();
-                update_status_for_every_year();
-               insert_every_year_recurringincomeexpenses();
+            update_status_for_every_year();
+            insert_every_year_recurringincomeexpenses();
 
             ////Every year week function call END/////
 
             //update balance after all function
-               update_blnce();
-               get_total_balanc_with_recursion();
+            update_blnce();
+            get_total_balanc_with_recursion();
+           // get_predict_total_with_INEX_RinEx_balnce();
+           get_predict_balnce();
+           update_blnce();
+           get_predict_total_with_INEX_RinEx_balnce();
         }
 
 
@@ -141,7 +145,7 @@ namespace self_FinanceApp
             }
 
         }
-        
+
         // get the data of recurring income in grid
         public void getdata_recurring_income()
         {
@@ -385,7 +389,6 @@ namespace self_FinanceApp
             }
         }
         public void get_total_balanc_with_recursion()
-        
         {
             using (SqlConnection connection = new SqlConnection(cs))
             {
@@ -412,7 +415,7 @@ namespace self_FinanceApp
                     this.Dispose();
                 }
             }
-        
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -450,41 +453,41 @@ namespace self_FinanceApp
         private void getincome_Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-          
-            }
-      // if(Label9.Text=)
-      
+
+        }
+        // if(Label9.Text=)
+
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Incomeexpense_editFrm obj = new Incomeexpense_editFrm();
             obj.label1.Text = this.getincome_Grid.CurrentRow.Cells[0].Value.ToString();
             obj.txt_des.Text = this.getincome_Grid.CurrentRow.Cells[1].Value.ToString();
-           
+
             obj.txt_amnt.Text = this.getincome_Grid.CurrentRow.Cells[2].Value.ToString();
             obj.txt_date.Text = this.getincome_Grid.CurrentRow.Cells[3].Value.ToString();
-           obj.rbtn_income.Visible = true;
+            obj.rbtn_income.Visible = true;
             this.Hide();
             obj.ShowDialog();
 
-          
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            
+
             //to delete the selected row
             try
             {
                 var ObjConnection = new SqlConnection();
                 int i;
-               
-               
-               
+
+
+
 
                 ObjConnection.ConnectionString = cs;
                 var ObjCommand = new SqlCommand();
@@ -496,25 +499,25 @@ namespace self_FinanceApp
                     ObjCommand.ExecuteNonQuery();
                     ObjConnection.Close();
                     this.getincome_Grid.Rows.Remove(this.getincome_Grid.SelectedRows[i]);
-                }   
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Failed:Deleting Selected Values" + ex.Message);
                 this.Dispose();
             }
-           
-        
+
+
         }
 
         private void getexpense_Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
         {
-           
+
         }
 
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
@@ -557,12 +560,12 @@ namespace self_FinanceApp
 
         private void getincome_Grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void getexpense_Grid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-          
+
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -572,7 +575,7 @@ namespace self_FinanceApp
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            
+
             Manage_contacts MC = new Manage_contacts();
             this.Hide();
             MC.Show();
@@ -588,14 +591,14 @@ namespace self_FinanceApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            
+
+
             incomeexpenseReportForm ud = new incomeexpenseReportForm();
             ud.Show();
         }
 
 
-       
+
 
         //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Start RECURRING||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
@@ -615,7 +618,7 @@ namespace self_FinanceApp
                         connection.Open();
                         cmd.Parameters.Clear();
                         SqlDataReader read = command.ExecuteReader();
-                        
+
                         while (read.Read())
                         {
                             label24.Text = (read["Entry_no"].ToString());
@@ -629,9 +632,9 @@ namespace self_FinanceApp
                             Record_Stauts.Text = (read["Record_update"].ToString());
                             entry_date.Text = (read["Entry_Date"].ToString());
                         }
-                       
+
                         read.Close();
-                       
+
                     }
                     catch (Exception ex)
                     {
@@ -706,7 +709,7 @@ namespace self_FinanceApp
                 string Record_update = Record_Stauts.Text;
 
                 //string Entry_Date = txt_date.Text;
-              
+
                 DateTime Recurring_Date = for_recuringinsert.Value.Date;
                 DateTime Entry_Date = dateTimePicker1.Value.Date;
                 if (recurring_income.Text != "Income")
@@ -731,25 +734,25 @@ namespace self_FinanceApp
                     label21.ForeColor = System.Drawing.Color.DarkGreen;
 
                 }
-              if (recuring_expenses.Text != "Expenses")
-               {
-                   string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Expense,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + userid.Text + "','" + namee.Text + "','" + descr.Text + "','" + sourcee.Text + "','" + recuring_expenses.Text + "','" + for_recuringinsert.Value.Date + "','" + Recurring_interval.Text + "','" + Record_Stauts.Text + "','" + dateTimePicker1.Value.Date + "')");
+                if (recuring_expenses.Text != "Expenses")
+                {
+                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Expense,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + userid.Text + "','" + namee.Text + "','" + descr.Text + "','" + sourcee.Text + "','" + recuring_expenses.Text + "','" + for_recuringinsert.Value.Date + "','" + Recurring_interval.Text + "','" + Record_Stauts.Text + "','" + dateTimePicker1.Value.Date + "')");
                     SqlCommand command = new SqlCommand(sqlquery, connection);
-                  command.Parameters.AddWithValue("Username", Usernamee);
-                  command.Parameters.AddWithValue("Name", Name);
-                  command.Parameters.AddWithValue("Description", Des);
-                  command.Parameters.AddWithValue("Name_or_source", Contact);
+                    command.Parameters.AddWithValue("Username", Usernamee);
+                    command.Parameters.AddWithValue("Name", Name);
+                    command.Parameters.AddWithValue("Description", Des);
+                    command.Parameters.AddWithValue("Name_or_source", Contact);
                     command.Parameters.AddWithValue("Recurring_Expense", recuringexpense);
-                  command.Parameters.AddWithValue("Recurring_Date", Recurring_Date);
-                   command.Parameters.AddWithValue("Recurring_Interval", Recurring_Interval);
-                   command.Parameters.AddWithValue("Record_update", Record_update);
-                  command.Parameters.AddWithValue("Entry_Date", Entry_Date);
-                   command.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("Recurring_Date", Recurring_Date);
+                    command.Parameters.AddWithValue("Recurring_Interval", Recurring_Interval);
+                    command.Parameters.AddWithValue("Record_update", Record_update);
+                    command.Parameters.AddWithValue("Entry_Date", Entry_Date);
+                    command.ExecuteNonQuery();
                     // radiobtn_expense.Text = "Expense";
-                   label21.Text = "Expenses added Successfully";
+                    label21.Text = "Expenses added Successfully";
                     label21.ForeColor = System.Drawing.Color.DarkGreen;
                 }
-             // update_status();
+                // update_status();
 
             }
             catch (Exception ex)
@@ -762,10 +765,10 @@ namespace self_FinanceApp
 
         public void update_status_for_everyday()
         {
-            
+
             if (recurring_income.Text != "Income")
             {
-               
+
                 if (recurring_date.Text == today_datee.Text)
                 {
 
@@ -795,13 +798,13 @@ namespace self_FinanceApp
             }
         }
         //////////////////////////////////////////////////////////////////End recurring everday///////////////////////////////////////////////////////////////
-                        //****************************************************************************************************///
+        //****************************************************************************************************///
         //////////////////////////////////////////////////////////////////start recurring everyweek///////////////////////////////////////////////////////////////
-        
+
         //get the recurringincome everdweek details
         public void Everyweek_getRecuring_incomedate()
         {
-           
+
             {
                 using (SqlConnection connection = new SqlConnection(cs))
                 {
@@ -835,7 +838,7 @@ namespace self_FinanceApp
                         }
 
                         read.Close();
-                       
+
                     }
                     catch (Exception ex)
                     {
@@ -895,7 +898,7 @@ namespace self_FinanceApp
         {
             if (everyweek_income.Text != "Income")
             {
-                if (everyweek_recDate.Text == today_datee.Text )
+                if (everyweek_recDate.Text == today_datee.Text)
                 {
 
                     // Query string
@@ -927,7 +930,7 @@ namespace self_FinanceApp
         {
             try
             {
-               
+
                 SqlConnection connection = new SqlConnection(cs);
                 connection.Open();
                 change_interval_for_rcurring();
@@ -994,7 +997,7 @@ namespace self_FinanceApp
         }
 
         //////////////////////////////////////////////////////////////////End recurring everyweek/////////////////////////////////////////////////////////////// 
-                                  //****************************************************************************************************//
+        //****************************************************************************************************//
         //////////////////////////////////////////////////////////////////start recurring Every 2 weeks///////////////////////////////////////////////////////////////
 
         //get the recurringincome everdweek details
@@ -1194,13 +1197,13 @@ namespace self_FinanceApp
 
         //////////////////////////////////////////////////////////////////End recurring every 2 week/////////////////////////////////////////////////////////////// 
 
-                                  //****************************************************************************************************//
+        //****************************************************************************************************//
         //////////////////////////////////////////////////////////////////start recurring Every 3 weeks///////////////////////////////////////////////////////////////
 
         //get the recurringincome every 3 week details
         public void Every_three_week_getRecuring_incomedate()
         {
-             
+
             {
                 using (SqlConnection connection = new SqlConnection(cs))
                 {
@@ -1245,7 +1248,7 @@ namespace self_FinanceApp
                 }
             }
         }
-      
+
         //get every 3 week expense details
         public void Everyweek_three_getRecuring_expensedate()
         {
@@ -1254,7 +1257,7 @@ namespace self_FinanceApp
                 {
                     try
                     {
-                        
+
                         SqlCommand command =
                         new SqlCommand("SELECT * FROM db_incomeexpenses where Recurring_Expense IS NOT NULL AND Recurring_Interval ='Every 3 weeks' AND Record_update ='Not Updated' AND Username='" + userid.Text + "' AND Recurring_Date='" + label9.Text + "'", connection);
                         connection.Open();
@@ -1377,7 +1380,7 @@ namespace self_FinanceApp
                     command.Parameters.AddWithValue("Record_update", three_week_Record_update);
                     command.Parameters.AddWithValue("Entry_Date", three_week_Entry_Date);
                     command.ExecuteNonQuery();
-                  
+
                     label21.Text = "Recurring Expenses added Successfully";
                     label21.ForeColor = System.Drawing.Color.DarkGreen;
                 }
@@ -1392,10 +1395,10 @@ namespace self_FinanceApp
             }
         }
         //////////////////////////////////////////////////////////////////End recurring every 3 week/////////////////////////////////////////////////////////////// 
-                                  //****************************************************************************************************//
+        //****************************************************************************************************//
         //////////////////////////////////////////////////////////////////Start recurring every 4 week/////////////////////////////////////////////////////////////// 
-       
-        
+
+
         //get the recurringincome every 4 week details
         public void Every_four_week_getRecuring_incomedate()
         {
@@ -1990,7 +1993,7 @@ namespace self_FinanceApp
         }
 
         //////////////////////////////////////////////////////////////////End recurring every 3 MONTH///////////////////////////////////////////////////////////////                      
-                            //****************************************************************************************************//
+        //****************************************************************************************************//
         //////////////////////////////////////////////////////////////////Start recurring every 6 MONTH/////////////////////////////////////////////////////////////// 
 
 
@@ -2040,7 +2043,7 @@ namespace self_FinanceApp
                 }
             }
         }
-       
+
         //get every Month expense details
         public void Every_6_Month_getRecuring_expensedate()
         {
@@ -2186,7 +2189,7 @@ namespace self_FinanceApp
 
             }
         }
-        
+
         //////////////////////////////////////////////////////////////////End recurring every 6 MONTH///////////////////////////////////////////////////////////////                      
 
         //****************************************************************************************************//
@@ -2238,7 +2241,7 @@ namespace self_FinanceApp
                 }
             }
         }
-      
+
         //get every year expense details
         public void Every_year_getRecuring_expensedate()
         {
@@ -2360,7 +2363,7 @@ namespace self_FinanceApp
                 {
                     string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Expense,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + every_year_username.Text + "','" + every_year_name.Text + "','" + every_year_description.Text + "','" + every_year_source.Text + "','" + every_year_expense.Text + "','" + for_year_recurring.Value.Date + "','" + every_year_interval.Text + "','" + every_year_record.Text + "','" + dateTimePicker8.Value.Date + "')");
                     SqlCommand command = new SqlCommand(sqlquery, connection);
-                   
+
                     command.Parameters.AddWithValue("Username", Every_year_Usernamee);
                     command.Parameters.AddWithValue("Name", Every_year_Name);
                     command.Parameters.AddWithValue("Description", Every_year_Des);
@@ -2467,7 +2470,7 @@ namespace self_FinanceApp
 
 
             }
-             if (every_year_interval.Text == "Every year")
+            if (every_year_interval.Text == "Every year")
             {
                 DateTime dt = dateTimePicker8.Value;
                 for_year_recurring.Value = dt.AddYears(1); //add 1 year to the selected date
@@ -2480,10 +2483,10 @@ namespace self_FinanceApp
             }
 
         }
-        
-    //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||END RECURRING||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-   
-        
+
+        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||END RECURRING||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
         private void button4_Click(object sender, EventArgs e)
         {
             userdetailsFrm ud = new userdetailsFrm();
@@ -2492,55 +2495,56 @@ namespace self_FinanceApp
 
         private void btn_recurring_Click(object sender, EventArgs e)
         {
-            RecurringFrm rc= new RecurringFrm();
+            RecurringFrm rc = new RecurringFrm();
             rc.Show();
         }
-//add the value on specific date
+        //add the value on specific date
         public void add_rcurr_income()
         {
-            
-            if (recurring_income.Text !="Income")
-            {
-              if (recurring_date.Text == today_datee.Text )
-            {
 
-               get_blancee();
-                  double recurincome;
-                recurincome = double.Parse(recurring_income.Text) + double.Parse(label3.Text);
-                label3.Text = Convert.ToString(recurincome);
-                
-               update_status_for_everyday();
-                
-            } 
-              else{
-              if (recuring_expenses.Text != "Expenses")
-              {
-                  if (recurring_date.Text == today_datee.Text)
-                  {
-                      double recurexpense;
-                      recurexpense = double.Parse(recuring_expenses.Text) - double.Parse(label3.Text);
-                      label3.Text = Convert.ToString(recurexpense);
-                      update_status_for_everyday();
-                  } 
-              }
+            if (recurring_income.Text != "Income")
+            {
+                if (recurring_date.Text == today_datee.Text)
+                {
+
+                    get_blancee();
+                    double recurincome;
+                    recurincome = double.Parse(recurring_income.Text) + double.Parse(label3.Text);
+                    label3.Text = Convert.ToString(recurincome);
+
+                    update_status_for_everyday();
+
                 }
-            } 
+                else
+                {
+                    if (recuring_expenses.Text != "Expenses")
+                    {
+                        if (recurring_date.Text == today_datee.Text)
+                        {
+                            double recurexpense;
+                            recurexpense = double.Parse(recuring_expenses.Text) - double.Parse(label3.Text);
+                            label3.Text = Convert.ToString(recurexpense);
+                            update_status_for_everyday();
+                        }
+                    }
+                }
+            }
         }
         private void button5_Click(object sender, EventArgs e)
         {
-          // add_rcurr_income();
-           // Everyday_getRecuring_incomedate();
+            // add_rcurr_income();
+            // Everyday_getRecuring_incomedate();
             get_blancee();
         }
         //update the balnce
-       
+
         public void update_blnce()
         {
             // Query string
             SqlConnection con = new SqlConnection(cs);
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "Update db_auth Set Your_Balnc_withou_Recurring='" + label3.Text + "',Your_Balance_with_Recursion='" + label27.Text + "' where Username='" + userid.Text + "'";
+            cmd.CommandText = "Update db_auth Set Your_Balnc_withou_Recurring='" + label3.Text + "',Your_Balance_with_Recursion='" + label27.Text + "',Total_Balance='" + label32.Text + "' where Username='" + userid.Text + "'";
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -2583,12 +2587,12 @@ namespace self_FinanceApp
 
         private void label3_Click(object sender, EventArgs e)
         {
-            
+
         }
-       
+
         private void label3_TextChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -2606,78 +2610,61 @@ namespace self_FinanceApp
 
         }
 
-        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Prediction Algorithm Start||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-        public void update_prdiction_dates()
-        {
-            // Query string
-            SqlConnection con = new SqlConnection(cs);
-            DateTime Pre_start = dateTimePicker11.Value;
-            DateTime pre_end = dateTimePicker9.Value;
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Prediction_Start_Date='" + Pre_start + "',Prediction_End_Date='" + pre_end + "' where  Entry_Date >='" + Pre_start + "' and Entry_Date <='" + pre_end + "' AND Recurring_Interval IS NOT NULL AND Username='" + userid.Text + "';";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-
-        public void update_values_to_Null_of_previous_prediction()
-        {
-            // Query string
-            SqlConnection con = new SqlConnection(cs);
-            DateTime Pre_start = dateTimePicker11.Value;
-            DateTime pre_end = dateTimePicker9.Value;
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Prediction_Start_Date=NULL,Prediction_End_Date=NULL where Prediction_Start_Date IS NOT NULL and  Prediction_End_Date IS NOT NULL AND Recurring_Interval IS NOT NULL AND Username='" + userid.Text + "';";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-        public void update_no_of_days()
-        {
-            // Query string
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set No_of_days=" + label33.Text + " where Prediction_Start_Date IS NOT NULL and  Prediction_End_Date IS NOT NULL AND Recurring_Interval IS NOT NULL AND Username='" + userid.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-
         private void button14_Click(object sender, EventArgs e)
         {
 
-           // update_values_to_Null_of_previous_prediction();
-            //update_prdiction_dates();  // to enter prediction dates
-           // count_numberof_days_entriess();
-           // update_no_of_days(); //count number of days from today date to prediction date
-            update_no_of_days_everyday();
-            update_no_of_days_week();
-            update_no_of_days_2_week();
-            update_no_of_days_3_week();
-            update_no_of_days_4_week();
-            update_no_of_days_every_month();
-            update_no_of_days_3_month();
-            update_no_of_days_6_month();
-            update_no_of_days_every_year();
+
+
         }
 
-        public void count_numberof_days_entriess()
+
+
+        private void dateTimePicker9_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+        private void dateTimePicker11_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label33_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userid_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            PredictionScreen PS = new PredictionScreen();
+            PS.Show();
+        }
+
+        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Predicti||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        public void get_predict_total_with_INEX_RinEx_balnce()
         {
             using (SqlConnection connection = new SqlConnection(cs))
             {
                 try
                 {
-                    DateTime Pre_start = dateTimePicker11.Value;
-                    DateTime pre_end = dateTimePicker9.Value;
                     SqlCommand command =
-                    new SqlCommand("SELECT DATEDIFF(DAY,Prediction_Start_Date,Prediction_End_Date) AS everdayinterval FROM db_incomeexpenses where Prediction_End_Date IS NOT NULL AND Username='" + userid.Text + "'", connection);
+                    new SqlCommand("SELECT Total_Balance,Predict_balnce,Total_Balance+Predict_balnce as totalpredictt FROM db_auth where Username='" + userid.Text + "'", connection);
                     connection.Open();
                     cmd.Parameters.Clear();
                     SqlDataReader read = command.ExecuteReader();
 
                     while (read.Read())
                     {
-                        label33.Text = (read["everdayinterval"].ToString());
+                        label33.Text = (read["totalpredictt"].ToString());
 
                     }
                     read.Close();
@@ -2691,107 +2678,44 @@ namespace self_FinanceApp
                 }
             }
         }
-
-        private void dateTimePicker9_ValueChanged(object sender, EventArgs e)
+        public void get_predict_balnce()
         {
+        
+
             
+               
+                using (SqlConnection connection = new SqlConnection(cs))
+                {
+                    try
+                    {
+                        SqlCommand command =
+                        new SqlCommand("SELECT Predict_Date FROM db_auth where Username='" + userid.Text + "'", connection);
+                        connection.Open();
+                        cmd.Parameters.Clear();
+                        SqlDataReader read = command.ExecuteReader();
+
+                        while (read.Read())
+                        {
+                            label25.Text = DateTime.Parse(read["Predict_Date"].ToString()).ToString("dd-MM-yyyy");
+
+                        }
+                        read.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                        this.Dispose();
+                    }
+                
+            }
         }
 
-        //||||||||||||||||||||||||||||||||||||||||||||||||||||||||Update the values of week,2weeks,3weeks,4weeks||||||||||||||||||||||
-        public void update_no_of_days_everyday()
+        private void button14_Click_1(object sender, EventArgs e)
         {
-            // Query string
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/1 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every day' AND Username='" + userid.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
+            get_predict_total_with_INEX_RinEx_balnce();
         }
-        public void update_no_of_days_week()
-        {
-            // Query string
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/7 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every week' AND Username='" + userid.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-        public void update_no_of_days_2_week()
-        {
-            // Query string
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/14 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every 2 weeks' AND Username='" + userid.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-        public void update_no_of_days_3_week()
-        {
-            // Query string
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/21 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every 3 weeks' AND Username='" + userid.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-        public void update_no_of_days_4_week()
-        {
-            // Query string
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/28 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every 4 weeks' AND Username='" + userid.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-        public void update_no_of_days_every_month()
-        {
-            // Query string
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/30.417 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every Month' AND Username='" + userid.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-        public void update_no_of_days_3_month()
-        {
-            // Query string
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/91.251 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every 3 Months' AND Username='" + userid.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-        public void update_no_of_days_6_month()
-        {
-            // Query stringEvery 6 Months
-
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/182.502 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every 6 Months' AND Username='" + userid.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-         public void update_no_of_days_every_year()
-        {
-            // Query stringEvery 6 Months
-
-            SqlConnection con = new SqlConnection(cs);
-            con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = " Update db_incomeexpenses Set Calculate_no_days=No_of_days/365 where Prediction_End_Date IS NOT NULL AND Recurring_Interval='Every year' AND Username='" + userid.Text + "'";
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-
-        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Prediction Algorithm END||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     }
     }
 

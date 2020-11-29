@@ -31,3 +31,5 @@ F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_Fi
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csproj.GenerateResource.Cache
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.incomeexpenseReportForm.resources
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.RecurringFrm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.PredictionScreen.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csprojResolveAssemblyReference.cache
