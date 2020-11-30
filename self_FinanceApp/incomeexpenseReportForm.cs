@@ -17,10 +17,12 @@ namespace self_FinanceApp
         SqlConnection con = new SqlConnection();
         BindingSource source1 = new BindingSource();
         // public static string SetValueForText3 = "";
-
+        ReportDocument cryrpt=new ReportDocument();
 
         //Database Connection String
         String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True");
+        SqlDataAdapter sda;
         public incomeexpenseReportForm()
         {
             InitializeComponent();
@@ -64,7 +66,7 @@ namespace self_FinanceApp
                 myDA.SelectCommand = MyCommand;
                 myDA.Fill(myDS, "db_incomeexpenses");
                 rprot.SetDataSource(myDS);
-               
+                rprot.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"c:\pdffiles\" + textBox1.Text + ".pdf");
                 //incomeexpenseReportForm ud = new incomeexpenseReportForm();
 
                 crystalReportViewer1.ReportSource = rprot;
@@ -91,6 +93,7 @@ namespace self_FinanceApp
                 var MyCommand = new SqlCommand();
                 var myDA = new SqlDataAdapter();
                 var myDS = new db_selfFinaceDataSet(); // The DataSet you created.
+                
                 myConnection = new SqlConnection(cs);
                 DateTime dfrom = dateTimePicker1.Value;
                 DateTime dto = dateTimePicker2.Value;
@@ -100,7 +103,7 @@ namespace self_FinanceApp
                 myDA.SelectCommand = MyCommand;
                 myDA.Fill(myDS, "db_incomeexpenses");
                 rprot.SetDataSource(myDS);
-
+                rprot.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"c:\pdffiles\" + textBox1.Text + ".pdf");
               //  incomeexpenseReportForm ud = new incomeexpenseReportForm();
                 crystalReportViewer1.Visible = true;
                 crystalReportViewer1.ReportSource = rprot;
@@ -114,5 +117,17 @@ namespace self_FinanceApp
             }
         
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+        
     }
 }

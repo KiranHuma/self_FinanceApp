@@ -33,3 +33,4 @@ F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_Fi
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.exe
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.pdb
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Delete_recurring.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csprojResolveAssemblyReference.cache
