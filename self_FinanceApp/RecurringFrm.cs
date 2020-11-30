@@ -195,10 +195,7 @@ namespace self_FinanceApp
             recurring_date.Value = DateTime.Today;
             txt_date.Value = DateTime.Today;
             
-            //Today_date.Text = DateTime.Now.ToString("MM-dd-yyyy");
-           // label9.Text = DateTime.Now.ToString("dd");
-            //label11.Text = DateTime.Now.ToString("MM");
-            // label13.Text = DateTime.Now.ToString("yyyy");
+           
         }
         //Function to get data from the database into textboxes for geting the name for expense/income
         public void get_name()
@@ -321,6 +318,7 @@ namespace self_FinanceApp
         private void recurring_txt_SelectedIndexChanged(object sender, EventArgs e)
         {
             change_interval_for_rcurring();
+
         }
 
         private void txt_date_ValueChanged(object sender, EventArgs e)
@@ -331,6 +329,139 @@ namespace self_FinanceApp
         private void label4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_addincome_expense_Click(object sender, EventArgs e)
+        {
+            Manage_income_expensesFrm Mie = new Manage_income_expensesFrm();
+            this.Hide();
+            Mie.Show();
+        }
+        // update the record
+        public void expense_edit()
+        {
+            
+
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+
+            cmd.CommandText = "Update db_incomeexpenses Set Description='" + txt_des.Text + "',Name_or_source='" + txt_contacts.Text + "',Recurring_Expense='" + txt_amnt.Text + "' ,Recurring_Date='" + recurring_date.Value + "',Recurring_Interval='" + recurring_txt.Text + "',Record_update='" + label9.Text + "',Entry_Date='" + txt_date.Value + "' where Entry_no='" + label11.Text + "'";
+            cmd.ExecuteNonQuery();
+            //getincome_Grid.Rows.Remove(getincome_Grid.CurrentRow);
+            MessageBox.Show("Data Updated");
+            con.Close();
+            
+
+          
+        }
+        public void income_edit()
+        {
+           
+
+            // Query string
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            cmd.Connection = con;
+
+            cmd.CommandText = "Update  db_incomeexpenses Set Description='" + txt_des.Text + "',Name_or_source='" + txt_contacts.Text + "',Recurring_Income='" + txt_amnt.Text + "' ,Recurring_Date='" + recurring_date.Value + "',Recurring_Interval='" + recurring_txt.Text + "',Record_update='" + label9.Text + "',Entry_Date='" + txt_date.Value + "' where Entry_no='" + label11.Text + "'";
+            cmd.ExecuteNonQuery();
+            //getincome_Grid.Rows.Remove(getincome_Grid.CurrentRow);
+            MessageBox.Show("Data Updated");
+            con.Close();
+            
+
+
+        }
+        //get the entry date and  recurring date for update
+        public void get_contactforEdit()
+        {
+            using (SqlConnection connection = new SqlConnection(cs))
+            {
+                try
+                {
+                    SqlCommand command =
+                    new SqlCommand("SELECT Entry_Date,Recurring_Date FROM db_incomeexpenses where Entry_no='" + label11.Text + "'", connection);
+                    connection.Open();
+                    cmd.Parameters.Clear();
+                    SqlDataReader read = command.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        txt_date.Text = (read["Entry_Date"].ToString());
+                        recurring_date.Text = (read["Recurring_Date"].ToString());
+
+                    }
+                    read.Close();
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                    this.Dispose();
+                }
+            }
+        }
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            if (rbtn_income.Visible == true)
+            {
+
+                income_edit();
+                insert_Recuring_incomeexpenses();
+            }
+            else
+            {
+                expense_edit();
+                insert_Recuring_incomeexpenses();
+            }
+           
+        }
+        public void get_contacts()
+        {
+            try
+            {
+                string constr = @cs;
+                // using (SqlConnection conn = new SqlConnection(@"Data Source=SHARKAWY;Initial Catalog=Booking;Persist Security Info=True;User ID=sa;Password=123456"))
+                using (SqlConnection conn = new SqlConnection(@cs))
+                {
+                    try
+                    {
+                        string query = "SELECT  Contact_Name FROM manage_contacts";
+                        SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                        conn.Open();
+                        DataSet ds = new DataSet();
+                        da.Fill(ds, "manage_contacts");
+                        txt_contacts.DisplayMember = "Contact_Name";
+                        //txt_contacts.ValueMember = "Entry_no";
+                        txt_contacts.DataSource = ds.Tables["manage_contacts"];
+                    }
+                    catch (Exception ex)
+                    {
+                        // write exception info to log or anything else
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Failed:Retrieving RecentNames " + ex.Message);
+                this.Dispose();
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            get_contacts();
         }    
     }
 }

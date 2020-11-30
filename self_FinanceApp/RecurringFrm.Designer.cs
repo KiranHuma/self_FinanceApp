@@ -56,6 +56,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.radiobtn_expense = new System.Windows.Forms.RadioButton();
             this.rbtn_income = new System.Windows.Forms.RadioButton();
+            this.btnedit = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +73,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Get Contacts";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // txt_des
             // 
@@ -81,6 +86,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label3);
@@ -107,26 +115,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(695, 346);
             this.panel1.TabIndex = 48;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(474, 168);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label9.Location = new System.Drawing.Point(585, 167);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 17);
             this.label9.TabIndex = 60;
             this.label9.Text = "Updated";
-            this.label9.Visible = false;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(474, 131);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label19.Location = new System.Drawing.Point(557, 135);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(88, 17);
             this.label19.TabIndex = 59;
             this.label19.Text = "Not Updated";
-            this.label19.Visible = false;
             // 
             // label3
             // 
@@ -185,7 +196,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(304, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -197,7 +208,8 @@
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.ForeColor = System.Drawing.Color.White;
+            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbl_name.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lbl_name.Location = new System.Drawing.Point(482, 26);
             this.lbl_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_name.Name = "lbl_name";
@@ -243,6 +255,7 @@
             this.btn_addincome_expense.Size = new System.Drawing.Size(52, 31);
             this.btn_addincome_expense.TabIndex = 26;
             this.btn_addincome_expense.UseVisualStyleBackColor = false;
+            this.btn_addincome_expense.Click += new System.EventHandler(this.btn_addincome_expense_Click);
             // 
             // lbl_balnce
             // 
@@ -313,7 +326,7 @@
             // lbl_user
             // 
             this.lbl_user.AutoSize = true;
-            this.lbl_user.ForeColor = System.Drawing.Color.White;
+            this.lbl_user.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lbl_user.Location = new System.Drawing.Point(401, 26);
             this.lbl_user.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_user.Name = "lbl_user";
@@ -402,11 +415,64 @@
             this.rbtn_income.Text = "Income";
             this.rbtn_income.UseVisualStyleBackColor = true;
             // 
+            // btnedit
+            // 
+            this.btnedit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnedit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnedit.BackgroundImage")));
+            this.btnedit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnedit.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnedit.Location = new System.Drawing.Point(520, 394);
+            this.btnedit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(51, 49);
+            this.btnedit.TabIndex = 50;
+            this.btnedit.UseVisualStyleBackColor = false;
+            this.btnedit.Visible = false;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label11.Location = new System.Drawing.Point(239, 46);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 17);
+            this.label11.TabIndex = 61;
+            this.label11.Text = "user";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label13.Location = new System.Drawing.Point(481, 26);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(88, 17);
+            this.label13.TabIndex = 62;
+            this.label13.Text = "statusediting";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label14.Location = new System.Drawing.Point(481, 66);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(88, 17);
+            this.label14.TabIndex = 63;
+            this.label14.Text = "statusediting";
+            // 
             // RecurringFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 458);
+            this.Controls.Add(this.btnedit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.recurring_date);
             this.Controls.Add(this.button2);
@@ -428,7 +494,6 @@
         #endregion
 
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RichTextBox txt_des;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_name;
@@ -437,22 +502,27 @@
         private System.Windows.Forms.Button btn_addincome_expense;
         private System.Windows.Forms.Label lbl_balnce;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_amnt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox txt_contacts;
         private System.Windows.Forms.Label lbl_user;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker txt_date;
-        private System.Windows.Forms.RadioButton radiobtn_expense;
-        private System.Windows.Forms.RadioButton rbtn_income;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox recurring_txt;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.DateTimePicker recurring_date;
-        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.RichTextBox txt_des;
+        public System.Windows.Forms.TextBox txt_amnt;
+        public System.Windows.Forms.ComboBox txt_contacts;
+        public System.Windows.Forms.DateTimePicker txt_date;
+        public System.Windows.Forms.ComboBox recurring_txt;
+        public System.Windows.Forms.Label label19;
+        public System.Windows.Forms.DateTimePicker recurring_date;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Button btnedit;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.RadioButton radiobtn_expense;
+        public System.Windows.Forms.RadioButton rbtn_income;
     }
 }

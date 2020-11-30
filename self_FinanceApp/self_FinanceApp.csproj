@@ -68,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_selfFinaceDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Delete_recurring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delete_recurring.Designer.cs">
+      <DependentUpon>Delete_recurring.cs</DependentUpon>
+    </Compile>
     <Compile Include="incomeexpenseReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="Add_IncomeExpense.resx">
       <DependentUpon>Add_IncomeExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete_recurring.resx">
+      <DependentUpon>Delete_recurring.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="incomeexpenseReportForm.resx">
       <DependentUpon>incomeexpenseReportForm.cs</DependentUpon>

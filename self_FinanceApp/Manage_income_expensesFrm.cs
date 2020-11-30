@@ -35,6 +35,7 @@ namespace self_FinanceApp
             label18.Text = DateTime.Now.ToString("MMM-dd");
             label9.Text = DateTime.Now.ToString("MM-dd-yyyy");
             today_datee.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            label38.Text = DateTime.Now.ToString("dd-MM-yyyy");
             get_income();
             get_expenses();
             get_incomesum();
@@ -46,7 +47,8 @@ namespace self_FinanceApp
             get_recurringincomeSum();
             get_recurringexpensesSum();
             get_total_recursion();
-            update_prev_record();
+            
+           
             ////Every day function call START/////
             Everyday_getRecuring_incomedate();  // get the today's date recuring income
             Everyday_getRecuring_expensedate(); // get the today's date recuring expense
@@ -119,6 +121,7 @@ namespace self_FinanceApp
            get_predict_balnce();
            update_blnce();
            get_predict_total_with_INEX_RinEx_balnce();
+         //  update_prev_record();
         }
 
 
@@ -154,7 +157,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select Entry_no,Description,Recurring_Income,Recurring_Interval,Record_update,Recurring_Date,Entry_Date from db_incomeexpenses where Recurring_Income IS NOT NULL AND Recurring_Date='" + label9.Text + "' AND Username='" + userid.Text + "'", con);
+                    var da = new SqlDataAdapter("Select Entry_no,Description,Name_or_source,Recurring_Income,Recurring_Interval,Record_update,Recurring_Date,Entry_Date from db_incomeexpenses where Recurring_Income IS NOT NULL AND Recurring_Date='" + label9.Text + "' AND Username='" + userid.Text + "'", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
@@ -176,7 +179,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select Entry_no,Description,Recurring_Expense,Recurring_Interval,Record_update,Recurring_Date,Entry_Date from db_incomeexpenses where Recurring_Expense IS NOT NULL AND Recurring_Date='" + label9.Text + "' AND Username='" + userid.Text + "'", con);
+                    var da = new SqlDataAdapter("Select Entry_no,Description,Name_or_source,Recurring_Expense,Recurring_Interval,Record_update,Recurring_Date,Entry_Date from db_incomeexpenses where Recurring_Expense IS NOT NULL AND Recurring_Date='" + label9.Text + "' AND Username='" + userid.Text + "'", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
@@ -634,7 +637,7 @@ namespace self_FinanceApp
                         }
 
                         read.Close();
-
+                       
                     }
                     catch (Exception ex)
                     {
@@ -675,7 +678,7 @@ namespace self_FinanceApp
                         }
 
                         read.Close();
-
+                        
                     }
                     catch (Exception ex)
                     {
@@ -690,12 +693,15 @@ namespace self_FinanceApp
         //insert the values of income and expenses in database
         public void insert_recurringincomeexpenses()
         {
+        
             try
             {
+                
                 //Record_Stauts.Text = "Not Updated";
                 SqlConnection connection = new SqlConnection(cs);
                 connection.Open();
-                change_interval_for_rcurring();
+                DateTime startdat = dateTimePicker1.Value;    //it will select the chosen date in datetimepicker
+                for_recuringinsert_everday.Value = startdat.AddDays(1);
                 string Usernamee = userid.Text;
                 string Name = namee.Text;
                 string Des = descr.Text;
@@ -710,12 +716,12 @@ namespace self_FinanceApp
 
                 //string Entry_Date = txt_date.Text;
 
-                DateTime Recurring_Date = for_recuringinsert.Value.Date;
+                DateTime Recurring_Date = for_recuringinsert_everday.Value.Date;
                 DateTime Entry_Date = dateTimePicker1.Value.Date;
                 if (recurring_income.Text != "Income")
                 {
-
-                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Income,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + userid.Text + "','" + namee.Text + "','" + descr.Text + "','" + sourcee.Text + "','" + recurring_income.Text + "','" + for_recuringinsert.Value.Date + "','" + Recurring_interval.Text + "','" + Record_Stauts.Text + "','" + dateTimePicker1.Value.Date + "')");
+                  
+                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Income,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + userid.Text + "','" + namee.Text + "','" + descr.Text + "','" + sourcee.Text + "','" + recurring_income.Text + "','" + for_recuringinsert_everday.Value.Date + "','" + Recurring_interval.Text + "','" + Record_Stauts.Text + "','" + dateTimePicker1.Value.Date + "')");
                     SqlCommand command = new SqlCommand(sqlquery, connection);
                     command.Parameters.AddWithValue("Username", Usernamee);
                     command.Parameters.AddWithValue("Name", Name);
@@ -736,7 +742,9 @@ namespace self_FinanceApp
                 }
                 if (recuring_expenses.Text != "Expenses")
                 {
-                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Expense,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + userid.Text + "','" + namee.Text + "','" + descr.Text + "','" + sourcee.Text + "','" + recuring_expenses.Text + "','" + for_recuringinsert.Value.Date + "','" + Recurring_interval.Text + "','" + Record_Stauts.Text + "','" + dateTimePicker1.Value.Date + "')");
+                    DateTime startdate = dateTimePicker1.Value;    //it will select the chosen date in datetimepicker
+                    for_recuringinsert_everday.Value = startdate.AddDays(1);
+                    string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Recurring_Expense,Recurring_Date,Recurring_Interval,Record_update,Entry_Date)values('" + userid.Text + "','" + namee.Text + "','" + descr.Text + "','" + sourcee.Text + "','" + recuring_expenses.Text + "','" + for_recuringinsert_everday.Value.Date + "','" + Recurring_interval.Text + "','" + Record_Stauts.Text + "','" + dateTimePicker1.Value.Date + "')");
                     SqlCommand command = new SqlCommand(sqlquery, connection);
                     command.Parameters.AddWithValue("Username", Usernamee);
                     command.Parameters.AddWithValue("Name", Name);
@@ -2404,14 +2412,13 @@ namespace self_FinanceApp
         /////******************************for adding next recurrsion record**************************************////
         public void change_interval_for_rcurring()
         {
-            if (Recurring_interval.Text == "Every day")
+            if (Recurring_interval.Text ==  "Every day")
             {
 
-
-                // DateTime dt = DateTime.Now;  //it will add for today date, not user defined
-                DateTime dt = dateTimePicker1.Value;    //it will select the chosen date in datetimepicker
-                for_recuringinsert.Value = dt.AddDays(1); //add the days to the date which the user choose
-                // dateTimePicker1.Value = dt.ToString();  //send the date to label
+                DateTime startdat = dateTimePicker1.Value;    //it will select the chosen date in datetimepicker
+                for_recuringinsert_everday.Value = startdat.AddDays(1);
+                
+               
             }
             if (everyweek_interval.Text == "Every week")
             {
@@ -2479,7 +2486,7 @@ namespace self_FinanceApp
             else
             {
                 DateTime dt = DateTime.Now;
-                for_recuringinsert.Value = dt;
+                for_recuringinsert_everday.Value = dt;
             }
 
         }
@@ -2597,7 +2604,7 @@ namespace self_FinanceApp
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            change_interval_for_rcurring();
         }
 
         private void entry_date_ValueChanged(object sender, EventArgs e)
@@ -2715,6 +2722,125 @@ namespace self_FinanceApp
         private void button14_Click_1(object sender, EventArgs e)
         {
             get_predict_total_with_INEX_RinEx_balnce();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RecurringFrm RF= new RecurringFrm();
+            RF.btnedit.Visible = true;
+            RF.button2.Visible = false;
+            
+            RF.rbtn_income.Visible = true;
+            RF.radiobtn_expense.Visible = false;
+            RF.label11.Text = this.recurringINCOME_GRID.CurrentRow.Cells[0].Value.ToString();
+            RF.txt_des.Text = this.recurringINCOME_GRID.CurrentRow.Cells[1].Value.ToString();
+            RF.txt_contacts.Text = this.recurringINCOME_GRID.CurrentRow.Cells[2].Value.ToString();
+            RF.txt_amnt.Text = this.recurringINCOME_GRID.CurrentRow.Cells[3].Value.ToString();
+            RF.recurring_txt.Text = this.recurringINCOME_GRID.CurrentRow.Cells[4].Value.ToString();
+            RF.label9.Text = this.recurringINCOME_GRID.CurrentRow.Cells[5].Value.ToString();
+            this.Hide();
+            RF.ShowDialog();
+        }
+
+        private void dateTimePicker9_ValueChanged_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button14_Click_2(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Recurring_interval_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Recurring_interval_TextChanged(object sender, EventArgs e)
+        {
+            DateTime startdat = dateTimePicker1.Value;    //it will select the chosen date in datetimepicker
+            for_recuringinsert_everday.Value = startdat.AddDays(1);
+        }
+
+        private void button14_Click_3(object sender, EventArgs e)
+        {
+            DateTime startdat = dateTimePicker1.Value;    //it will select the chosen date in datetimepicker
+            for_recuringinsert_everday.Value = startdat.AddDays(1);
+        }
+
+        private void deleteThisInstanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ObjConnection = new SqlConnection();
+                int i;
+                ObjConnection.ConnectionString = cs;
+                var ObjCommand = new SqlCommand();
+                ObjCommand.Connection = ObjConnection;
+                for (i = this.recurringINCOME_GRID.SelectedRows.Count - 1; i >= 0; i -= 1)
+                {
+                    ObjCommand.CommandText = "delete from db_incomeexpenses where Entry_no='" + recurringINCOME_GRID.SelectedRows[i].Cells["Entry_no"].Value + "'";
+                    ObjConnection.Open();
+                    ObjCommand.ExecuteNonQuery();
+                    ObjConnection.Close();
+                    this.recurringINCOME_GRID.Rows.Remove(this.recurringINCOME_GRID.SelectedRows[i]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed:Deleting Selected Values" + ex.Message);
+                this.Dispose();
+            }
+        }
+
+        private void deleteThisAndFollowingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Delete_recurring DR = new Delete_recurring();
+            this.Hide();
+            DR.ShowDialog();
+        }
+
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RecurringFrm RFf = new RecurringFrm();
+            RFf.btnedit.Visible = true;
+            RFf.button2.Visible = false;
+            RFf.rbtn_income.Visible = false;
+            RFf.radiobtn_expense.Visible = true;
+            RFf.label11.Text = this.recurringEXPENSE_GRID.CurrentRow.Cells[0].Value.ToString();
+            RFf.txt_des.Text = this.recurringEXPENSE_GRID.CurrentRow.Cells[1].Value.ToString();
+            RFf.txt_contacts.Text = this.recurringEXPENSE_GRID.CurrentRow.Cells[2].Value.ToString();
+            RFf.txt_amnt.Text = this.recurringEXPENSE_GRID.CurrentRow.Cells[3].Value.ToString();
+           RFf.recurring_txt.Text = this.recurringEXPENSE_GRID.CurrentRow.Cells[4].Value.ToString();
+
+            this.Hide();
+            RFf.ShowDialog();
+        }
+
+        private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ObjConnection = new SqlConnection();
+                int i;
+                ObjConnection.ConnectionString = cs;
+                var ObjCommand = new SqlCommand();
+                ObjCommand.Connection = ObjConnection;
+                for (i = this.recurringEXPENSE_GRID.SelectedRows.Count - 1; i >= 0; i -= 1)
+                {
+                    ObjCommand.CommandText = "delete from db_incomeexpenses where Entry_no='" + recurringEXPENSE_GRID.SelectedRows[i].Cells["Entry_no"].Value + "'";
+                    ObjConnection.Open();
+                    ObjCommand.ExecuteNonQuery();
+                    ObjConnection.Close();
+                    this.recurringEXPENSE_GRID.Rows.Remove(this.recurringEXPENSE_GRID.SelectedRows[i]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed:Deleting Selected Values" + ex.Message);
+                this.Dispose();
+            }
         }
     }
     }

@@ -178,7 +178,7 @@ namespace self_FinanceApp
             get_contactforEdit();
           //  radiobtn_expense.Visible = false;
         }
-            //get sum of income
+           
             public void get_contactforEdit()
             {
                 using (SqlConnection connection = new SqlConnection(cs))
@@ -186,7 +186,7 @@ namespace self_FinanceApp
                     try
                     {
                         SqlCommand command =
-                        new SqlCommand("SELECT Name_or_source FROM db_incomeexpenses where Entry_no='" + label1.Text + "'", connection);
+                        new SqlCommand("SELECT Name_or_source,Entry_Date FROM db_incomeexpenses where Entry_no='" + label1.Text + "'", connection);
                         connection.Open();
                         cmd.Parameters.Clear();
                         SqlDataReader read = command.ExecuteReader();
@@ -194,7 +194,7 @@ namespace self_FinanceApp
                         while (read.Read())
                         {
                             txt_contacts.Text = (read["Name_or_source"].ToString());
-
+                            txt_date.Text = (read["Entry_Date "].ToString());
                         }
                         read.Close();
 

@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manage_income_expensesFrm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,11 +50,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.userid = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.lbl_income = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label33 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -86,6 +87,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.every_three_mnth_expense_entry = new System.Windows.Forms.Label();
@@ -125,7 +127,7 @@
             this.descr = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.sourcee = new System.Windows.Forms.Label();
-            this.for_recuringinsert = new System.Windows.Forms.DateTimePicker();
+            this.for_recuringinsert_everday = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.today_datee = new System.Windows.Forms.Label();
             this.entry_date = new System.Windows.Forms.DateTimePicker();
@@ -284,7 +286,6 @@
             this.every_month_todaydate = new System.Windows.Forms.Label();
             this.every_month_entrydate = new System.Windows.Forms.DateTimePicker();
             this.every_month_recDate = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -294,9 +295,16 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.recurringINCOME_GRID = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteThisInstanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recurringEXPENSE_GRID = new System.Windows.Forms.DataGridView();
             this.button15 = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
+            this.contextMenuStrip4 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label34 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.getexpense_Grid)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getincome_Grid)).BeginInit();
@@ -314,14 +322,16 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recurringINCOME_GRID)).BeginInit();
+            this.contextMenuStrip3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recurringEXPENSE_GRID)).BeginInit();
+            this.contextMenuStrip4.SuspendLayout();
             this.SuspendLayout();
             // 
             // userid
             // 
             this.userid.AutoSize = true;
             this.userid.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.userid.ForeColor = System.Drawing.Color.White;
+            this.userid.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.userid.Location = new System.Drawing.Point(332, 24);
             this.userid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.userid.Name = "userid";
@@ -440,7 +450,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(1273, 140);
+            this.label8.Location = new System.Drawing.Point(140, 137);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 20);
             this.label8.TabIndex = 2;
@@ -450,37 +460,37 @@
             // 
             this.getexpense_Grid.AllowUserToAddRows = false;
             this.getexpense_Grid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.getexpense_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.getexpense_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.getexpense_Grid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.getexpense_Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.getexpense_Grid.BackgroundColor = System.Drawing.Color.DimGray;
             this.getexpense_Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.getexpense_Grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.getexpense_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Brown;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.getexpense_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.getexpense_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.getexpense_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.getexpense_Grid.ContextMenuStrip = this.contextMenuStrip2;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.getexpense_Grid.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.getexpense_Grid.DefaultCellStyle = dataGridViewCellStyle3;
             this.getexpense_Grid.EnableHeadersVisualStyles = false;
             this.getexpense_Grid.GridColor = System.Drawing.Color.White;
             this.getexpense_Grid.Location = new System.Drawing.Point(158, 614);
@@ -488,21 +498,21 @@
             this.getexpense_Grid.Name = "getexpense_Grid";
             this.getexpense_Grid.ReadOnly = true;
             this.getexpense_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.getexpense_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.getexpense_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.getexpense_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.getexpense_Grid.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.getexpense_Grid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.getexpense_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.getexpense_Grid.Size = new System.Drawing.Size(522, 150);
             this.getexpense_Grid.TabIndex = 172;
@@ -537,37 +547,37 @@
             // 
             this.getincome_Grid.AllowUserToAddRows = false;
             this.getincome_Grid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            this.getincome_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.getincome_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.getincome_Grid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.getincome_Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.getincome_Grid.BackgroundColor = System.Drawing.Color.DimGray;
             this.getincome_Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.getincome_Grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.getincome_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.getincome_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.getincome_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.getincome_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.getincome_Grid.ContextMenuStrip = this.contextMenuStrip1;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.getincome_Grid.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.getincome_Grid.DefaultCellStyle = dataGridViewCellStyle8;
             this.getincome_Grid.EnableHeadersVisualStyles = false;
             this.getincome_Grid.GridColor = System.Drawing.Color.White;
             this.getincome_Grid.Location = new System.Drawing.Point(158, 431);
@@ -575,21 +585,21 @@
             this.getincome_Grid.Name = "getincome_Grid";
             this.getincome_Grid.ReadOnly = true;
             this.getincome_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.getincome_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.getincome_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.getincome_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            this.getincome_Grid.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.getincome_Grid.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.getincome_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.getincome_Grid.Size = new System.Drawing.Size(522, 154);
             this.getincome_Grid.TabIndex = 171;
@@ -623,7 +633,7 @@
             // monthCalendar1
             // 
             this.monthCalendar1.ForeColor = System.Drawing.Color.IndianRed;
-            this.monthCalendar1.Location = new System.Drawing.Point(590, 72);
+            this.monthCalendar1.Location = new System.Drawing.Point(542, 74);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.ShowWeekNumbers = true;
             this.monthCalendar1.TabIndex = 173;
@@ -633,35 +643,40 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label9.Location = new System.Drawing.Point(214, 12);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 17);
             this.label9.TabIndex = 174;
             this.label9.Text = "label9";
-            this.label9.Visible = false;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
+            this.panel3.Controls.Add(this.label38);
+            this.panel3.Controls.Add(this.label34);
             this.panel3.Controls.Add(this.label33);
             this.panel3.Controls.Add(this.label20);
             this.panel3.Controls.Add(this.label25);
             this.panel3.Controls.Add(this.label31);
             this.panel3.Controls.Add(this.label32);
-            this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.label18);
-            this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label27);
-            this.panel3.Controls.Add(this.txt_blncdate);
-            this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(-3, 298);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1460, 89);
             this.panel3.TabIndex = 175;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Green;
+            this.label33.Location = new System.Drawing.Point(1286, 38);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(19, 20);
+            this.label33.TabIndex = 20;
+            this.label33.Text = "0";
             // 
             // label20
             // 
@@ -700,17 +715,17 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.Green;
-            this.label32.Location = new System.Drawing.Point(740, 27);
+            this.label32.Location = new System.Drawing.Point(439, 27);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(37, 39);
+            this.label32.Size = new System.Drawing.Size(36, 38);
             this.label32.TabIndex = 16;
             this.label32.Text = "0";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(520, 37);
+            this.label17.Location = new System.Drawing.Point(1209, 244);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(12, 17);
@@ -720,7 +735,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(457, 37);
+            this.label18.Location = new System.Drawing.Point(1146, 244);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(38, 17);
@@ -730,7 +745,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(294, 37);
+            this.label19.Location = new System.Drawing.Point(983, 244);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(155, 17);
@@ -740,7 +755,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(191, 37);
+            this.label11.Location = new System.Drawing.Point(331, 221);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(12, 17);
@@ -752,7 +767,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Green;
-            this.label3.Location = new System.Drawing.Point(211, 35);
+            this.label3.Location = new System.Drawing.Point(351, 219);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(19, 20);
@@ -766,7 +781,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Green;
-            this.label27.Location = new System.Drawing.Point(555, 34);
+            this.label27.Location = new System.Drawing.Point(1244, 241);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(19, 20);
@@ -776,7 +791,7 @@
             // txt_blncdate
             // 
             this.txt_blncdate.AutoSize = true;
-            this.txt_blncdate.Location = new System.Drawing.Point(128, 37);
+            this.txt_blncdate.Location = new System.Drawing.Point(268, 221);
             this.txt_blncdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txt_blncdate.Name = "txt_blncdate";
             this.txt_blncdate.Size = new System.Drawing.Size(38, 17);
@@ -786,7 +801,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 37);
+            this.label1.Location = new System.Drawing.Point(189, 221);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 17);
@@ -798,7 +813,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(1270, 97);
+            this.label16.Location = new System.Drawing.Point(137, 94);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(90, 20);
             this.label16.TabIndex = 11;
@@ -821,9 +836,9 @@
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.userid);
-            this.panel4.Controls.Add(this.panel12);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label21);
+            this.panel4.Controls.Add(this.panel12);
             this.panel4.Location = new System.Drawing.Point(-3, -1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1464, 68);
@@ -841,6 +856,18 @@
             this.label10.TabIndex = 175;
             this.label10.Text = "Self Finance";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label21.Location = new System.Drawing.Point(790, 10);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(160, 20);
+            this.label21.TabIndex = 183;
+            this.label21.Text = "Recurring Amount";
+            this.label21.Visible = false;
+            // 
             // panel12
             // 
             this.panel12.Controls.Add(this.panel9);
@@ -852,11 +879,10 @@
             this.panel12.Controls.Add(this.panel6);
             this.panel12.Controls.Add(this.panel7);
             this.panel12.Controls.Add(this.panel8);
-            this.panel12.Location = new System.Drawing.Point(1087, 42);
+            this.panel12.Location = new System.Drawing.Point(866, 18);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(10, 10);
+            this.panel12.Size = new System.Drawing.Size(15, 12);
             this.panel12.TabIndex = 216;
-            this.panel12.Visible = false;
             // 
             // panel9
             // 
@@ -1132,16 +1158,15 @@
             this.panel1.Controls.Add(this.descr);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.sourcee);
-            this.panel1.Controls.Add(this.for_recuringinsert);
+            this.panel1.Controls.Add(this.for_recuringinsert_everday);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.today_datee);
             this.panel1.Controls.Add(this.entry_date);
             this.panel1.Controls.Add(this.recurring_date);
-            this.panel1.Location = new System.Drawing.Point(49, 87);
+            this.panel1.Location = new System.Drawing.Point(115, 119);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 10);
+            this.panel1.Size = new System.Drawing.Size(320, 382);
             this.panel1.TabIndex = 207;
-            this.panel1.Visible = false;
             // 
             // label30
             // 
@@ -1188,6 +1213,8 @@
             this.Recurring_interval.Size = new System.Drawing.Size(54, 17);
             this.Recurring_interval.TabIndex = 185;
             this.Recurring_interval.Text = "interval";
+            this.Recurring_interval.TextChanged += new System.EventHandler(this.Recurring_interval_TextChanged);
+            this.Recurring_interval.Click += new System.EventHandler(this.Recurring_interval_Click);
             // 
             // Record_Stauts
             // 
@@ -1315,13 +1342,13 @@
             this.sourcee.TabIndex = 193;
             this.sourcee.Text = "Namesource";
             // 
-            // for_recuringinsert
+            // for_recuringinsert_everday
             // 
-            this.for_recuringinsert.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.for_recuringinsert.Location = new System.Drawing.Point(27, 326);
-            this.for_recuringinsert.Name = "for_recuringinsert";
-            this.for_recuringinsert.Size = new System.Drawing.Size(200, 22);
-            this.for_recuringinsert.TabIndex = 202;
+            this.for_recuringinsert_everday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.for_recuringinsert_everday.Location = new System.Drawing.Point(27, 326);
+            this.for_recuringinsert_everday.Name = "for_recuringinsert_everday";
+            this.for_recuringinsert_everday.Size = new System.Drawing.Size(200, 22);
+            this.for_recuringinsert_everday.TabIndex = 202;
             // 
             // label2
             // 
@@ -3160,18 +3187,6 @@
             this.every_month_recDate.TabIndex = 200;
             this.every_month_recDate.Text = "label22";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label21.Location = new System.Drawing.Point(790, 10);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(160, 20);
-            this.label21.TabIndex = 183;
-            this.label21.Text = "Recurring Amount";
-            this.label21.Visible = false;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
@@ -3237,7 +3252,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(1002, 97);
+            this.label6.Location = new System.Drawing.Point(916, 91);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(226, 20);
             this.label6.TabIndex = 16;
@@ -3248,7 +3263,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Green;
-            this.label12.Location = new System.Drawing.Point(97, 91);
+            this.label12.Location = new System.Drawing.Point(1178, 94);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(205, 20);
             this.label12.TabIndex = 15;
@@ -3259,7 +3274,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Green;
-            this.label13.Location = new System.Drawing.Point(145, 138);
+            this.label13.Location = new System.Drawing.Point(1226, 141);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 20);
             this.label13.TabIndex = 13;
@@ -3270,7 +3285,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(1080, 146);
+            this.label14.Location = new System.Drawing.Point(994, 140);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(90, 20);
             this.label14.TabIndex = 14;
@@ -3280,122 +3295,146 @@
             // 
             this.recurringINCOME_GRID.AllowUserToAddRows = false;
             this.recurringINCOME_GRID.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.recurringINCOME_GRID.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.recurringINCOME_GRID.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.recurringINCOME_GRID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.recurringINCOME_GRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.recurringINCOME_GRID.BackgroundColor = System.Drawing.Color.DimGray;
             this.recurringINCOME_GRID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.recurringINCOME_GRID.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.recurringINCOME_GRID.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.recurringINCOME_GRID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.recurringINCOME_GRID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.recurringINCOME_GRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.recurringINCOME_GRID.ContextMenuStrip = this.contextMenuStrip1;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.recurringINCOME_GRID.DefaultCellStyle = dataGridViewCellStyle18;
+            this.recurringINCOME_GRID.ContextMenuStrip = this.contextMenuStrip3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.recurringINCOME_GRID.DefaultCellStyle = dataGridViewCellStyle13;
             this.recurringINCOME_GRID.EnableHeadersVisualStyles = false;
             this.recurringINCOME_GRID.GridColor = System.Drawing.Color.White;
-            this.recurringINCOME_GRID.Location = new System.Drawing.Point(768, 432);
+            this.recurringINCOME_GRID.Location = new System.Drawing.Point(764, 431);
             this.recurringINCOME_GRID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.recurringINCOME_GRID.Name = "recurringINCOME_GRID";
             this.recurringINCOME_GRID.ReadOnly = true;
             this.recurringINCOME_GRID.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.recurringINCOME_GRID.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.recurringINCOME_GRID.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.recurringINCOME_GRID.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            this.recurringINCOME_GRID.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            this.recurringINCOME_GRID.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.recurringINCOME_GRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.recurringINCOME_GRID.Size = new System.Drawing.Size(657, 154);
+            this.recurringINCOME_GRID.Size = new System.Drawing.Size(659, 154);
             this.recurringINCOME_GRID.TabIndex = 181;
+            // 
+            // contextMenuStrip3
+            // 
+            this.contextMenuStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.deleteThisInstanceToolStripMenuItem});
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(127, 52);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteThisInstanceToolStripMenuItem
+            // 
+            this.deleteThisInstanceToolStripMenuItem.Name = "deleteThisInstanceToolStripMenuItem";
+            this.deleteThisInstanceToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
+            this.deleteThisInstanceToolStripMenuItem.Text = "Delete ";
+            this.deleteThisInstanceToolStripMenuItem.ToolTipText = "Select Multiple or single row to delete";
+            this.deleteThisInstanceToolStripMenuItem.Click += new System.EventHandler(this.deleteThisInstanceToolStripMenuItem_Click);
             // 
             // recurringEXPENSE_GRID
             // 
             this.recurringEXPENSE_GRID.AllowUserToAddRows = false;
             this.recurringEXPENSE_GRID.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            this.recurringEXPENSE_GRID.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.recurringEXPENSE_GRID.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.recurringEXPENSE_GRID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.recurringEXPENSE_GRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.recurringEXPENSE_GRID.BackgroundColor = System.Drawing.Color.DimGray;
             this.recurringEXPENSE_GRID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.recurringEXPENSE_GRID.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.recurringEXPENSE_GRID.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Brown;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.recurringEXPENSE_GRID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.recurringEXPENSE_GRID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.recurringEXPENSE_GRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.recurringEXPENSE_GRID.ContextMenuStrip = this.contextMenuStrip2;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.recurringEXPENSE_GRID.DefaultCellStyle = dataGridViewCellStyle23;
+            this.recurringEXPENSE_GRID.ContextMenuStrip = this.contextMenuStrip4;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.recurringEXPENSE_GRID.DefaultCellStyle = dataGridViewCellStyle18;
             this.recurringEXPENSE_GRID.EnableHeadersVisualStyles = false;
             this.recurringEXPENSE_GRID.GridColor = System.Drawing.Color.White;
-            this.recurringEXPENSE_GRID.Location = new System.Drawing.Point(768, 614);
+            this.recurringEXPENSE_GRID.Location = new System.Drawing.Point(764, 614);
             this.recurringEXPENSE_GRID.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.recurringEXPENSE_GRID.Name = "recurringEXPENSE_GRID";
             this.recurringEXPENSE_GRID.ReadOnly = true;
             this.recurringEXPENSE_GRID.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.recurringEXPENSE_GRID.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.recurringEXPENSE_GRID.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.recurringEXPENSE_GRID.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            this.recurringEXPENSE_GRID.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            this.recurringEXPENSE_GRID.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.recurringEXPENSE_GRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.recurringEXPENSE_GRID.Size = new System.Drawing.Size(657, 150);
+            this.recurringEXPENSE_GRID.Size = new System.Drawing.Size(662, 150);
             this.recurringEXPENSE_GRID.TabIndex = 182;
             // 
             // button15
@@ -3414,17 +3453,49 @@
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // label33
+            // contextMenuStrip4
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.Green;
-            this.label33.Location = new System.Drawing.Point(1286, 38);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(19, 20);
-            this.label33.TabIndex = 20;
-            this.label33.Text = "0";
+            this.contextMenuStrip4.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem1,
+            this.deleteToolStripMenuItem1});
+            this.contextMenuStrip4.Name = "contextMenuStrip4";
+            this.contextMenuStrip4.Size = new System.Drawing.Size(123, 52);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(173, 39);
+            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(110, 17);
+            this.label34.TabIndex = 188;
+            this.label34.Text = "Current Balance";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(291, 41);
+            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(38, 17);
+            this.label38.TabIndex = 189;
+            this.label38.Text = "Date";
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(122, 24);
+            this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
+            // 
+            // deleteToolStripMenuItem1
+            // 
+            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(122, 24);
+            this.deleteToolStripMenuItem1.Text = "Delete";
+            this.deleteToolStripMenuItem1.ToolTipText = "Select Multiple or single row to delete";
+            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
             // 
             // Manage_income_expensesFrm
             // 
@@ -3433,13 +3504,21 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1459, 891);
             this.Controls.Add(this.button15);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.recurringEXPENSE_GRID);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.recurringINCOME_GRID);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.label16);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.txt_blncdate);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
@@ -3491,7 +3570,9 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recurringINCOME_GRID)).EndInit();
+            this.contextMenuStrip3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.recurringEXPENSE_GRID)).EndInit();
+            this.contextMenuStrip4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3544,8 +3625,7 @@
         private System.Windows.Forms.DateTimePicker entry_date;
         private System.Windows.Forms.Label recurring_date;
         private System.Windows.Forms.Label today_datee;
-        private System.Windows.Forms.DateTimePicker for_recuringinsert;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker for_recuringinsert_everday;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
@@ -3745,5 +3825,14 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteThisInstanceToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip4;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
     }
 }
