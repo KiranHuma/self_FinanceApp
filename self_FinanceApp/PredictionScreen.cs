@@ -487,6 +487,14 @@ namespace self_FinanceApp
         private void label4_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.Dispose();
+        }
+
+        private void btn_addincome_expense_Click(object sender, EventArgs e)
+        {
+            Manage_income_expensesFrm Mie = new Manage_income_expensesFrm();
+            this.Hide();
+            Mie.Show();
         }
     }
 }

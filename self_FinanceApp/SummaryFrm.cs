@@ -29,7 +29,10 @@ namespace self_FinanceApp
 
         private void label4_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
+            Manage_income_expensesFrm Mie = new Manage_income_expensesFrm();
+            this.Dispose();
+            Mie.Show();
         }
         // get the data of income of user in grid
         public void getdata_income()

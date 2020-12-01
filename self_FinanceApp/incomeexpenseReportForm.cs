@@ -128,6 +128,24 @@ namespace self_FinanceApp
         {
             
         }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+        }
+
+        private void btn_addincome_expense_Click(object sender, EventArgs e)
+        {
+            Manage_income_expensesFrm Mie = new Manage_income_expensesFrm();
+            this.Dispose();
+            Mie.Show();
+        }
         
     }
 }

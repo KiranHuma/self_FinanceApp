@@ -79,6 +79,7 @@ namespace self_FinanceApp
             }
             catch (Exception ex)
             {
+                label7.Visible = true;
                 label7.Text = "Account not Created Successfully";
                 MessageBox.Show(ex.Message);
 
@@ -107,6 +108,7 @@ namespace self_FinanceApp
             con.Close();
             if (count > 0)
             {
+                label7.Visible = true;
                 label7.Text = "Sorry! you can't take this username";
                 label7.ForeColor = Color.Red;
                 //label7.Text = "";
@@ -123,11 +125,13 @@ namespace self_FinanceApp
             {
                 if (txtPass.Text == txtPassAgain.Text)
                 {
+                    label8.Visible = true;
                     label8.Text = "Match";
                     label8.ForeColor = Color.Green;
                 }
                 else
                 {
+                    label8.Visible = true;
                     label8.Text = "Not match";
                     label8.ForeColor = Color.Red;
                 }
@@ -142,7 +146,10 @@ namespace self_FinanceApp
 
         private void label10_Click(object sender, EventArgs e)
         {
+           
+            loginFrm lg = new loginFrm();
             this.Close();
+            lg.Show();
         }
     }
 }

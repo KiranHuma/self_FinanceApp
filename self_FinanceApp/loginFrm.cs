@@ -98,7 +98,8 @@ namespace self_FinanceApp
 
         private void label3_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
+            this.Dispose();
         }
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -107,6 +108,11 @@ namespace self_FinanceApp
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
             userregFrm ud = new userregFrm();
             this.Hide();

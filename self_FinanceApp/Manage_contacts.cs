@@ -29,6 +29,8 @@ namespace self_FinanceApp
         private void label4_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.Dispose();
+
         }
         //Function for database connection
         public void dbaccessconnection()

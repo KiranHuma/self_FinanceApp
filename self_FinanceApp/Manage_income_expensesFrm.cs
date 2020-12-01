@@ -29,7 +29,6 @@ namespace self_FinanceApp
 
         private void Manage_income_expensesFrm_Load(object sender, EventArgs e)
         {
-
             userid.Text = loginFrm.SetValueForText1;
             txt_blncdate.Text = DateTime.Now.ToString("MMM-dd");
             label18.Text = DateTime.Now.ToString("MMM-dd");
@@ -429,7 +428,8 @@ namespace self_FinanceApp
             btn_recurring.Visible = true;
             lbl_recurr.Visible = true;
             recurringEXPENSE_GRID.Visible = false;
-            recurringINCOME_GRID.Visible = true;
+            recurringINCOME_GRID.Visible = false;
+
         }
 
         private void btn_addincome_expense_Click(object sender, EventArgs e)
@@ -442,6 +442,7 @@ namespace self_FinanceApp
         private void label4_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.Dispose();
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
@@ -597,6 +598,7 @@ namespace self_FinanceApp
 
 
             incomeexpenseReportForm ud = new incomeexpenseReportForm();
+            this.Hide();
             ud.Show();
         }
 
@@ -2497,12 +2499,14 @@ namespace self_FinanceApp
         private void button4_Click(object sender, EventArgs e)
         {
             userdetailsFrm ud = new userdetailsFrm();
+            this.Hide();
             ud.Show();
         }
 
         private void btn_recurring_Click(object sender, EventArgs e)
         {
             RecurringFrm rc = new RecurringFrm();
+            this.Hide();
             rc.Show();
         }
         //add the value on specific date
@@ -2653,6 +2657,7 @@ namespace self_FinanceApp
         private void button15_Click(object sender, EventArgs e)
         {
             PredictionScreen PS = new PredictionScreen();
+            this.Hide();
             PS.Show();
         }
 
@@ -2796,9 +2801,7 @@ namespace self_FinanceApp
 
         private void deleteThisAndFollowingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Delete_recurring DR = new Delete_recurring();
-            this.Hide();
-            DR.ShowDialog();
+           
         }
 
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -2841,6 +2844,124 @@ namespace self_FinanceApp
                 MessageBox.Show("Failed:Deleting Selected Values" + ex.Message);
                 this.Dispose();
             }
+        }
+
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+            label41.Visible = true;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            label41.Visible = false;
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label45_MouseHover(object sender, EventArgs e)
+        {
+          
+
+        }
+
+        private void label45_Leave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label45_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_MouseHover(object sender, EventArgs e)
+        {
+            label45.Visible = true;
+
+            getexpense_Grid.Visible = false;
+            getincome_Grid.Visible = false;
+
+
+
+            recurringEXPENSE_GRID.Visible = false;
+            recurringINCOME_GRID.Visible = false;
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            label45.Visible = false;
+            getexpense_Grid.Visible = true;
+            getincome_Grid.Visible = true;
+
+            recurringEXPENSE_GRID.Visible = true;
+            recurringINCOME_GRID.Visible = true;
+        }
+
+        private void label10_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label10_MouseLeave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label48_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label48_MouseLeave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button15_MouseHover(object sender, EventArgs e)
+        {
+            label48.Visible = true;
+
+            getexpense_Grid.Visible = false;
+            getincome_Grid.Visible = false;
+            recurringEXPENSE_GRID.Visible = false;
+            recurringINCOME_GRID.Visible = false;
+        }
+
+        private void button15_MouseLeave(object sender, EventArgs e)
+        {
+            label48.Visible = false;
+            getexpense_Grid.Visible = true;
+            getincome_Grid.Visible = true;
+            recurringEXPENSE_GRID.Visible = true;
+            recurringINCOME_GRID.Visible = true;
+        }
+
+        private void button3_MouseHover(object sender, EventArgs e)
+        {
+            label10.Visible = true;
+
+            getexpense_Grid.Visible = false;
+            getincome_Grid.Visible = false;
+            recurringEXPENSE_GRID.Visible = false;
+            recurringINCOME_GRID.Visible = false;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            label10.Visible = false;
+            getexpense_Grid.Visible = true;
+            getincome_Grid.Visible = true;
+
+            recurringEXPENSE_GRID.Visible = true;
+            recurringINCOME_GRID.Visible = true;
         }
     }
     }

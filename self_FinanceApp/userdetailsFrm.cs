@@ -270,11 +270,13 @@ namespace self_FinanceApp
             {
                 if (txtPass.Text == txtPassAgain.Text)
                 {
+                    label12.Visible = true;
                     label12.Text = "Match";
                     label12.ForeColor = Color.Green;
                 }
                 else
                 {
+                    label12.Visible = true;
                     label12.Text = "Not match";
                     label2.ForeColor = Color.Red;
                 }
@@ -436,6 +438,9 @@ namespace self_FinanceApp
         private void label19_Click_1(object sender, EventArgs e)
         {
             this.Dispose();
+            Manage_income_expensesFrm Mie = new Manage_income_expensesFrm();
+            
+            Mie.Show();
         }
     }
     
