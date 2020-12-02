@@ -18,7 +18,7 @@ namespace self_FinanceApp
         SqlConnection con = new SqlConnection();
         BindingSource source1 = new BindingSource();
         public static string SetValueForText3 = "";
-
+        public static string SetValueForedit= "";
 
         //Database Connection String
         String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
@@ -132,7 +132,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select Entry_no,Description,Income,Entry_Date from db_incomeexpenses where Income IS NOT NULL AND Entry_Date='" + label9.Text + "' AND Username='" + userid.Text + "'", con);
+                    var da = new SqlDataAdapter("Select Entry_no,Description,Name_or_source,Income,Entry_Date from db_incomeexpenses where Income IS NOT NULL AND Entry_Date='" + label9.Text + "' AND Username='" + userid.Text + "'", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
@@ -463,15 +463,17 @@ namespace self_FinanceApp
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Incomeexpense_editFrm obj = new Incomeexpense_editFrm();
-            obj.label1.Text = this.getincome_Grid.CurrentRow.Cells[0].Value.ToString();
-            obj.txt_des.Text = this.getincome_Grid.CurrentRow.Cells[1].Value.ToString();
-
-            obj.txt_amnt.Text = this.getincome_Grid.CurrentRow.Cells[2].Value.ToString();
-            obj.txt_date.Text = this.getincome_Grid.CurrentRow.Cells[3].Value.ToString();
-            obj.rbtn_income.Visible = true;
+          
+            
+            Incomeexpense_editFrm objjj = new Incomeexpense_editFrm();
+          
+           objjj.label1.Text = this.getincome_Grid.CurrentRow.Cells[0].Value.ToString();
+            objjj.txt_des.Text = this.getincome_Grid.CurrentRow.Cells[1].Value.ToString();
+            objjj.txt_amnt.Text = this.getincome_Grid.CurrentRow.Cells[3].Value.ToString();
+         
+            objjj.rbtn_income.Visible = true;
             this.Hide();
-            obj.ShowDialog();
+            objjj.ShowDialog();
 
 
         }
@@ -2732,9 +2734,10 @@ namespace self_FinanceApp
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RecurringFrm RF= new RecurringFrm();
+            SetValueForedit = editincomee.Text;
             RF.btnedit.Visible = true;
             RF.button2.Visible = false;
-            
+           
             RF.rbtn_income.Visible = true;
             RF.radiobtn_expense.Visible = false;
             RF.label11.Text = this.recurringINCOME_GRID.CurrentRow.Cells[0].Value.ToString();
@@ -2743,6 +2746,9 @@ namespace self_FinanceApp
             RF.txt_amnt.Text = this.recurringINCOME_GRID.CurrentRow.Cells[3].Value.ToString();
             RF.recurring_txt.Text = this.recurringINCOME_GRID.CurrentRow.Cells[4].Value.ToString();
             RF.label9.Text = this.recurringINCOME_GRID.CurrentRow.Cells[5].Value.ToString();
+
+          //  RF.txt_date.Value = DateTime.Parse(this.recurringINCOME_GRID.CurrentRow.Cells[6].Value.ToString());
+           // RF.txt_date.Value = DateTime.Parse(dtBookPublishDate.ToShortDateString());  
             this.Hide();
             RF.ShowDialog();
         }
@@ -2807,6 +2813,7 @@ namespace self_FinanceApp
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             RecurringFrm RFf = new RecurringFrm();
+            SetValueForedit = editincomee.Text;
             RFf.btnedit.Visible = true;
             RFf.button2.Visible = false;
             RFf.rbtn_income.Visible = false;

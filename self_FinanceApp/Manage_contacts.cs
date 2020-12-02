@@ -50,6 +50,8 @@ namespace self_FinanceApp
         }
         private void Manage_contacts_Load(object sender, EventArgs e)
         {
+           
+            userid.Text = loginFrm.SetValueForText1;//for user
             getdata_contacts();
         }
         //insert the values of income and expenses in database
@@ -65,8 +67,8 @@ namespace self_FinanceApp
                 string Contact_Emaill = txt_Email.Text;
                 string Contact_Descriptionn = txt_des.Text;
                 string Creation_Datee = txt_date.Text;
-
-                string sqlquery = ("insert into manage_contacts(Contact_Name,Phone_Number,Contact_Email,Contact_Description,Creation_Date)values('" + txt_name.Text + "','" + txt_phoneNumber.Text + "','" + txt_Email.Text + "','" + txt_des.Text + "','" + txt_date.Value + "')");
+                string useridd = userid.Text;
+                string sqlquery = ("insert into manage_contacts(Contact_Name,Phone_Number,Contact_Email,Contact_Description,Creation_Date,userid)values('" + txt_name.Text + "','" + txt_phoneNumber.Text + "','" + txt_Email.Text + "','" + txt_des.Text + "','" + txt_date.Value + "','" + userid.Text + "')");
                 SqlCommand command = new SqlCommand(sqlquery, connection);
                // command.Parameters.AddWithValue("Entry_no", idd);
                 command.Parameters.AddWithValue("Contact_Name", Namee);
@@ -74,6 +76,7 @@ namespace self_FinanceApp
                 command.Parameters.AddWithValue("Contact_Email", Contact_Emaill);
                 command.Parameters.AddWithValue("Contact_Description", Contact_Descriptionn);
                 command.Parameters.AddWithValue("Creation_Date", Creation_Datee);
+                command.Parameters.AddWithValue("userid", useridd);
                 command.ExecuteNonQuery();
                 label7.Text = "Contact  Created Successfully";
                 connection.Close();
@@ -96,7 +99,7 @@ namespace self_FinanceApp
             con.Open();
             cmd.Connection = con;
 
-            cmd.CommandText = "Update  manage_contacts Set Contact_Name='" + txt_name.Text + "',Phone_Number='" + txt_phoneNumber.Text + "',Contact_Email='" + txt_Email.Text + "' ,Contact_Description='" + txt_des.Text + "',Creation_Date='" + txt_date.Value + "' where Entry_no='" + txt_entry.Text + "'";
+            cmd.CommandText = "Update  manage_contacts Set Contact_Name='" + txt_name.Text + "',Phone_Number='" + txt_phoneNumber.Text + "',Contact_Email='" + txt_Email.Text + "' ,Contact_Description='" + txt_des.Text + "',Creation_Date='" + txt_date.Value + "' where Entry_no='" + txt_entry.Text + "' AND userid='" + userid.Text + "'";
             cmd.ExecuteNonQuery();
             //getincome_Grid.Rows.Remove(getincome_Grid.CurrentRow);
             MessageBox.Show("Data Updated");
@@ -110,9 +113,10 @@ namespace self_FinanceApp
         {
             SqlConnection con = new SqlConnection(cs);
             con.Open();
-            cmd = new SqlCommand("delete manage_contacts where Entry_no=@Entry_no", con);
+            cmd = new SqlCommand("delete manage_contacts where Entry_no=@Entry_no AND userid='" + userid.Text + "'", con);
 
             cmd.Parameters.AddWithValue("@Entry_no", int.Parse(txt_entry.Text));
+           
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Record Deleted Successfully!");
@@ -126,7 +130,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select * from manage_contacts", con);
+                    var da = new SqlDataAdapter("Select Contact_Name,Phone_Number,Contact_Email,Contact_Description,Creation_Date from manage_contacts where userid='" + userid.Text + "'", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;
@@ -192,7 +196,7 @@ namespace self_FinanceApp
             {
                 var con = new SqlConnection(cs);
                 con.Open();
-                str = "Select * from manage_contacts where Contact_Name like '" + search_name.Text + "%'";
+                str = "Select Contact_Name,Phone_Number,Contact_Email,Contact_Description,Creation_Date from manage_contacts where Contact_Name like '" + search_name.Text + "%' AND userid='" + userid.Text + "'";
                 SqlCommand cmd = new SqlCommand(str, con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();

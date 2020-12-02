@@ -17,9 +17,10 @@ namespace self_FinanceApp
         SqlCommand cmd = new SqlCommand();
         SqlConnection con = new SqlConnection();
         BindingSource source1 = new BindingSource();
+
+
        
-
-
+       
         //Database Connection String
         String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
         public Add_IncomeExpense()
@@ -115,10 +116,34 @@ namespace self_FinanceApp
         private void Add_IncomeExpense_Load(object sender, EventArgs e)
         {
             lbl_user.Text = loginFrm.SetValueForText1;
+           
             
             get_name();
-            
+             
           
+        }
+        // get contacts
+        public void getdata_contacts()
+        {
+            {
+                try
+                {
+                    var con = new SqlConnection(cs);
+                    con.Open();
+                    var da = new SqlDataAdapter("Select Contact_Name from manage_contacts where userid='" + lbl_user.Text + "'", con);
+                    var dt = new DataTable();
+                    da.Fill(dt);
+                    source1.DataSource = dt;
+                    Contact_Grid.DataSource = dt;
+                    Contact_Grid.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed:Retrieving Data" + ex.Message);
+                    this.Dispose();
+                }
+            }
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -187,6 +212,7 @@ namespace self_FinanceApp
                 }
             }
         }
+       
         //get the contacts
         public void get_contacts()
         {
@@ -246,7 +272,67 @@ namespace self_FinanceApp
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            get_contacts();
+            //get_contacts();
         }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txt_contacts.Text = "No Contacts";
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+           // contactListFrm CLIST = new contactListFrm();
+
+            
+            Contact_Grid.Visible =true ;
+            panel2.Visible = false;
+            panel3.Visible = true;
+            getdata_contacts();
+           // CLIST.dataGridView1.Visible = false;
+           // CLIST.dataGridView2.Visible = false;
+           // this.Hide();
+               
+           // CLIST.Show();
+        }
+
+        private void Contact_Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_contacts.Text = this.Contact_Grid.CurrentRow.Cells[0].Value.ToString();
+            Contact_Grid.Visible = false;
+            panel3.Visible = false;
+            panel2.Visible = true;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void search_name_TextChanged(object sender, EventArgs e)
+        {
+             string str;
+            try
+            {
+                var con = new SqlConnection(cs);
+                con.Open();
+                str = "Select Contact_Name from manage_contacts where Contact_Name like '" + search_name.Text + "%' AND userid='" + lbl_user.Text + "'";
+                SqlCommand cmd = new SqlCommand(str, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "manage_contacts");
+                con.Close();
+                Contact_Grid.DataSource = ds;
+                Contact_Grid.DataMember = "manage_contacts";
+                
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Failed: Name Search", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Dispose();
+            }
+        }
+        
     }
 }

@@ -17,7 +17,8 @@ namespace self_FinanceApp
         SqlConnection con = new SqlConnection();
         BindingSource source1 = new BindingSource();
 
-
+        public static string SetValueForaddrecurring = "";
+      
 
         //Database Connection String
         String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
@@ -188,15 +189,33 @@ namespace self_FinanceApp
       
         private void RecurringFrm_Load(object sender, EventArgs e)
         {
+          
+           
+            label13.Text = Manage_income_expensesFrm.SetValueForedit;
             lbl_user.Text = loginFrm.SetValueForText1;
-            get_name();
-           
-           
-            recurring_date.Value = DateTime.Today;
-            txt_date.Value = DateTime.Today;
+            if (label13.Text == "editrecurring_frommanage")
+            {
+               
+                get_contactforEdit();
+               // label13.Text = "statusediting";
+            }
+            else
+            {
+
+
+                recurring_date.Value = DateTime.Today;
+                txt_date.Value = DateTime.Today;
+                get_name();
+
+               
+
+               
+                
+            }
             
            
         }
+
         //Function to get data from the database into textboxes for geting the name for expense/income
         public void get_name()
         {
@@ -336,6 +355,7 @@ namespace self_FinanceApp
         {
             Manage_income_expensesFrm Mie = new Manage_income_expensesFrm();
             this.Hide();
+            this.Dispose();
             Mie.Show();
         }
         // update the record
@@ -383,15 +403,16 @@ namespace self_FinanceApp
                 try
                 {
                     SqlCommand command =
-                    new SqlCommand("SELECT Entry_Date,Recurring_Date FROM db_incomeexpenses where Entry_no='" + label11.Text + "'", connection);
+                    new SqlCommand("SELECT Username,Entry_Date,Recurring_Date FROM db_incomeexpenses where Entry_no='" + label11.Text + "'", connection);
                     connection.Open();
-                    cmd.Parameters.Clear();
+                   cmd.Parameters.Clear();
                     SqlDataReader read = command.ExecuteReader();
 
                     while (read.Read())
                     {
                         txt_date.Text = (read["Entry_Date"].ToString());
                         recurring_date.Text = (read["Recurring_Date"].ToString());
+                        label14.Text = (read["Username"].ToString());
 
                     }
                     read.Close();
@@ -462,7 +483,86 @@ namespace self_FinanceApp
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            get_contacts();
-        }    
+            //get_contacts();
+        }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txt_contacts.Text = "No Contacts";
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            edit_INEXP_Grid.Visible = true;
+            panel2.Visible = false;
+            panel3.Visible = true;
+            getdata_contacts();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+        }
+        // get contacts
+        public void getdata_contacts()
+        {
+            {
+                try
+                {
+                    var con = new SqlConnection(cs);
+                    con.Open();
+                    var da = new SqlDataAdapter("Select Contact_Name from manage_contacts where userid='" + label14.Text + "'", con);
+                    var dt = new DataTable();
+                    da.Fill(dt);
+                    source1.DataSource = dt;
+                    edit_INEXP_Grid.DataSource = dt;
+                    edit_INEXP_Grid.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed:Retrieving Data" + ex.Message);
+                    this.Dispose();
+                }
+            }
+
+        }
+        private void edit_INEXP_Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_contacts.Text = this.edit_INEXP_Grid.CurrentRow.Cells[0].Value.ToString();
+            edit_INEXP_Grid.Visible = false;
+            panel3.Visible = false;
+            panel2.Visible = true;
+        }
+
+        private void search_name_TextChanged(object sender, EventArgs e)
+        {
+             string str;
+            try
+            {
+                var con = new SqlConnection(cs);
+                con.Open();
+                str = "Select Contact_Name from manage_contacts where Contact_Name like '" + search_name.Text + "%' AND userid='" + label14.Text + "'";
+                SqlCommand cmd = new SqlCommand(str, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "manage_contacts");
+                con.Close();
+                edit_INEXP_Grid.DataSource = ds;
+                edit_INEXP_Grid.DataMember = "manage_contacts";
+                
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Failed: Name Search", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Dispose();
+            }
+        }
+        
     }
 }

@@ -22,7 +22,7 @@ namespace self_FinanceApp
         //Database Connection String
         String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True");
-        SqlDataAdapter sda;
+      
         public incomeexpenseReportForm()
         {
             InitializeComponent();
