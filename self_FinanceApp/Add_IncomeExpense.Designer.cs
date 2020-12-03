@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_IncomeExpense));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label4 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_user = new System.Windows.Forms.Label();
             this.rbtn_income = new System.Windows.Forms.RadioButton();
             this.radiobtn_expense = new System.Windows.Forms.RadioButton();
@@ -47,40 +46,27 @@
             this.btn_addincome_expense = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_contacts = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_balnce = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Button();
+            this.txt_contacts = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_des = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Contact_Grid = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.search_name = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Contact_Grid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Contact_Grid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(739, 12);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 29);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "x";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // lbl_user
             // 
@@ -228,15 +214,6 @@
             this.label8.TabIndex = 29;
             this.label8.Text = "Contacts";
             // 
-            // txt_contacts
-            // 
-            this.txt_contacts.FormattingEnabled = true;
-            this.txt_contacts.Location = new System.Drawing.Point(63, 207);
-            this.txt_contacts.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_contacts.Name = "txt_contacts";
-            this.txt_contacts.Size = new System.Drawing.Size(212, 24);
-            this.txt_contacts.TabIndex = 30;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
@@ -280,6 +257,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.txt_contacts);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_des);
@@ -291,9 +269,7 @@
             this.panel1.Controls.Add(this.txt_amnt);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.txt_contacts);
             this.panel1.Controls.Add(this.lbl_user);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -302,16 +278,23 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(163, 187);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(159, 173);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 17);
-            this.label9.TabIndex = 66;
+            this.label9.Size = new System.Drawing.Size(115, 30);
+            this.label9.TabIndex = 68;
             this.label9.Text = "Select Contact";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label9.UseVisualStyleBackColor = true;
+            this.label9.Click += new System.EventHandler(this.label9_Click_1);
+            // 
+            // txt_contacts
+            // 
+            this.txt_contacts.Location = new System.Drawing.Point(61, 209);
+            this.txt_contacts.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_contacts.Name = "txt_contacts";
+            this.txt_contacts.Size = new System.Drawing.Size(213, 22);
+            this.txt_contacts.TabIndex = 67;
             // 
             // radioButton1
             // 
@@ -373,66 +356,22 @@
             this.panel3.TabIndex = 43;
             this.panel3.Visible = false;
             // 
-            // Contact_Grid
+            // label11
             // 
-            this.Contact_Grid.AllowUserToAddRows = false;
-            this.Contact_Grid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.White;
-            this.Contact_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
-            this.Contact_Grid.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Contact_Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Contact_Grid.BackgroundColor = System.Drawing.Color.DarkSlateGray;
-            this.Contact_Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Contact_Grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.Contact_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Contact_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
-            this.Contact_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Contact_Grid.DefaultCellStyle = dataGridViewCellStyle43;
-            this.Contact_Grid.EnableHeadersVisualStyles = false;
-            this.Contact_Grid.GridColor = System.Drawing.Color.White;
-            this.Contact_Grid.Location = new System.Drawing.Point(5, 176);
-            this.Contact_Grid.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.Contact_Grid.Name = "Contact_Grid";
-            this.Contact_Grid.ReadOnly = true;
-            this.Contact_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle44.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Contact_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
-            this.Contact_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.White;
-            this.Contact_Grid.RowsDefaultCellStyle = dataGridViewCellStyle45;
-            this.Contact_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Contact_Grid.Size = new System.Drawing.Size(770, 394);
-            this.Contact_Grid.TabIndex = 173;
-            this.Contact_Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Contact_Grid_CellContentClick);
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 113);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 17);
+            this.label11.TabIndex = 181;
+            this.label11.Text = "Search";
+            // 
+            // search_name
+            // 
+            this.search_name.Location = new System.Drawing.Point(12, 133);
+            this.search_name.Name = "search_name";
+            this.search_name.Size = new System.Drawing.Size(243, 22);
+            this.search_name.TabIndex = 180;
+            this.search_name.TextChanged += new System.EventHandler(this.search_name_TextChanged);
             // 
             // label10
             // 
@@ -455,30 +394,74 @@
             this.panel4.Size = new System.Drawing.Size(777, 10);
             this.panel4.TabIndex = 176;
             // 
-            // label11
+            // Contact_Grid
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 113);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 17);
-            this.label11.TabIndex = 181;
-            this.label11.Text = "Search";
-            // 
-            // search_name
-            // 
-            this.search_name.Location = new System.Drawing.Point(12, 133);
-            this.search_name.Name = "search_name";
-            this.search_name.Size = new System.Drawing.Size(243, 22);
-            this.search_name.TabIndex = 180;
-            this.search_name.TextChanged += new System.EventHandler(this.search_name_TextChanged);
+            this.Contact_Grid.AllowUserToAddRows = false;
+            this.Contact_Grid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Contact_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Contact_Grid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Contact_Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Contact_Grid.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.Contact_Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Contact_Grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Contact_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Contact_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Contact_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Contact_Grid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Contact_Grid.EnableHeadersVisualStyles = false;
+            this.Contact_Grid.GridColor = System.Drawing.Color.White;
+            this.Contact_Grid.Location = new System.Drawing.Point(5, 176);
+            this.Contact_Grid.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Contact_Grid.Name = "Contact_Grid";
+            this.Contact_Grid.ReadOnly = true;
+            this.Contact_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Contact_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.Contact_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.Contact_Grid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.Contact_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Contact_Grid.Size = new System.Drawing.Size(770, 394);
+            this.Contact_Grid.TabIndex = 173;
+            this.Contact_Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Contact_Grid_CellContentClick);
             // 
             // Add_IncomeExpense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 573);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Add_IncomeExpense";
@@ -498,7 +481,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_user;
         private System.Windows.Forms.RadioButton rbtn_income;
         private System.Windows.Forms.RadioButton radiobtn_expense;
@@ -517,8 +499,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RichTextBox txt_des;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.ComboBox txt_contacts;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -527,5 +507,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox search_name;
+        private System.Windows.Forms.Button label9;
+        private System.Windows.Forms.TextBox txt_contacts;
     }
 }

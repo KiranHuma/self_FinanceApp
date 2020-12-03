@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecurringFrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_des = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Button();
+            this.txt_contacts = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,7 +58,6 @@
             this.txt_amnt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_contacts = new System.Windows.Forms.ComboBox();
             this.lbl_user = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.recurring_date = new System.Windows.Forms.DateTimePicker();
@@ -63,16 +66,13 @@
             this.radiobtn_expense = new System.Windows.Forms.RadioButton();
             this.rbtn_income = new System.Windows.Forms.RadioButton();
             this.btnedit = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.search_name = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.edit_INEXP_Grid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.search_name = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edit_INEXP_Grid)).BeginInit();
@@ -90,8 +90,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.txt_contacts);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label11);
@@ -112,7 +113,6 @@
             this.panel1.Controls.Add(this.txt_amnt);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.txt_contacts);
             this.panel1.Controls.Add(this.lbl_user);
             this.panel1.Controls.Add(this.label4);
             this.panel1.ForeColor = System.Drawing.Color.White;
@@ -121,6 +121,48 @@
             this.panel1.Size = new System.Drawing.Size(789, 365);
             this.panel1.TabIndex = 48;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label15
+            // 
+            this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(160, 176);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(115, 30);
+            this.label15.TabIndex = 70;
+            this.label15.Text = "&Select Contact";
+            this.label15.UseVisualStyleBackColor = true;
+            this.label15.Click += new System.EventHandler(this.label15_Click_1);
+            // 
+            // txt_contacts
+            // 
+            this.txt_contacts.Location = new System.Drawing.Point(62, 209);
+            this.txt_contacts.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_contacts.Name = "txt_contacts";
+            this.txt_contacts.Size = new System.Drawing.Size(213, 22);
+            this.txt_contacts.TabIndex = 69;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label14.Location = new System.Drawing.Point(497, 134);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 17);
+            this.label14.TabIndex = 66;
+            this.label14.Text = "for contacts";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(283, 197);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(106, 21);
+            this.radioButton1.TabIndex = 64;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "No Contacts";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
             // 
             // label13
             // 
@@ -342,21 +384,12 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(59, 177);
+            this.label8.Location = new System.Drawing.Point(59, 185);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 17);
             this.label8.TabIndex = 29;
             this.label8.Text = "Contacts";
-            // 
-            // txt_contacts
-            // 
-            this.txt_contacts.FormattingEnabled = true;
-            this.txt_contacts.Location = new System.Drawing.Point(64, 197);
-            this.txt_contacts.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_contacts.Name = "txt_contacts";
-            this.txt_contacts.Size = new System.Drawing.Size(212, 24);
-            this.txt_contacts.TabIndex = 30;
             // 
             // lbl_user
             // 
@@ -459,7 +492,7 @@
             this.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnedit.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnedit.Location = new System.Drawing.Point(698, 476);
+            this.btnedit.Location = new System.Drawing.Point(639, 476);
             this.btnedit.Margin = new System.Windows.Forms.Padding(4);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(51, 49);
@@ -467,41 +500,6 @@
             this.btnedit.UseVisualStyleBackColor = false;
             this.btnedit.Visible = false;
             this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(283, 197);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(106, 21);
-            this.radioButton1.TabIndex = 64;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "No Contacts";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(162, 177);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(113, 17);
-            this.label15.TabIndex = 65;
-            this.label15.Text = "Select Contact";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label14.Location = new System.Drawing.Point(497, 134);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 17);
-            this.label14.TabIndex = 66;
-            this.label14.Text = "for contacts";
             // 
             // panel3
             // 
@@ -516,6 +514,23 @@
             this.panel3.Size = new System.Drawing.Size(777, 570);
             this.panel3.TabIndex = 51;
             this.panel3.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(9, 113);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 17);
+            this.label17.TabIndex = 181;
+            this.label17.Text = "Search";
+            // 
+            // search_name
+            // 
+            this.search_name.Location = new System.Drawing.Point(12, 133);
+            this.search_name.Name = "search_name";
+            this.search_name.Size = new System.Drawing.Size(243, 22);
+            this.search_name.TabIndex = 180;
+            this.search_name.TextChanged += new System.EventHandler(this.search_name_TextChanged);
             // 
             // label16
             // 
@@ -542,36 +557,36 @@
             // 
             this.edit_INEXP_Grid.AllowUserToAddRows = false;
             this.edit_INEXP_Grid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
-            this.edit_INEXP_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.edit_INEXP_Grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.edit_INEXP_Grid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.edit_INEXP_Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.edit_INEXP_Grid.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.edit_INEXP_Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.edit_INEXP_Grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.edit_INEXP_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.edit_INEXP_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit_INEXP_Grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.edit_INEXP_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.edit_INEXP_Grid.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.edit_INEXP_Grid.DefaultCellStyle = dataGridViewCellStyle3;
             this.edit_INEXP_Grid.EnableHeadersVisualStyles = false;
             this.edit_INEXP_Grid.GridColor = System.Drawing.Color.White;
             this.edit_INEXP_Grid.Location = new System.Drawing.Point(5, 176);
@@ -579,21 +594,21 @@
             this.edit_INEXP_Grid.Name = "edit_INEXP_Grid";
             this.edit_INEXP_Grid.ReadOnly = true;
             this.edit_INEXP_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.edit_INEXP_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit_INEXP_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.edit_INEXP_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White;
-            this.edit_INEXP_Grid.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.edit_INEXP_Grid.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.edit_INEXP_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.edit_INEXP_Grid.Size = new System.Drawing.Size(767, 388);
             this.edit_INEXP_Grid.TabIndex = 173;
@@ -613,30 +628,13 @@
             this.panel2.Size = new System.Drawing.Size(777, 570);
             this.panel2.TabIndex = 52;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(9, 113);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(53, 17);
-            this.label17.TabIndex = 181;
-            this.label17.Text = "Search";
-            // 
-            // search_name
-            // 
-            this.search_name.Location = new System.Drawing.Point(12, 133);
-            this.search_name.Name = "search_name";
-            this.search_name.Size = new System.Drawing.Size(243, 22);
-            this.search_name.TabIndex = 180;
-            this.search_name.TextChanged += new System.EventHandler(this.search_name_TextChanged);
-            // 
             // RecurringFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 570);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RecurringFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -672,7 +670,6 @@
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.RichTextBox txt_des;
         public System.Windows.Forms.TextBox txt_amnt;
-        public System.Windows.Forms.ComboBox txt_contacts;
         public System.Windows.Forms.DateTimePicker txt_date;
         public System.Windows.Forms.ComboBox recurring_txt;
         public System.Windows.Forms.Label label19;
@@ -685,7 +682,6 @@
         public System.Windows.Forms.RadioButton radiobtn_expense;
         public System.Windows.Forms.RadioButton rbtn_income;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label16;
@@ -694,5 +690,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label17;
         public System.Windows.Forms.TextBox search_name;
+        private System.Windows.Forms.Button label15;
+        public System.Windows.Forms.TextBox txt_contacts;
     }
 }

@@ -46,7 +46,9 @@ namespace self_FinanceApp
             get_recurringincomeSum();
             get_recurringexpensesSum();
             get_total_recursion();
-            
+            //for total
+           get_totoalincome();
+           get_totoalexpense();
            
             ////Every day function call START/////
             Everyday_getRecuring_incomedate();  // get the today's date recuring income
@@ -114,13 +116,15 @@ namespace self_FinanceApp
             ////Every year week function call END/////
 
             //update balance after all function
-            update_blnce();
+            
             get_total_balanc_with_recursion();
            // get_predict_total_with_INEX_RinEx_balnce();
+            
            get_predict_balnce();
            update_blnce();
            get_predict_total_with_INEX_RinEx_balnce();
          //  update_prev_record();
+           
         }
 
 
@@ -229,7 +233,7 @@ namespace self_FinanceApp
                 try
                 {
                     SqlCommand command =
-                    new SqlCommand("SELECT SUM(Recurring_Expense) as Recurringexpenses FROM db_incomeexpenses where Username='" + userid.Text + "'AND Record_update='Updated'", connection);
+                    new SqlCommand("SELECT SUM(Recurring_Expense)as Recurringexpenses,SUM(Recurring_Expense+Expense)as totalRecurringexpenses FROM db_incomeexpenses where Username='" + userid.Text + "'AND Record_update='Updated'", connection);
                     connection.Open();
                     cmd.Parameters.Clear();
                     SqlDataReader read = command.ExecuteReader();
@@ -237,6 +241,7 @@ namespace self_FinanceApp
                     while (read.Read())
                     {
                         label14.Text = (read["Recurringexpenses"].ToString());
+                       // label6.Text = (read["totalRecurringexpenses"].ToString());
 
                     }
                     read.Close();
@@ -361,6 +366,9 @@ namespace self_FinanceApp
                 }
             }
         }
+      
+     
+     
         // Total balance with recursion
         public void get_total_recursion()
         {
@@ -397,7 +405,7 @@ namespace self_FinanceApp
                 try
                 {
                     SqlCommand command =
-                    new SqlCommand("SELECT (Your_Balance_with_Recursion+Your_Balnc_withou_Recurring) as incomeamount FROM db_auth where  Username='" + userid.Text + "'", connection);
+                    new SqlCommand("SELECT (Your_Balance_with_Recursion-Your_Balnc_withou_Recurring)*-1 as incomeamount FROM db_auth where  Username='" + userid.Text + "'", connection);
                     connection.Open();
                     cmd.Parameters.Clear();
                     SqlDataReader read = command.ExecuteReader();
@@ -419,16 +427,128 @@ namespace self_FinanceApp
             }
 
         }
+        // get income sum only
+        public void get_totoalincome()
+        {
+            // Query string
+         
+
+            if (label7.Text != "Income" && label13.Text != "Income" && label7.Text != "" && label13.Text != "" )
+            {
+                label7.Visible = false;
+                label13.Visible = false;
+                label57.Visible = true;
+                double adddex;
+                adddex = Math.Abs(double.Parse(label7.Text) + (double.Parse(label13.Text)));
+                label57.Text = Convert.ToString(adddex);
+                adddex = Math.Abs(adddex);
+             
+                SqlConnection conn = new SqlConnection(cs);
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = "Update db_auth Set Your_Balnc_withou_Recurring='" + label57.Text + "' where Username='" + userid.Text + "'";
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            else if (label7.Text != "Income" && label7.Text != "")
+                {
+                   // label57.Text = "0";
+                    label57.Visible = false;
+                    label7.Visible = true;
+                    label13.Visible = false;
+                    SqlConnection conn = new SqlConnection(cs);
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = "Update db_auth Set Your_Balnc_withou_Recurring='" + label7.Text + "' where Username='" + userid.Text + "'";
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+             else if (label13.Text != "Income" &&  label13.Text != "")
+                {
+                    label57.Visible = false;
+                    //label57.Text = "0";
+                    label7.Visible = false;
+                    label13.Visible = true;
+                    SqlConnection conn = new SqlConnection(cs);
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = "Update db_auth Set Your_Balnc_withou_Recurring='" + label13.Text + "' where Username='" + userid.Text + "'";
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+
+          
+            
+        }
+        // get income sum only
+        public void get_totoalexpense()
+        {
+
+
+            if (label8.Text != "Expenses" && label14.Text != "Expenses" && label8.Text != "" && label14.Text != "")
+            {
+                label8.Visible = false;
+                label8.Visible = false;
+                label63.Visible = true;
+                double adddex;
+                adddex = Math.Abs(double.Parse(label8.Text) + (double.Parse(label14.Text)));
+                label63.Text = Convert.ToString(adddex);
+                adddex = Math.Abs(adddex);
+                SqlConnection conn = new SqlConnection(cs);
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = "Update db_auth Set Your_Balance_with_Recursion='" + label63.Text + "' where Username='" + userid.Text + "'";
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            else if (label8.Text != "Expenses" && label8.Text != "" || label32.Text != "" && label32.Text != "0")
+            {
+                // label57.Text = "0";
+                label63.Visible = false;
+                label8.Visible = true;
+                label14.Visible = false;
+                double adddex;
+                adddex = Math.Abs(double.Parse(label32.Text) - (double.Parse(label8.Text)));
+                label63.Text = Convert.ToString(adddex);
+                adddex = Math.Abs(adddex);
+                SqlConnection conn = new SqlConnection(cs);
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = "Update db_auth Set Your_Balance_with_Recursion='" + label8.Text + "' where Username='" + userid.Text + "'";
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            else if (label14.Text != "Expenses" && label14.Text != "" || label32.Text != "" && label32.Text != "0")
+            {
+                label63.Visible = false;
+                //label57.Text = "0";
+                label8.Visible = false;
+                label14.Visible = true;
+                double adddex;
+                adddex = Math.Abs(double.Parse(label32.Text) - (double.Parse(label14.Text)));
+                label63.Text = Convert.ToString(adddex);
+                adddex = Math.Abs(adddex);
+                SqlConnection conn = new SqlConnection(cs);
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = "Update db_auth Set Your_Balance_with_Recursion='" + label8.Text + "' where Username='" + userid.Text + "'";
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             btn_addincome_expense.Visible = true;
-            getexpense_Grid.Visible = false;
-            getincome_Grid.Visible = false;
+           
             lbl_income.Visible = true;
             btn_recurring.Visible = true;
             lbl_recurr.Visible = true;
-            recurringEXPENSE_GRID.Visible = false;
-            recurringINCOME_GRID.Visible = false;
+            
+
+            tabControl1.Visible = false;
 
         }
 
@@ -2557,7 +2677,7 @@ namespace self_FinanceApp
             SqlConnection con = new SqlConnection(cs);
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "Update db_auth Set Your_Balnc_withou_Recurring='" + label3.Text + "',Your_Balance_with_Recursion='" + label27.Text + "',Total_Balance='" + label32.Text + "' where Username='" + userid.Text + "'";
+            cmd.CommandText = "Update db_auth Set Total_Balance='" + label32.Text + "' where Username='" + userid.Text + "'";
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -2871,6 +2991,7 @@ namespace self_FinanceApp
         private void button1_MouseLeave(object sender, EventArgs e)
         {
             
+           
         }
 
         private void label45_MouseHover(object sender, EventArgs e)
@@ -2893,23 +3014,13 @@ namespace self_FinanceApp
         {
             label45.Visible = true;
 
-            getexpense_Grid.Visible = false;
-            getincome_Grid.Visible = false;
-
-
-
-            recurringEXPENSE_GRID.Visible = false;
-            recurringINCOME_GRID.Visible = false;
+            tabControl1.Visible = false;
         }
 
         private void button4_MouseLeave(object sender, EventArgs e)
         {
             label45.Visible = false;
-            getexpense_Grid.Visible = true;
-            getincome_Grid.Visible = true;
-
-            recurringEXPENSE_GRID.Visible = true;
-            recurringINCOME_GRID.Visible = true;
+            tabControl1.Visible = true;
         }
 
         private void label10_MouseHover(object sender, EventArgs e)
@@ -2936,39 +3047,52 @@ namespace self_FinanceApp
         {
             label48.Visible = true;
 
-            getexpense_Grid.Visible = false;
-            getincome_Grid.Visible = false;
-            recurringEXPENSE_GRID.Visible = false;
-            recurringINCOME_GRID.Visible = false;
+            tabControl1.Visible = false;
         }
 
         private void button15_MouseLeave(object sender, EventArgs e)
         {
             label48.Visible = false;
-            getexpense_Grid.Visible = true;
-            getincome_Grid.Visible = true;
-            recurringEXPENSE_GRID.Visible = true;
-            recurringINCOME_GRID.Visible = true;
+            tabControl1.Visible = true;
         }
 
         private void button3_MouseHover(object sender, EventArgs e)
         {
             label10.Visible = true;
 
-            getexpense_Grid.Visible = false;
-            getincome_Grid.Visible = false;
-            recurringEXPENSE_GRID.Visible = false;
-            recurringINCOME_GRID.Visible = false;
+            tabControl1.Visible = false;
         }
 
         private void button3_MouseLeave(object sender, EventArgs e)
         {
             label10.Visible = false;
-            getexpense_Grid.Visible = true;
-            getincome_Grid.Visible = true;
+            tabControl1.Visible = true;
+        }
 
-            recurringEXPENSE_GRID.Visible = true;
-            recurringINCOME_GRID.Visible = true;
+        private void button1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            btn_addincome_expense.Visible = false;
+            
+            tabControl1.Visible = true;
+            lbl_income.Visible = false;
+            btn_recurring.Visible = false;
+            lbl_recurr.Visible = false;
+            
+        }
+
+        private void label71_Click(object sender, EventArgs e)
+        {
+            panel14.Visible = false;
+        }
+
+        private void button14_Click_4(object sender, EventArgs e)
+        {
+            panel14.Visible = true;
         }
     }
     }

@@ -138,44 +138,7 @@ namespace self_FinanceApp
         {
          
         }
-        public void get_contacts()
-        
-            {
-             try
-            {
-                string constr = @cs;
-                // using (SqlConnection conn = new SqlConnection(@"Data Source=SHARKAWY;Initial Catalog=Booking;Persist Security Info=True;User ID=sa;Password=123456"))
-                using (SqlConnection conn = new SqlConnection(@cs))
-                {
-                    try
-                    {
-                        string query = "SELECT  Contact_Name FROM manage_contacts";
-                        SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                        conn.Open();
-                        DataSet ds = new DataSet();
-                        da.Fill(ds, "manage_contacts");
-                        txt_contacts.DisplayMember = "Contact_Name";
-                        //txt_contacts.ValueMember = "Entry_no";
-                        txt_contacts.DataSource = ds.Tables["manage_contacts"];
-                    }
-                    catch (Exception ex)
-                    {
-                        // write exception info to log or anything else
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            
-            
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(" Failed:Retrieving RecentNames " + ex.Message);
-                this.Dispose();
-            }
-
-
-            
-        }
+      
 
             private void Incomeexpense_editFrm_Load(object sender, EventArgs e)
         {
@@ -251,10 +214,7 @@ namespace self_FinanceApp
         private void label10_Click(object sender, EventArgs e)
         {
             
-            edit_INEXP_Grid.Visible = true;
-            panel2.Visible = false;
-            panel3.Visible = true;
-            getdata_contacts();
+          
         }
 
         private void Contact_Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -293,6 +253,14 @@ namespace self_FinanceApp
                 MessageBox.Show(ex.Message, "Failed: Name Search", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Dispose();
             }
+        }
+
+        private void label10_Click_1(object sender, EventArgs e)
+        {
+            edit_INEXP_Grid.Visible = true;
+            panel2.Visible = false;
+            panel3.Visible = true;
+            getdata_contacts();
         }
           
         }

@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PredictionScreen));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_addincome_expense = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.userid = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -54,15 +60,9 @@
             this.button14 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
-            this.userid = new System.Windows.Forms.Label();
-            this.btn_addincome_expense = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,16 +70,95 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.button14);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dateTimePicker9);
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(673, 336);
+            this.panel1.Size = new System.Drawing.Size(593, 303);
             this.panel1.TabIndex = 50;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel3.Controls.Add(this.btn_addincome_expense);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.userid);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(673, 80);
+            this.panel3.TabIndex = 207;
+            // 
+            // btn_addincome_expense
+            // 
+            this.btn_addincome_expense.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_addincome_expense.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_addincome_expense.BackgroundImage")));
+            this.btn_addincome_expense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_addincome_expense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_addincome_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addincome_expense.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_addincome_expense.Location = new System.Drawing.Point(10, 18);
+            this.btn_addincome_expense.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_addincome_expense.Name = "btn_addincome_expense";
+            this.btn_addincome_expense.Size = new System.Drawing.Size(52, 31);
+            this.btn_addincome_expense.TabIndex = 26;
+            this.btn_addincome_expense.UseVisualStyleBackColor = false;
+            this.btn_addincome_expense.Click += new System.EventHandler(this.btn_addincome_expense_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label6.Location = new System.Drawing.Point(76, 26);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 20);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Prediction";
+            // 
+            // userid
+            // 
+            this.userid.AutoSize = true;
+            this.userid.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.userid.ForeColor = System.Drawing.Color.White;
+            this.userid.Location = new System.Drawing.Point(289, 18);
+            this.userid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.userid.Name = "userid";
+            this.userid.Size = new System.Drawing.Size(79, 17);
+            this.userid.TabIndex = 27;
+            this.userid.Text = "usernamee";
+            this.userid.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(644, 6);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 29);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "x";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.LightCoral;
+            this.label5.Location = new System.Drawing.Point(289, 274);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 25);
+            this.label5.TabIndex = 206;
+            this.label5.Text = "Predict";
+            this.label5.Visible = false;
             // 
             // panel2
             // 
@@ -103,9 +182,9 @@
             this.panel2.Controls.Add(this.avg_income);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(61, 224);
+            this.panel2.Location = new System.Drawing.Point(599, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(14, 10);
+            this.panel2.Size = new System.Drawing.Size(714, 416);
             this.panel2.TabIndex = 205;
             this.panel2.Visible = false;
             // 
@@ -324,92 +403,13 @@
             this.dateTimePicker9.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker9.TabIndex = 188;
             // 
-            // userid
-            // 
-            this.userid.AutoSize = true;
-            this.userid.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.userid.ForeColor = System.Drawing.Color.White;
-            this.userid.Location = new System.Drawing.Point(289, 18);
-            this.userid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.userid.Name = "userid";
-            this.userid.Size = new System.Drawing.Size(79, 17);
-            this.userid.TabIndex = 27;
-            this.userid.Text = "usernamee";
-            this.userid.Visible = false;
-            // 
-            // btn_addincome_expense
-            // 
-            this.btn_addincome_expense.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_addincome_expense.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_addincome_expense.BackgroundImage")));
-            this.btn_addincome_expense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_addincome_expense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_addincome_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addincome_expense.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_addincome_expense.Location = new System.Drawing.Point(10, 18);
-            this.btn_addincome_expense.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_addincome_expense.Name = "btn_addincome_expense";
-            this.btn_addincome_expense.Size = new System.Drawing.Size(52, 31);
-            this.btn_addincome_expense.TabIndex = 26;
-            this.btn_addincome_expense.UseVisualStyleBackColor = false;
-            this.btn_addincome_expense.Click += new System.EventHandler(this.btn_addincome_expense_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.label6.Location = new System.Drawing.Point(76, 26);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 20);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Prediction";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(644, 6);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 29);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "x";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.LightCoral;
-            this.label5.Location = new System.Drawing.Point(289, 274);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 25);
-            this.label5.TabIndex = 206;
-            this.label5.Text = "Predict";
-            this.label5.Visible = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel3.Controls.Add(this.btn_addincome_expense);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.userid);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(673, 80);
-            this.panel3.TabIndex = 207;
-            // 
             // PredictionScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 336);
+            this.ClientSize = new System.Drawing.Size(1425, 551);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PredictionScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -417,10 +417,10 @@
             this.Load += new System.EventHandler(this.PredictionScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
