@@ -34,7 +34,7 @@ namespace self_FinanceApp
                 label30.Text = "Admin";
                 label28.Visible = true;
                 button5.Visible = true;
-                label29.Visible = true;
+                //label29.Visible = true;
                 label8.Visible = false;
                 label5.Visible = false;
                 label9.Visible = false;
@@ -54,7 +54,7 @@ namespace self_FinanceApp
             {
                 label28.Visible = false;
                 button5.Visible = false;
-                label29.Visible = false;
+               // label29.Visible = false;
                 txtDate.Text = DateTime.Now.ToString("MM-dd-yyyy ");
                 txt_useName_Search.Visible = false;
                 label31.Visible = false;
@@ -278,7 +278,7 @@ namespace self_FinanceApp
                 {
                     label12.Visible = true;
                     label12.Text = "Not match";
-                    label2.ForeColor = Color.Red;
+                    label12.ForeColor = Color.Red;
                 }
             }
         }
@@ -441,6 +441,11 @@ namespace self_FinanceApp
             Manage_income_expensesFrm Mie = new Manage_income_expensesFrm();
             
             Mie.Show();
+        }
+
+        private void button5_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(button5, "Get AdminData");
         }
     }
     

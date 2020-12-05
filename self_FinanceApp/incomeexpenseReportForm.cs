@@ -103,6 +103,7 @@ namespace self_FinanceApp
                 myDA.SelectCommand = MyCommand;
                 myDA.Fill(myDS, "db_incomeexpenses");
                 rprot.SetDataSource(myDS);
+                 // for pdf 
                 rprot.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"c:\pdffiles\" + textBox1.Text + ".pdf");
               //  incomeexpenseReportForm ud = new incomeexpenseReportForm();
                 crystalReportViewer1.Visible = true;

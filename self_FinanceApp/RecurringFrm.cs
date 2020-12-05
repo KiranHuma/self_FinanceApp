@@ -193,6 +193,7 @@ namespace self_FinanceApp
            
             label13.Text = Manage_income_expensesFrm.SetValueForedit;
             lbl_user.Text = loginFrm.SetValueForText1;
+            label14.Text = loginFrm.SetValueForText1;
             if (label13.Text == "editrecurring_frommanage")
             {
                
@@ -206,11 +207,7 @@ namespace self_FinanceApp
                 recurring_date.Value = DateTime.Today;
                 txt_date.Value = DateTime.Today;
                 get_name();
-
-               
-
-               
-                
+ 
             }
             
            
@@ -552,6 +549,17 @@ namespace self_FinanceApp
             panel2.Visible = false;
             panel3.Visible = true;
             getdata_contacts();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            panel2.Visible = true;
         }
         
     }

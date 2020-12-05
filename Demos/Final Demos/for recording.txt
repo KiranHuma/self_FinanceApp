@@ -1,0 +1,140 @@
+1.I clean the database.
+2.Using the sqlquery(I reset the autonumber)
+DBCC CHECKIDENT ('manage_contacts', RESEED, 1)  
+
+////////////Database tables/////////
+*db_auth
+this for users
+*db_admin
+this for admin login
+*db_incomeexpenses
+this for all incomes and expenses(including recurring)
+*manage_contacts
+This manage the contacts which are registered by users
+
+///////////////////////////////
+Now i will create a user account
+User is now registered
+Now i will add another user with same username
+
+See the red line.(the username should be unique)
+Now login with registered credentials
+As their are no registered contacts so it is empty
+
+Now check that the value for next will be inserted
+(with not updated status)
+See the for every week the for next week is inserted
+
+Now i change the date to that recurring date(e.g i added the entry
+for every week(now will change the date to next week)
+
+Now i will change the date to 3 week recuring date
+
+See that record is updated
+
+I added the button for previous record update(All the records will
+be update before today date
+
+All the records before date is updated now
+
+I change back the status for further demo
+
+Summary for show the all records (updated or not updated)
+
+The record which have interval are(recurring income and expenses)
+Where the record update is (simple income or expenses
+
+Now report will be generate in the form of pdf file to c drive
+
+Write the name of report and select the dates
+
+you have to create the folder Name(pdffiles) all the report in
+pdf files will be export to that folder
+
+To see the credentials or edit the credentials
+
+
+Now we will predict the balnce
+
+
+
+
+
+
+
+
+
+
+
+To run the source code and attach the database to sql server
+
+copy the databases and copy the files in the following path
+
+i already have databases
+you have to copy these two databases file to this path
+C:\Program Files (x86)\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA
+Now attach the database in sql server
+
+Select .mdf file
+
+database is attach now
+
+now to run source code you have to change the server name to your 
+server name
+
+to change the server name go to the code of each form and change
+the server name
+
+Copy your server name from the sql server
+
+Copy this server name and replace it in code
+
+As this my server name( your will be diferent so replace them
+with your server name
+
+Each form will have one line of (//Database Connection String)
+on the top 
+change only server name
+
+
+Search each form by quick find and replace the server name
+(there may be more than one string)
+
+if you want to change the path of pdf files for report
+
+change here
+
+
+///////////////////////////////////
+To run setup
+Go to desktop
+
+
+
+admin panel
+as there is no record for admin so it will show 0
+and show the details of users
+
+you can change the username and password for admin
+
+Now check the user data
+
+you can change the user data from here
+
+
+as i enter the data for one user so it is showing that user info
+now i will login as another user
+
+as this user has not entered his contacts so it shows empty
+
+
+i forget about the edit and delete option
+
+
+now go back to admin
+
+
+report show the data of all users in specific date
+
+all functions are for admin(if he/she want to add his/her income,expenses
+predictions,reports etc

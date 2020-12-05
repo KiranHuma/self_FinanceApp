@@ -35,19 +35,19 @@
             this.selectUser = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             this.txtUser.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtUser.Location = new System.Drawing.Point(7, 1);
             this.txtUser.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -70,11 +70,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(882, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 32);
+            this.label3.Size = new System.Drawing.Size(31, 29);
             this.label3.TabIndex = 1;
             this.label3.Text = "X";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -102,6 +102,7 @@
             // 
             this.selectUser.BackColor = System.Drawing.Color.WhiteSmoke;
             this.selectUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.selectUser.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectUser.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.selectUser.FormattingEnabled = true;
             this.selectUser.Items.AddRange(new object[] {
@@ -109,7 +110,7 @@
             "Admin"});
             this.selectUser.Location = new System.Drawing.Point(550, 166);
             this.selectUser.Name = "selectUser";
-            this.selectUser.Size = new System.Drawing.Size(269, 24);
+            this.selectUser.Size = new System.Drawing.Size(269, 31);
             this.selectUser.TabIndex = 54;
             // 
             // label6
@@ -129,19 +130,8 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(-3, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(427, 603);
+            this.panel1.Size = new System.Drawing.Size(466, 603);
             this.panel1.TabIndex = 58;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 112);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(364, 366);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -150,9 +140,20 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(92, 465);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(279, 55);
+            this.label4.Size = new System.Drawing.Size(273, 54);
             this.label4.TabIndex = 1;
             this.label4.Text = "Self-Finance";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::self_FinanceApp.Properties.Resources.budget1;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 112);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(388, 366);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label7
             // 
@@ -175,16 +176,6 @@
             this.button2.Text = "&Sign Up";
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(239, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -194,6 +185,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(269, 32);
             this.panel2.TabIndex = 61;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Image = global::self_FinanceApp.Properties.Resources.user_24px;
+            this.pictureBox2.Location = new System.Drawing.Point(239, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // panel3
             // 
@@ -208,7 +209,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = global::self_FinanceApp.Properties.Resources.password_24px;
             this.pictureBox3.Location = new System.Drawing.Point(239, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(27, 26);
@@ -219,7 +220,7 @@
             // 
             this.txtPass.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtPass.Location = new System.Drawing.Point(5, 1);
             this.txtPass.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -247,6 +248,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "loginFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -254,9 +256,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

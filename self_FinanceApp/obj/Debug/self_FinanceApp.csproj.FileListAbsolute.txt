@@ -1,19 +1,3 @@
-F:\Vb projects\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.exe
-F:\Vb projects\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.pdb
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.loginFrm.resources
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Properties.Resources.resources
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.userregFrm.resources
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csproj.GenerateResource.cache
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.exe
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.pdb
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.userdetailsFrm.resources
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Manage_income_expensesFrm.resources
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Add_IncomeExpense.resources
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Incomeexpense_editFrm.resources
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Manage_contacts.resources
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.SummaryFrm.resources
-F:\Vb projects\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.exe.config
-F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csprojResolveAssemblyReference.cache
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.exe.config
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.exe
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.pdb
@@ -32,4 +16,41 @@ F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_Fi
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csproj.GenerateResource.Cache
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.exe
 F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.pdb
-F:\Vb projects\self_FinanceApp\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csprojResolveAssemblyReference.cache
+F:\Vb projects\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.exe.config
+F:\Vb projects\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.exe
+F:\Vb projects\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.pdb
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Add_IncomeExpense.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.incomeexpenseReportForm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Incomeexpense_editFrm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.loginFrm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Manage_contacts.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Manage_income_expensesFrm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.PredictionScreen.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Properties.Resources.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.RecurringFrm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.SummaryFrm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.userdetailsFrm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.userregFrm.resources
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csproj.GenerateResource.Cache
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.exe
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.pdb
+F:\Vb projects\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csprojResolveAssemblyReference.cache
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.exe.config
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.exe
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.pdb
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.exe
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\bin\Debug\self_FinanceApp.pdb
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Add_IncomeExpense.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.incomeexpenseReportForm.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Incomeexpense_editFrm.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.loginFrm.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Manage_contacts.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Manage_income_expensesFrm.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.PredictionScreen.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.Properties.Resources.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.RecurringFrm.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.SummaryFrm.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.userdetailsFrm.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.userregFrm.resources
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csproj.GenerateResource.Cache
+C:\Users\Aimal\Documents\self_FinanceApp\self_FinanceApp\obj\Debug\self_FinanceApp.csprojResolveAssemblyReference.cache

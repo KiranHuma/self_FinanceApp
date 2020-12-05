@@ -45,6 +45,7 @@ namespace self_FinanceApp
                 MessageBox.Show("Database not Connected");
             }
         }
+        // account creation
         public void accountcreated()
         {
             try
@@ -91,13 +92,23 @@ namespace self_FinanceApp
             this.Hide();
             lg.Show();
         }
-
+        public void update_intial_predicted_values()
+        {
+            // Query string
+            SqlConnection conn = new SqlConnection(cs);
+            conn.Open();
+            cmd.Connection = conn;
+            cmd.CommandText = "Update db_auth Set Your_Balance_with_Recursion='0',Your_Balnc_withou_Recurring='0',Total_Balance='0',Predict_balnce='0',Predict_Date='" + txtDate.Text + "' where Username= '" + txtUsername.Text + "'";
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             accountcreated();
-
+            update_intial_predicted_values();
 
         }
+        // for unique username
         public void namecheck()
         {
             SqlConnection con = new SqlConnection(cs);
@@ -120,6 +131,7 @@ namespace self_FinanceApp
             }
             
         }
+        // match the password of two textboxes
         private void txtPassAgain_TextChanged(object sender, EventArgs e)
         {
             {

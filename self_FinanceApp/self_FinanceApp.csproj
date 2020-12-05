@@ -211,5 +211,44 @@
   <ItemGroup>
     <Folder Include="Report\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_to_printer_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\budget1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\predictions_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editt_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\164611.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contactt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credentials.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_24px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

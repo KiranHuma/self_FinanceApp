@@ -247,15 +247,7 @@ namespace self_FinanceApp
 
         private void label9_Click(object sender, EventArgs e)
         {
-           // contactListFrm CLIST = new contactListFrm();
-
-            
-          
-           // CLIST.dataGridView1.Visible = false;
-           // CLIST.dataGridView2.Visible = false;
-           // this.Hide();
-               
-           // CLIST.Show();
+           
         }
 
         private void Contact_Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -302,6 +294,18 @@ namespace self_FinanceApp
             panel2.Visible = false;
             panel3.Visible = true;
             getdata_contacts();
+        }
+
+        private void label4_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            panel2.Visible = true;
         }
         
     }

@@ -43,6 +43,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SummaryFrm));
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -119,11 +120,11 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton5.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton5.ForeColor = System.Drawing.Color.LightCoral;
             this.radioButton5.Location = new System.Drawing.Point(280, 36);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(155, 24);
+            this.radioButton5.Size = new System.Drawing.Size(134, 24);
             this.radioButton5.TabIndex = 176;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Search Income";
@@ -133,11 +134,11 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ForeColor = System.Drawing.Color.LightCoral;
             this.radioButton1.Location = new System.Drawing.Point(4, 36);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(155, 24);
+            this.radioButton1.Size = new System.Drawing.Size(134, 24);
             this.radioButton1.TabIndex = 175;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Search Income";
@@ -146,16 +147,18 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Location = new System.Drawing.Point(235, 66);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker2.TabIndex = 174;
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(4, 66);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker1.TabIndex = 173;
             // 
             // getincome_Grid
@@ -164,7 +167,7 @@
             this.getincome_Grid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -178,7 +181,7 @@
             this.getincome_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
@@ -187,7 +190,7 @@
             this.getincome_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -202,7 +205,7 @@
             this.getincome_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -210,7 +213,7 @@
             this.getincome_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.getincome_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -237,11 +240,11 @@
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
-            this.radioButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton6.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.radioButton6.Location = new System.Drawing.Point(280, 36);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(166, 24);
+            this.radioButton6.Size = new System.Drawing.Size(142, 24);
             this.radioButton6.TabIndex = 181;
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Search Expense";
@@ -251,11 +254,11 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.radioButton2.Location = new System.Drawing.Point(4, 36);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(166, 24);
+            this.radioButton2.Size = new System.Drawing.Size(142, 24);
             this.radioButton2.TabIndex = 180;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Search Expense";
@@ -264,16 +267,18 @@
             // 
             // dateTimePicker3
             // 
+            this.dateTimePicker3.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker3.Location = new System.Drawing.Point(235, 66);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker3.TabIndex = 177;
             // 
             // dateTimePicker4
             // 
+            this.dateTimePicker4.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker4.Location = new System.Drawing.Point(4, 66);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker4.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker4.TabIndex = 176;
             // 
             // getexpense_Grid
@@ -282,7 +287,7 @@
             this.getexpense_Grid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
@@ -295,7 +300,7 @@
             this.getexpense_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Red;
@@ -304,7 +309,7 @@
             this.getexpense_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
@@ -319,7 +324,7 @@
             this.getexpense_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
@@ -327,7 +332,7 @@
             this.getexpense_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.getexpense_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
@@ -354,11 +359,11 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.radioButton4.Location = new System.Drawing.Point(280, 36);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(95, 24);
+            this.radioButton4.Size = new System.Drawing.Size(83, 24);
             this.radioButton4.TabIndex = 184;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Search ";
@@ -368,11 +373,11 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.radioButton3.Location = new System.Drawing.Point(4, 36);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(95, 24);
+            this.radioButton3.Size = new System.Drawing.Size(83, 24);
             this.radioButton3.TabIndex = 183;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Search ";
@@ -381,16 +386,18 @@
             // 
             // dateTimePicker5
             // 
+            this.dateTimePicker5.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker5.Location = new System.Drawing.Point(235, 66);
             this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker5.TabIndex = 182;
             // 
             // dateTimePicker6
             // 
+            this.dateTimePicker6.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker6.Location = new System.Drawing.Point(4, 66);
             this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker6.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker6.TabIndex = 181;
             // 
             // GetInEx_Grid
@@ -399,7 +406,7 @@
             this.GetInEx_Grid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
@@ -411,7 +418,7 @@
             this.GetInEx_Grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightCoral;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.LightCoral;
@@ -420,7 +427,7 @@
             this.GetInEx_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle13.ForeColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
@@ -434,7 +441,7 @@
             this.GetInEx_Grid.ReadOnly = true;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle14.ForeColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
@@ -442,7 +449,7 @@
             this.GetInEx_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.GetInEx_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle15.ForeColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
@@ -454,30 +461,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.LightCoral;
             this.label1.Location = new System.Drawing.Point(106, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(52, 20);
             this.label1.TabIndex = 17;
             this.label1.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.LightCoral;
             this.label2.Location = new System.Drawing.Point(75, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 17);
+            this.label2.Size = new System.Drawing.Size(29, 20);
             this.label2.TabIndex = 18;
             this.label2.Text = "Hi,";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.LightCoral;
             this.label3.Location = new System.Drawing.Point(158, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 17);
+            this.label3.Size = new System.Drawing.Size(207, 20);
             this.label3.TabIndex = 19;
             this.label3.Text = "search your records by date";
             // 
@@ -513,6 +523,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SummaryFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SummaryFrm";

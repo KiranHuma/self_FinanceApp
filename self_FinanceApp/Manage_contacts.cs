@@ -130,7 +130,7 @@ namespace self_FinanceApp
                 {
                     var con = new SqlConnection(cs);
                     con.Open();
-                    var da = new SqlDataAdapter("Select Contact_Name,Phone_Number,Contact_Email,Contact_Description,Creation_Date from manage_contacts where userid='" + userid.Text + "'", con);
+                    var da = new SqlDataAdapter("Select Entry_no,Contact_Name,Phone_Number,Contact_Email,Contact_Description,Creation_Date from manage_contacts where userid='" + userid.Text + "'", con);
                     var dt = new DataTable();
                     da.Fill(dt);
                     source1.DataSource = dt;

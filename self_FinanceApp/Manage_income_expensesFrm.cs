@@ -33,7 +33,7 @@ namespace self_FinanceApp
             txt_blncdate.Text = DateTime.Now.ToString("MMM-dd");
             label18.Text = DateTime.Now.ToString("MMM-dd");
             label9.Text = DateTime.Now.ToString("MM-dd-yyyy");
-            today_datee.Text = DateTime.Now.ToString("dd-MM-yyyy");
+           today_datee.Text = DateTime.Now.ToString("dd-MM-yyyy");
             label38.Text = DateTime.Now.ToString("dd-MM-yyyy");
             get_income();
             get_expenses();
@@ -53,67 +53,61 @@ namespace self_FinanceApp
             ////Every day function call START/////
             Everyday_getRecuring_incomedate();  // get the today's date recuring income
             Everyday_getRecuring_expensedate(); // get the today's date recuring expense
-            update_status_for_everyday();       //update the record of today
-            insert_recurringincomeexpenses();   // insert the record for next recurrsion
+           
             ////Every day function call END/////
 
             ////Every week function call START/////
             Everyweek_getRecuring_expensedate();
             Everyweek_getRecuring_incomedate();
-            update_status_for_everyweek();
-            insert_week_recurringincomeexpenses();
+           
             ////Every week function call END/////
 
             ////Every 2 week function call START/////
             Every_two_week_getRecuring_incomedate();
             Everyweek_two_getRecuring_expensedate();
-            update_status_for_everyweek_two();
-            insert_two_week_recurringincomeexpenses();
+           
             ////Every2  week function call END/////
 
             ////Every 3 week function call START/////
             Every_three_week_getRecuring_incomedate();
             Everyweek_three_getRecuring_expensedate();
-            update_status_for_everyweek_three();
-            insert_three_week_recurringincomeexpenses();
+            
             ////Every 3  week function call END/////
 
             ////Every 4 week function call START/////
             Every_four_week_getRecuring_incomedate();
             Everyweek_four_getRecuring_expensedate();
             // change_interval_for_rcurring();
-            update_status_for_everyweek_four();
-            insert_four_week_recurringincomeexpenses();
+           
             ////Every 4  week function call END/////
 
             ////Every month function call START/////
             Every_Month_getRecuring_incomedate();
             Every_Month_getRecuring_expensedate();
-            update_status_for_every_Month();
-            insert_every_Month_recurringincomeexpenses();
+          
             ////Every month  week function call END/////
 
             ////Every 3 month function call START/////
             Every_3_Month_getRecuring_incomedate();
             Every_3_Month_getRecuring_expensedate();
-            update_status_for_every_three_Month();
-            insert_every_3_Month_recurringincomeexpenses();
+          
             ////Every 3 month  week function call END/////
 
             ////Every 6 month function call START/////
             Every_6_Month_getRecuring_incomedate();
             Every_6_Month_getRecuring_expensedate();
-            update_status_for_every_6_Month();
-            insert_every_6_Month_recurringincomeexpenses();
+           
             ////Every 6 month  week function call END/////
 
             ////Every year function call START/////
             Every_year_getRecuring_incomedate();
             Every_year_getRecuring_expensedate();
-            update_status_for_every_year();
-            insert_every_year_recurringincomeexpenses();
+         
 
             ////Every year week function call END/////
+            /////// Functions to enter the next recurring Records///////
+            recurringnext_Record();
+
 
             //update balance after all function
             
@@ -123,12 +117,95 @@ namespace self_FinanceApp
            get_predict_balnce();
            update_blnce();
            get_predict_total_with_INEX_RinEx_balnce();
-         //  update_prev_record();
+           getdata_income();
+           getdata_expenses();
+           getdata_recurring_income();
+           getdata_recurring_expense();
            
         }
+       /////////////////////////// RECURRING FUNCTIONS CALLS////////////////////////////////////////////////////
+        public void recurringnext_Record()
+        {
+            if (Recurring_interval.Text == "Every day")
+            {
+
+                update_status_for_everyday();       //update the record of today
+                insert_recurringincomeexpenses();   // insert the record for next recurrsion
 
 
-        // get the data of User in grid
+            }
+            if (everyweek_interval.Text == "Every week")
+            {
+
+
+                update_status_for_everyweek();
+                insert_week_recurringincomeexpenses();
+
+            }
+            if (every_two_week_interval.Text == "Every 2 weeks")
+            {
+
+
+                update_status_for_everyweek_two();
+                insert_two_week_recurringincomeexpenses();
+
+            }
+            if (every_three_week_interval.Text == "Every 3 weeks")
+            {
+
+
+                update_status_for_everyweek_three();
+                insert_three_week_recurringincomeexpenses();
+
+            }
+            if (every_four_week_interval.Text == "Every 4 weeks")
+            {
+
+
+                update_status_for_everyweek_four();
+                insert_four_week_recurringincomeexpenses();
+
+            }
+            if (every_three_month_interval.Text == "Every 3 Months")
+            {
+
+
+                  update_status_for_every_three_Month();
+            insert_every_3_Month_recurringincomeexpenses();
+
+
+            }
+            if (every_six_month_interval.Text == "Every 6 Months")
+            {
+
+                update_status_for_every_6_Month();
+                insert_every_6_Month_recurringincomeexpenses();
+
+
+            }
+            if (every_month_interval.Text == "Every Month")
+            {
+
+                update_status_for_every_Month();
+                insert_every_Month_recurringincomeexpenses();
+
+
+            }
+            if (every_year_interval.Text == "Every year")
+            {
+                update_status_for_every_year();
+                insert_every_year_recurringincomeexpenses();
+
+            }
+            else
+            {
+                DateTime dt = DateTime.Now;
+                for_recuringinsert_everday.Value = dt;
+            }
+        }
+        /////////////////////////// RECURRING FUNCTIONS CALLS////////////////////////////////////////////////////
+
+        // get the data of User(Income) in grid
         public void getdata_income()
         {
             {
@@ -175,6 +252,7 @@ namespace self_FinanceApp
             }
 
         }
+        // get the data of recurring expense in grid
         public void getdata_recurring_expense()
         {
             {
@@ -197,6 +275,7 @@ namespace self_FinanceApp
             }
 
         }
+        // get the data of recurring income sum
         public void get_recurringincomeSum()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -337,7 +416,7 @@ namespace self_FinanceApp
                 }
             }
         }
-        //get sum of income and function for calculating the total balance
+        //get sum of income and expenses (function for calculating the total balance)
         public void get_incomesum()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -369,7 +448,7 @@ namespace self_FinanceApp
       
      
      
-        // Total balance with recursion
+        // sum of total income minus sum of expenses to get Total balance with recursion
         public void get_total_recursion()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -398,6 +477,7 @@ namespace self_FinanceApp
                 }
             }
         }
+        // get total balance 
         public void get_total_balanc_with_recursion()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -480,7 +560,7 @@ namespace self_FinanceApp
           
             
         }
-        // get income sum only
+        // get expense sum only
         public void get_totoalexpense()
         {
 
@@ -645,7 +725,7 @@ namespace self_FinanceApp
         {
 
         }
-
+        // send values to another form to edit
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -658,7 +738,7 @@ namespace self_FinanceApp
             this.Hide();
             obj.ShowDialog();
         }
-
+        // delete selected rows
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -1132,7 +1212,7 @@ namespace self_FinanceApp
         //****************************************************************************************************//
         //////////////////////////////////////////////////////////////////start recurring Every 2 weeks///////////////////////////////////////////////////////////////
 
-        //get the recurringincome everdweek details
+        //get the recurringincome every 2 week details
         public void Every_two_week_getRecuring_incomedate()
         {
 
@@ -1180,7 +1260,7 @@ namespace self_FinanceApp
                 }
             }
         }
-        //get everyweek expense details
+        //get every 2 week expense details
         public void Everyweek_two_getRecuring_expensedate()
         {
             {
@@ -1256,7 +1336,7 @@ namespace self_FinanceApp
                 }
             }
         }
-        //insert the values of week recurrincome and expenses in database
+        //insert the values of every 2 week recurrincome and expenses in database
         public void insert_two_week_recurringincomeexpenses()
         {
             try
@@ -1456,7 +1536,7 @@ namespace self_FinanceApp
                 }
             }
         }
-        //insert the values of week recurrincome and expenses in database
+        //insert the values of every 3 week recurrincome and expenses in database
         public void insert_three_week_recurringincomeexpenses()
         {
             try
@@ -1931,7 +2011,7 @@ namespace self_FinanceApp
         //////////////////////////////////////////////////////////////////Start recurring every 3 MONTH/////////////////////////////////////////////////////////////// 
 
 
-        //get the recurringincome every Month details
+        //get the recurringincome every 3 Month details
         public void Every_3_Month_getRecuring_incomedate()
         {
 
@@ -1978,7 +2058,7 @@ namespace self_FinanceApp
             }
         }
 
-        //get every Month expense details
+        //get every 3 Month expense details
         public void Every_3_Month_getRecuring_expensedate()
         {
             {
@@ -2053,7 +2133,7 @@ namespace self_FinanceApp
                 }
             }
         }
-        //insert the values of every Month recurrincome and expenses in database
+        //insert the values of every 3 Month recurrincome and expenses in database
         public void insert_every_3_Month_recurringincomeexpenses()
         {
             try
@@ -2129,7 +2209,7 @@ namespace self_FinanceApp
         //////////////////////////////////////////////////////////////////Start recurring every 6 MONTH/////////////////////////////////////////////////////////////// 
 
 
-        //get the recurringincome every Month details
+        //get the recurringincome every 6 Month details
         public void Every_6_Month_getRecuring_incomedate()
         {
 
@@ -2176,7 +2256,7 @@ namespace self_FinanceApp
             }
         }
 
-        //get every Month expense details
+        //get every 6 Month expense details
         public void Every_6_Month_getRecuring_expensedate()
         {
             {
@@ -2251,7 +2331,7 @@ namespace self_FinanceApp
                 }
             }
         }
-        //insert the values of every Month recurrincome and expenses in database
+        //insert the values of every 6 Month recurrincome and expenses in database
         public void insert_every_6_Month_recurringincomeexpenses()
         {
             try
@@ -2631,7 +2711,7 @@ namespace self_FinanceApp
             this.Hide();
             rc.Show();
         }
-        //add the value on specific date
+        //add the value when recuuring date is equal to today date
         public void add_rcurr_income()
         {
 
@@ -2669,7 +2749,7 @@ namespace self_FinanceApp
             // Everyday_getRecuring_incomedate();
             get_blancee();
         }
-        //update the balnce
+        //update the total balnce
 
         public void update_blnce()
         {
@@ -2681,7 +2761,7 @@ namespace self_FinanceApp
             cmd.ExecuteNonQuery();
             con.Close();
         }
-
+        // get the updated balnce
         public void get_blancee()
         {
             {
@@ -2784,6 +2864,8 @@ namespace self_FinanceApp
         }
 
         //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Predicti||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       // add the total balnce with income,expenses(including recuring) to predict balance
+        
         public void get_predict_total_with_INEX_RinEx_balnce()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -2812,12 +2894,9 @@ namespace self_FinanceApp
                 }
             }
         }
+        // get the predict balnce to screen
         public void get_predict_balnce()
         {
-        
-
-            
-               
                 using (SqlConnection connection = new SqlConnection(cs))
                 {
                     try
@@ -2850,9 +2929,10 @@ namespace self_FinanceApp
         {
             get_predict_total_with_INEX_RinEx_balnce();
         }
-
+        // send value to other form to edit (for recurring)
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
             RecurringFrm RF= new RecurringFrm();
             SetValueForedit = editincomee.Text;
             RF.btnedit.Visible = true;
@@ -2899,7 +2979,7 @@ namespace self_FinanceApp
             DateTime startdat = dateTimePicker1.Value;    //it will select the chosen date in datetimepicker
             for_recuringinsert_everday.Value = startdat.AddDays(1);
         }
-
+        // delete selected row on recuring income
         private void deleteThisInstanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -2929,7 +3009,7 @@ namespace self_FinanceApp
         {
            
         }
-
+        // send value to other form to edit (for recurring)
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             RecurringFrm RFf = new RecurringFrm();
@@ -2947,7 +3027,7 @@ namespace self_FinanceApp
             this.Hide();
             RFf.ShowDialog();
         }
-
+        // delete selected row on recuring expense
         private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
@@ -3093,6 +3173,21 @@ namespace self_FinanceApp
         private void button14_Click_4(object sender, EventArgs e)
         {
             panel14.Visible = true;
+        }
+
+        private void button16_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(button16, "Update the Previous Records");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            update_prev_record();
+        }
+
+        private void button14_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(button14, "See the Predicted Balance");
         }
     }
     }

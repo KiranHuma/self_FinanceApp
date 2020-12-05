@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_IncomeExpense));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_IncomeExpense));
             this.lbl_user = new System.Windows.Forms.Label();
             this.rbtn_income = new System.Windows.Forms.RadioButton();
             this.radiobtn_expense = new System.Windows.Forms.RadioButton();
@@ -50,6 +50,7 @@
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_balnce = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Button();
             this.txt_contacts = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -62,6 +63,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Contact_Grid = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -83,12 +85,12 @@
             // rbtn_income
             // 
             this.rbtn_income.AutoSize = true;
-            this.rbtn_income.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtn_income.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtn_income.ForeColor = System.Drawing.Color.Green;
-            this.rbtn_income.Location = new System.Drawing.Point(64, 435);
+            this.rbtn_income.Location = new System.Drawing.Point(39, 382);
             this.rbtn_income.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn_income.Name = "rbtn_income";
-            this.rbtn_income.Size = new System.Drawing.Size(90, 24);
+            this.rbtn_income.Size = new System.Drawing.Size(101, 30);
             this.rbtn_income.TabIndex = 17;
             this.rbtn_income.TabStop = true;
             this.rbtn_income.Text = "Income";
@@ -98,12 +100,12 @@
             // radiobtn_expense
             // 
             this.radiobtn_expense.AutoSize = true;
-            this.radiobtn_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiobtn_expense.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radiobtn_expense.ForeColor = System.Drawing.Color.Red;
-            this.radiobtn_expense.Location = new System.Drawing.Point(64, 477);
+            this.radiobtn_expense.Location = new System.Drawing.Point(39, 424);
             this.radiobtn_expense.Margin = new System.Windows.Forms.Padding(4);
             this.radiobtn_expense.Name = "radiobtn_expense";
-            this.radiobtn_expense.Size = new System.Drawing.Size(101, 24);
+            this.radiobtn_expense.Size = new System.Drawing.Size(112, 30);
             this.radiobtn_expense.TabIndex = 18;
             this.radiobtn_expense.TabStop = true;
             this.radiobtn_expense.Text = "Expense";
@@ -113,71 +115,73 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(64, 69);
+            this.label2.Location = new System.Drawing.Point(58, 78);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 17);
+            this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 19;
             this.label2.Text = "Description";
             // 
             // txt_amnt
             // 
+            this.txt_amnt.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_amnt.Location = new System.Drawing.Point(62, 254);
             this.txt_amnt.Margin = new System.Windows.Forms.Padding(4);
             this.txt_amnt.Name = "txt_amnt";
-            this.txt_amnt.Size = new System.Drawing.Size(213, 22);
+            this.txt_amnt.Size = new System.Drawing.Size(213, 23);
             this.txt_amnt.TabIndex = 21;
             this.txt_amnt.Text = "0";
             // 
             // txt_date
             // 
-            this.txt_date.Location = new System.Drawing.Point(523, 435);
+            this.txt_date.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_date.Location = new System.Drawing.Point(523, 424);
             this.txt_date.Margin = new System.Windows.Forms.Padding(4);
             this.txt_date.Name = "txt_date";
-            this.txt_date.Size = new System.Drawing.Size(241, 22);
+            this.txt_date.Size = new System.Drawing.Size(241, 23);
             this.txt_date.TabIndex = 22;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(519, 415);
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(520, 403);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 17);
+            this.label3.Size = new System.Drawing.Size(42, 20);
             this.label3.TabIndex = 23;
             this.label3.Text = "Date";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(64, 235);
+            this.label5.Location = new System.Drawing.Point(58, 230);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 17);
+            this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 24;
             this.label5.Text = "Amount";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.label6.Location = new System.Drawing.Point(78, 17);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 20);
+            this.label6.Size = new System.Drawing.Size(105, 23);
             this.label6.TabIndex = 25;
             this.label6.Text = "Add Income";
             // 
             // btn_addincome_expense
             // 
             this.btn_addincome_expense.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_addincome_expense.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_addincome_expense.BackgroundImage")));
+            this.btn_addincome_expense.BackgroundImage = global::self_FinanceApp.Properties.Resources.back;
             this.btn_addincome_expense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_addincome_expense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addincome_expense.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,24 +209,24 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(58, 187);
+            this.label8.Location = new System.Drawing.Point(58, 183);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 17);
+            this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 29;
             this.label8.Text = "Contacts";
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImage = global::self_FinanceApp.Properties.Resources.save;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(713, 481);
+            this.button2.Location = new System.Drawing.Point(713, 493);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(51, 49);
@@ -245,7 +249,7 @@
             // 
             this.lbl_balnce.AutoSize = true;
             this.lbl_balnce.ForeColor = System.Drawing.Color.White;
-            this.lbl_balnce.Location = new System.Drawing.Point(225, 310);
+            this.lbl_balnce.Location = new System.Drawing.Point(169, 297);
             this.lbl_balnce.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_balnce.Name = "lbl_balnce";
             this.lbl_balnce.Size = new System.Drawing.Size(16, 17);
@@ -256,6 +260,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txt_contacts);
             this.panel1.Controls.Add(this.radioButton1);
@@ -273,35 +278,53 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(777, 346);
+            this.panel1.Size = new System.Drawing.Size(805, 346);
             this.panel1.TabIndex = 41;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(770, 10);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 29);
+            this.label4.TabIndex = 69;
+            this.label4.Text = "x";
+            this.label4.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // label9
             // 
+            this.label9.AutoSize = true;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label9.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(159, 173);
+            this.label9.Location = new System.Drawing.Point(134, 170);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(115, 30);
             this.label9.TabIndex = 68;
-            this.label9.Text = "Select Contact";
+            this.label9.Text = "&Select Contact";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label9.UseVisualStyleBackColor = true;
             this.label9.Click += new System.EventHandler(this.label9_Click_1);
             // 
             // txt_contacts
             // 
-            this.txt_contacts.Location = new System.Drawing.Point(61, 209);
+            this.txt_contacts.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_contacts.Location = new System.Drawing.Point(62, 209);
             this.txt_contacts.Margin = new System.Windows.Forms.Padding(4);
             this.txt_contacts.Name = "txt_contacts";
-            this.txt_contacts.Size = new System.Drawing.Size(213, 22);
+            this.txt_contacts.Size = new System.Drawing.Size(213, 23);
             this.txt_contacts.TabIndex = 67;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.Location = new System.Drawing.Point(295, 207);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(106, 21);
+            this.radioButton1.Size = new System.Drawing.Size(113, 24);
             this.radioButton1.TabIndex = 65;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "No Contacts";
@@ -321,6 +344,7 @@
             // 
             // txt_des
             // 
+            this.txt_des.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_des.Location = new System.Drawing.Point(62, 101);
             this.txt_des.Name = "txt_des";
             this.txt_des.Size = new System.Drawing.Size(353, 63);
@@ -329,6 +353,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.rbtn_income);
@@ -338,13 +363,14 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(777, 570);
+            this.panel2.Size = new System.Drawing.Size(811, 573);
             this.panel2.TabIndex = 42;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.search_name);
             this.panel3.Controls.Add(this.label10);
@@ -352,36 +378,38 @@
             this.panel3.Controls.Add(this.Contact_Grid);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(777, 570);
+            this.panel3.Size = new System.Drawing.Size(811, 573);
             this.panel3.TabIndex = 43;
             this.panel3.Visible = false;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 113);
+            this.label11.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(21, 118);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 17);
+            this.label11.Size = new System.Drawing.Size(57, 20);
             this.label11.TabIndex = 181;
             this.label11.Text = "Search";
             // 
             // search_name
             // 
-            this.search_name.Location = new System.Drawing.Point(12, 133);
+            this.search_name.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_name.Location = new System.Drawing.Point(22, 141);
             this.search_name.Name = "search_name";
-            this.search_name.Size = new System.Drawing.Size(243, 22);
+            this.search_name.Size = new System.Drawing.Size(243, 23);
             this.search_name.TabIndex = 180;
             this.search_name.TextChanged += new System.EventHandler(this.search_name_TextChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Trebuchet MS", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.LightCoral;
             this.label10.Location = new System.Drawing.Point(282, 25);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(177, 32);
+            this.label10.Size = new System.Drawing.Size(170, 36);
             this.label10.TabIndex = 177;
             this.label10.Text = "Contact List";
             // 
@@ -391,7 +419,7 @@
             this.panel4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.panel4.Location = new System.Drawing.Point(0, 88);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(777, 10);
+            this.panel4.Size = new System.Drawing.Size(811, 10);
             this.panel4.TabIndex = 176;
             // 
             // Contact_Grid
@@ -400,7 +428,7 @@
             this.Contact_Grid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -413,7 +441,7 @@
             this.Contact_Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
@@ -422,22 +450,22 @@
             this.Contact_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Contact_Grid.DefaultCellStyle = dataGridViewCellStyle3;
             this.Contact_Grid.EnableHeadersVisualStyles = false;
             this.Contact_Grid.GridColor = System.Drawing.Color.White;
-            this.Contact_Grid.Location = new System.Drawing.Point(5, 176);
+            this.Contact_Grid.Location = new System.Drawing.Point(22, 177);
             this.Contact_Grid.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Contact_Grid.Name = "Contact_Grid";
             this.Contact_Grid.ReadOnly = true;
             this.Contact_Grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -445,7 +473,7 @@
             this.Contact_Grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Contact_Grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trebuchet MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -455,14 +483,28 @@
             this.Contact_Grid.TabIndex = 173;
             this.Contact_Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Contact_Grid_CellContentClick);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(770, 10);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(25, 29);
+            this.label12.TabIndex = 182;
+            this.label12.Text = "x";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
             // Add_IncomeExpense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 573);
+            this.ClientSize = new System.Drawing.Size(811, 573);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Add_IncomeExpense";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -509,5 +551,7 @@
         public System.Windows.Forms.TextBox search_name;
         private System.Windows.Forms.Button label9;
         private System.Windows.Forms.TextBox txt_contacts;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label12;
     }
 }

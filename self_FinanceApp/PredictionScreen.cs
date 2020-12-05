@@ -94,8 +94,8 @@ namespace self_FinanceApp
            update_values_to_Null_of_previous_prediction();
            
             update_no_of_days(); //count number of days from today date to prediction date
-            update_no_of_days_with_null();
-            update_calculate_no_days_with_null();
+            update_no_of_days_with_null();// NUll the prvious record of no.of days prediction
+            update_calculate_no_days_with_null(); // NUll the prvious record of calculate_no_days prediction
           update_no_of_days_everyday();
        update_no_of_days_week();
            update_no_of_days_2_week();
@@ -116,6 +116,7 @@ namespace self_FinanceApp
            update_predict_balnce();
         }
         //||||||||||||||||||||||||||||||||||||||||||||||||||||||||Update the values of week,2weeks,3weeks,4weeks||||||||||||||||||||||
+      //for everyday
         public void update_no_of_days_everyday()
         {
             // Query string
@@ -126,6 +127,7 @@ namespace self_FinanceApp
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        // for week
         public void update_no_of_days_week()
         {
             // Query string
@@ -136,6 +138,7 @@ namespace self_FinanceApp
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        // for 2 weeks
         public void update_no_of_days_2_week()
         {
             // Query string
@@ -146,6 +149,7 @@ namespace self_FinanceApp
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        // for three weeks
         public void update_no_of_days_3_week()
         {
             // Query string
@@ -156,6 +160,7 @@ namespace self_FinanceApp
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        // for 4 weeks
         public void update_no_of_days_4_week()
         {
             // Query string
@@ -166,6 +171,7 @@ namespace self_FinanceApp
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        // for every month
         public void update_no_of_days_every_month()
         {
             // Query string
@@ -176,6 +182,7 @@ namespace self_FinanceApp
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        // for 3 month
         public void update_no_of_days_3_month()
         {
             // Query string
@@ -186,6 +193,7 @@ namespace self_FinanceApp
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        //for 6 month
         public void update_no_of_days_6_month()
         {
             // Query stringEvery 6 Months
@@ -197,6 +205,7 @@ namespace self_FinanceApp
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        // for every year
         public void update_no_of_days_every_year()
         {
             // Query stringEvery 6 Months
@@ -238,6 +247,7 @@ namespace self_FinanceApp
         }
 
         //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Prediction Algorithm END||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+       // get the number of days from today to user selected date
         public void count_numberof_days_entriess()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -269,7 +279,7 @@ namespace self_FinanceApp
             }
         }
        
-        
+        // now multiply the recurring income and expense with no. of days (days,month,week etc)
         public void calculate_recINcome_with_no_of_days()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -300,7 +310,7 @@ namespace self_FinanceApp
                 }
             }
         }
-        
+        // get the average of expense
         public void calculate_average_Expense()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -331,6 +341,7 @@ namespace self_FinanceApp
                 }
             }
         }
+        // average of income
         public void calculate_income_average_()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -361,6 +372,7 @@ namespace self_FinanceApp
                 }
             }
         }
+        // calculate the  previous 7 days
         public void calculate_week_from_no_of_days()
           
         {
@@ -426,7 +438,8 @@ namespace self_FinanceApp
             }
             }
         }
-
+        // Get the final balnce by multiplying the 7 days
+        // get the predict balnce by adding the average(income)+predicted(income)-averageexpense-(predicted(expense)
         public void get_average_income_expense()
         {
             double multiplyincome;

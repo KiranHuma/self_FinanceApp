@@ -80,7 +80,7 @@ namespace self_FinanceApp
             }
 
         }
-
+        // for user(total income,total expense)
         public void getdata_summary()
         {
             {
@@ -121,6 +121,7 @@ namespace self_FinanceApp
             getincome_Grid.Refresh();
 
         }
+        // date search by expense
         public void date_expense_search()
         {
             con.Close();
@@ -218,7 +219,8 @@ namespace self_FinanceApp
         {
 
         }
-        // for admin panel
+        /////////////////////////// for admin panel
+        // total summary by date search
         public void admin_datesummary()
         {
             con.Close();
@@ -235,7 +237,7 @@ namespace self_FinanceApp
             con.Close();
             GetInEx_Grid.Refresh();
         }
-       
+       // total summary grid
         public void admin_grid()
         {
             {
@@ -257,6 +259,7 @@ namespace self_FinanceApp
                 }
             }
         }
+        // income grid for admin
         public void admin_incomegrid()
         {
             {
@@ -278,6 +281,7 @@ namespace self_FinanceApp
                 }
             }
         }
+        // expense grid for admin
         public void admin_expensegrid()
         {
             {
@@ -309,6 +313,7 @@ namespace self_FinanceApp
             admin_datesummary();
             radioButton4.Checked = false;
         }
+        // income date filter
         public void admin_incomefilter()
         {
             try
@@ -338,6 +343,7 @@ namespace self_FinanceApp
             admin_incomefilter();
             radioButton5.Checked = false;
         }
+        // expense date filter
         public void admin_expensefilter()
         {
             try

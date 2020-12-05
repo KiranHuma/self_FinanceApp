@@ -42,6 +42,7 @@ namespace self_FinanceApp
             Mie.Show();
             get_incomesum();
         }
+        // get total income and expense sum for edit
         public void get_incomesum()
         {
             using (SqlConnection connection = new SqlConnection(cs))
@@ -74,6 +75,7 @@ namespace self_FinanceApp
         private void label4_Click_1(object sender, EventArgs e)
         {
             this.Close();
+            this.Dispose();
         }
         //to edit the  expenses
         public void income_edit()
@@ -147,7 +149,7 @@ namespace self_FinanceApp
             userid.Text = loginFrm.SetValueForText1;
            
            get_contactforEdit();
-          //  radiobtn_expense.Visible = false;
+         
         }
            
             public void get_contactforEdit()
@@ -184,7 +186,7 @@ namespace self_FinanceApp
        
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-           // get_contacts();
+           
             txt_contacts.Text = "No Contacts";
 
         }
@@ -229,7 +231,7 @@ namespace self_FinanceApp
         {
 
         }
-
+        // search contacts by textbox 
         private void search_name_TextChanged(object sender, EventArgs e)
         {
              string str;
@@ -261,6 +263,17 @@ namespace self_FinanceApp
             panel2.Visible = false;
             panel3.Visible = true;
             getdata_contacts();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            panel2.Visible = true;
         }
           
         }

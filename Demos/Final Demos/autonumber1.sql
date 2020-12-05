@@ -1,0 +1,1 @@
+DBCC CHECKIDENT ('db_auth', RESEED, 1)  
