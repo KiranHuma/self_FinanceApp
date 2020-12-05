@@ -59,7 +59,7 @@ namespace self_FinanceApp
                 string datee = txt_date.Text;
                 if (rbtn_income.Checked)
                 {
-                  double addd;
+                    double addd;
                     addd = double.Parse(txt_amnt.Text) + double.Parse(lbl_balnce.Text);
                     lbl_balnce.Text = Convert.ToString(addd);
                     string sqlquery = ("insert into db_incomeexpenses(Username,Name,Description,Name_or_source,Income,Entry_Date)values('" + lbl_user.Text + "','" + lbl_name.Text + "','" + txt_des.Text + "','" + txt_contacts.Text + "','" + txt_amnt.Text + "','" + txt_date.Value + "')");

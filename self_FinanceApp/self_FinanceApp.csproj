@@ -98,6 +98,12 @@
     <Compile Include="Manage_income_expensesFrm.Designer.cs">
       <DependentUpon>Manage_income_expensesFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecurringFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecurringFrm.Designer.cs">
+      <DependentUpon>RecurringFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SummaryFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecurringFrm.resx">
+      <DependentUpon>RecurringFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SummaryFrm.resx">
       <DependentUpon>SummaryFrm.cs</DependentUpon>
     </EmbeddedResource>
