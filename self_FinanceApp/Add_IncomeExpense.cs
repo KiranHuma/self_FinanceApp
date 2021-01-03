@@ -22,7 +22,7 @@ namespace self_FinanceApp
        
        
         //Database Connection String
-        String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
+        String cs = "Data Source=XENOInitial Catalog=db_selfFinace;Integrated Security=True";
         public Add_IncomeExpense()
         {
             InitializeComponent();
@@ -77,6 +77,7 @@ namespace self_FinanceApp
                     command.ExecuteNonQuery();
                   
                     label7.Text = "Income added Successfully";
+                    MessageBox.Show("Income added Successfully");
                     label7.ForeColor = System.Drawing.Color.DarkGreen;
 
                 }
@@ -101,6 +102,7 @@ namespace self_FinanceApp
                    
                     // radiobtn_expense.Text = "Expense";
                     label7.Text = "Expenses added Successfully";
+                    MessageBox.Show("Expenses added Successfully");
                     label7.ForeColor = System.Drawing.Color.DarkGreen;
                 }
 

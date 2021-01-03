@@ -68,12 +68,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_selfFinaceDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="incomeexpenseReportForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="incomeexpenseReportForm.Designer.cs">
-      <DependentUpon>incomeexpenseReportForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Incomeexpense_editFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +104,12 @@
     <Compile Include="RecurringFrm.Designer.cs">
       <DependentUpon>RecurringFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReprtForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprtForm.Designer.cs">
+      <DependentUpon>ReprtForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SummaryFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,9 +138,6 @@
     </Compile>
     <EmbeddedResource Include="Add_IncomeExpense.resx">
       <DependentUpon>Add_IncomeExpense.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="incomeexpenseReportForm.resx">
-      <DependentUpon>incomeexpenseReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Incomeexpense_editFrm.resx">
       <DependentUpon>Incomeexpense_editFrm.cs</DependentUpon>
@@ -174,6 +171,9 @@
     <EmbeddedResource Include="RecurringFrm.resx">
       <DependentUpon>RecurringFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReprtForm.resx">
+      <DependentUpon>ReprtForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SummaryFrm.resx">
       <DependentUpon>SummaryFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,7 +183,9 @@
     <EmbeddedResource Include="userregFrm.resx">
       <DependentUpon>userregFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="db_selfFinaceDataSet.xsc">
       <DependentUpon>db_selfFinaceDataSet.xsd</DependentUpon>
     </None>
@@ -208,9 +210,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Report\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\save.png" />
   </ItemGroup>

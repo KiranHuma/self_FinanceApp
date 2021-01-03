@@ -23,7 +23,7 @@ namespace self_FinanceApp
         public static string SetValueForaddincome = "";
 
         //Database Connection String
-        String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
+        String cs = "Data Source=XENO;Initial Catalog=db_selfFinace;Integrated Security=True";
 
         public Incomeexpense_editFrm()
         {

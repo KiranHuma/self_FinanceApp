@@ -21,7 +21,7 @@ namespace self_FinanceApp
       
 
         //Database Connection String
-        String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
+        String cs = "Data Source=XENO;Initial Catalog=db_selfFinace;Integrated Security=True";
         public RecurringFrm()
         {
             InitializeComponent();
@@ -70,7 +70,7 @@ namespace self_FinanceApp
 
                     label7.Text = "Recurring Income added Successfully";
                     label7.ForeColor = System.Drawing.Color.DarkGreen;
-
+                    MessageBox.Show("Recurring Income Successfully");
                 }
                 else
                 {
@@ -95,6 +95,7 @@ namespace self_FinanceApp
 
                     // radiobtn_expense.Text = "Expense";
                     label7.Text = "Recurring Expenses added Successfully";
+                    MessageBox.Show("Recurring Expenses Successfully");
                     label7.ForeColor = System.Drawing.Color.DarkGreen;
                 }
 
@@ -150,7 +151,7 @@ namespace self_FinanceApp
 
                     label7.Text = "Recurring Income added Successfully";
                     label7.ForeColor = System.Drawing.Color.DarkGreen;
-
+                  
                 }
                 else
                 {
@@ -176,6 +177,7 @@ namespace self_FinanceApp
                     // radiobtn_expense.Text = "Expense";
                     label7.Text = "Recurring Expenses added Successfully";
                     label7.ForeColor = System.Drawing.Color.DarkGreen;
+                    
                 }
 
             }

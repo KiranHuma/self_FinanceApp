@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System;
+using System.Globalization;
+using System.Text.RegularExpressions;
+
 namespace self_FinanceApp
 {
     public partial class userregFrm : Form
@@ -17,7 +21,7 @@ namespace self_FinanceApp
         string str;
         SqlCommand com;
         
-        String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
+        String cs = "Data Source=XENO;Initial Catalog=db_selfFinace;Integrated Security=True";
             public userregFrm()
         {
             InitializeComponent();
@@ -106,7 +110,11 @@ namespace self_FinanceApp
         {
             accountcreated();
             update_intial_predicted_values();
-
+            MessageBox.Show("Account Created Successfully");
+            loginFrm lg = new loginFrm();
+            this.Hide();
+            lg.Show();
+            
         }
         // for unique username
         public void namecheck()
@@ -162,6 +170,32 @@ namespace self_FinanceApp
             loginFrm lg = new loginFrm();
             this.Close();
             lg.Show();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+
+            if (txtEmail.Text.Length > 0)
+            {
+
+                if (!rEMail.IsMatch(txtEmail.Text))
+                {
+
+                    MessageBox.Show("E-Mail expected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    txtEmail.SelectAll();
+
+                    e.Cancel = true;
+
+                }
+
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace self_FinanceApp
         SqlCommand cmd = new SqlCommand();
         SqlConnection con = new SqlConnection();
        
-        String cs = "Data Source=DESKTOP-H2H8TNI;Initial Catalog=db_selfFinace;Integrated Security=True";
+        String cs = "Data Source=XENO;Initial Catalog=db_selfFinace;Integrated Security=True";
         public loginFrm()
         {
             InitializeComponent();
